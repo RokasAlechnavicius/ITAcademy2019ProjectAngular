@@ -23,20 +23,21 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>  Good Deeds Summer project site</span>
+      <span>  Good Deeds Summer Project</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+
+  <div>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="md-padding">
+      <div id="btmFooter">
+        <p>Text to be added</p>
+      </div>
+    </footer>
+  </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div>
-<main class="content">
-<router-outlet></router-outlet>
-</main>
-
-<footer class="md-padding">
-  <div id="btmFooter">
-    <p>Text to be added</p>
-  </div>
-</footer>
-</div>

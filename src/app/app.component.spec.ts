@@ -1,10 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import {LayoutNavComponent} from './layout-nav/layout-nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatDividerModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
+import {HomePageComponent} from './home-page/home-page.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,10 +27,11 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatIconModule,
         MatListModule,
+        MatDividerModule,
       ],
       declarations: [
         AppComponent,
-        LayoutNavComponent,
+        HomePageComponent
       ],
     }).compileComponents();
   }));

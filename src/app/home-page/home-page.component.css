@@ -4,3 +4,7 @@ div {
 mat-list-item {
   text-align: center;
 }
+mat-divider {
+  margin-left: 35px;
+  margin-right: 35px;
+}
