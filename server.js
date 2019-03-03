@@ -2,9 +2,9 @@ var express = require('express');
 var compression = require('compression');
 var proxy = require('http-proxy-middleware');
 var API_HOST = process.env.API_HOST || 'localhost:8080';
-var PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 8080;
 
-var buildPath = 'dist/IT-academy-project'
+var buildPath = 'dist/IT-academy-project';
 
 // Initialize
 var app = express();
@@ -25,7 +25,7 @@ app.use('/api', proxy({
 }));
 
 // Otherwise serve index.html
-app.get('*', function (req, res) {
+app.get('/*', function (req, res) {
     res.sendFile(__dirname + buildPath + "/index.html");
 });
 
