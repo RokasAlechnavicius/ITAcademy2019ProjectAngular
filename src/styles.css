@@ -10,23 +10,16 @@ body {
 
 footer {
   background-color: #ddd;
-  border-top: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-#clickFooter footer:hover {
-  background-color: #ccc;
-  cursor: pointer;
+mat-divider {
 }
 
-#btmFooter {
-  align-self: flex-end;
+.content {
+  margin-left: 30px;
 }
 
-#clickFooter {
-  position: relative;
-}
-.footer-demo {
-  height: 100%; /* Angular material adds "height:100%" to body tag by default. So, ignore this step in real-time application */
-}
