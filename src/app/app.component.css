@@ -1,0 +1,59 @@
+.companyName {
+  font-size: 125%;
+}
+
+.mat-toolbar {
+  height: 7vh;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  font-family: "Open Sans", sans-serif;
+}
+main {
+  padding-top: 0;
+  background-color:  #e1e8f0;
+}
+
+.mat-sidenav-container {
+  /*width: 100%;*/
+  min-height: 93vh !important;
+  background-color:  #e1e8f0;
+  margin-top: 7vh;
+}
+
+.vertical-divider {
+  border-top-width: 0;
+  border-right-width: 1px;
+  border-right-style: solid;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  font-size: 110%;
+  min-width: min-content;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-sidenav-content {
+  font-size: 100%;
+  text-align: center;
+  height: 100%;
+}
+
+#SummerDeeds {
+  background-color: #323438 !important;
+}
