@@ -9,10 +9,11 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
 import {HomePageComponent} from './home-page/home-page.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -28,6 +29,7 @@ describe('AppComponent', () => {
         MatIconModule,
         MatListModule,
         MatDividerModule,
+        FlexLayoutModule,
       ],
       declarations: [
         AppComponent,

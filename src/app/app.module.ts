@@ -8,6 +8,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatDividerModule } from '@angular/material';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HomePageComponent } from './home-page/home-page.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatIconModule,
     MatListModule,
     MatDividerModule,
+    FlexLayoutModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
