@@ -3,7 +3,8 @@
 }
 
 .mat-toolbar{
-  height: 7vh;
+  /*height: 6vh;*/
+  /*position: fixed;*/
   top: 0;
   z-index:999;
   font-family: 'Open Sans', sans-serif;
@@ -11,6 +12,7 @@
 main {
   /*padding-top: 50px;*/
   background-color: azure;
+
 }
 
 .mat-sidenav-container{
@@ -50,9 +52,6 @@ button{
 .mat-sidenav-content{
   font-size: 100%;
   text-align: center;
+  height: 100%;
 
-}
-
-mat-sidenav {
-  margin-top: 7vh;
 }
