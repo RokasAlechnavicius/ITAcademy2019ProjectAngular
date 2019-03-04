@@ -1,25 +1,24 @@
-.companyName{
+.companyName {
   font-size: 125%;
 }
 
-.mat-toolbar{
-  /*height: 6vh;*/
-  /*position: fixed;*/
+.mat-toolbar {
+  height: 7vh;
+  position: fixed;
   top: 0;
-  z-index:999;
-  font-family: 'Open Sans', sans-serif;
+  z-index: 999;
+  font-family: "Open Sans", sans-serif;
 }
 main {
-  /*padding-top: 50px;*/
-  background-color: azure;
-
+  padding-top: 0;
+  background-color:  #e1e8f0;
 }
 
-.mat-sidenav-container{
+.mat-sidenav-container {
   /*width: 100%;*/
   min-height: 93vh !important;
-  background-color: azure;
-  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./../assets/GoodDeedsBackground.jpg');
+  background-color:  #e1e8f0;
+  margin-top: 7vh;
 }
 
 .vertical-divider {
@@ -29,14 +28,14 @@ main {
   height: 100%;
 }
 
-a{
+a {
   text-decoration: none;
   font-size: 110%;
   white-space: normal;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-button{
+button {
   font-size: 110%;
   min-width: min-content;
 }
@@ -49,9 +48,12 @@ button{
   flex: 1 1 auto;
 }
 
-.mat-sidenav-content{
+.mat-sidenav-content {
   font-size: 100%;
   text-align: center;
   height: 100%;
+}
 
+#SummerDeeds {
+  background-color: #323438 !important;
 }
