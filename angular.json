@@ -98,7 +98,7 @@
             ],
             "exclude": [
               "**/node_modules/**",
-              "**/data/**"
+              "**/assets/**"
             ]
           }
         }
