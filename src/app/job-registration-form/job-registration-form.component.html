@@ -1,0 +1,164 @@
+<form class="jobForm" [formGroup]="jobForm" (ngSubmit)="addJob()">
+    <div class="example-container">
+        <h1>Job registration</h1>
+
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Idea</mat-label>
+                <input formControlName="idea" matInput placeholder="" />
+                <mat-hint>Max 256 characters</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls['idea'].invalid && jobForm.controls['idea'].touched">
+                <mat-error *ngIf="jobForm.controls['idea'].hasError('required')">
+                    Idea field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls['idea'].hasError('maxlength')">
+                    Idea field cannot be longer than 256 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Organization</mat-label>
+                <input formControlName="organization" matInput placeholder="" />
+                <mat-hint>Max 128 characters</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.organization.invalid && jobForm.controls.organization.touched">
+                <mat-error *ngIf="jobForm.controls.organization.hasError('required')">
+                    Organization field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.organization.hasError('maxlength')">
+                    Organization field cannot be longer than 128 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>City/Location</mat-label>
+                <mat-select formControlName="city">
+                    <mat-option *ngFor="let city of cities" [value]="city">
+                        {{ city }}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select from a list</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.city.invalid && jobForm.controls.city.touched">
+                <mat-error *ngIf="jobForm.controls.city.hasError('required')">
+                    City/Location field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.city.hasError('maxlength')">
+                    City/Location field cannot be longer than 40 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option *ngFor="let category of categories" [value]="category.value">
+                        {{ category.value }}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select from a list</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.category.invalid && jobForm.controls.category.touched">
+                <mat-error *ngIf="jobForm.controls.category.hasError('required')">
+                    Category field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.category.hasError('maxlength')">
+                    Category field cannot be longer than 40 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Event start date</mat-label>
+                <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date" />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-hint></mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.date.invalid && jobForm.controls.date.touched">
+                <mat-error *ngIf="jobForm.controls.date.hasError('required')">
+                    Date field cannot be empty
+                </mat-error>
+            </div>
+        </div>
+    </div>
+    <div class="example-container">
+        <h1>Contact</h1>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Contact person</mat-label>
+                <input formControlName="contactName" matInput placeholder="" />
+                <mat-hint>Max 64 characters</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.contactName.invalid && jobForm.controls.contactName.touched">
+                <mat-error *ngIf="jobForm.controls.contactName.hasError('required')">
+                    Contact person field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.contactName.hasError('maxlength')">
+                    Contact person field cannot be longer than 64 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Phone number</mat-label>
+                <input type="number" formControlName="phone" matInput placeholder="" />
+                <mat-hint></mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.phone.invalid && jobForm.controls.phone.touched">
+                <mat-error *ngIf="jobForm.controls.phone.hasError('required')">
+                    Phone field cannot be empty
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Website</mat-label>
+                <input formControlName="website" matInput placeholder="" />
+                <mat-hint>Max 64 characters, not required</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.website.invalid && jobForm.controls.website.touched">
+                <mat-error *ngIf="jobForm.controls.website.hasError('maxlength')">
+                    Website field cannot be longer than 64 characters
+                </mat-error>
+            </div>
+        </div>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput placeholder="" />
+                <mat-hint>Must be a valid email if present, not required</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.email.invalid && jobForm.controls.email.touched">
+                <mat-error *ngIf="jobForm.controls.email.hasError('maxlength')">
+                    Website field cannot be longer than 50 characters
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.email.hasError('email')">
+                    Not a valid email address
+                </mat-error>
+            </div>
+        </div>
+    </div>
+    <div class="example-container">
+        <h1>Description</h1>
+        <div class="job-form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea class="textareainput" matInput formControlName="description" placeholder=""> </textarea>
+                <mat-hint>Max 1024 characters</mat-hint>
+            </mat-form-field>
+            <div *ngIf="jobForm.controls.description.invalid && jobForm.controls.description.touched">
+                <mat-error *ngIf="jobForm.controls.description.hasError('required')">
+                    Description field cannot be empty
+                </mat-error>
+                <mat-error *ngIf="jobForm.controls.description.hasError('maxlength')">
+                    Description field cannot be longer than 1024 characters
+                </mat-error>
+            </div>
+        </div>
+    </div>
+    <button [disabled]="!jobForm.valid" mat-raised-button type="submit">Register</button>
+</form>

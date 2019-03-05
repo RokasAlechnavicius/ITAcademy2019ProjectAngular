@@ -1,0 +1,24 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 10%;
+}
+/*.example-container > * {
+  width: 100%;
+}*/
+
+/*.jobForm {
+  width: 100%;
+}*/
+mat-form-field {
+    width: 35%;
+}
+
+.job-form-field {
+    padding: 10px 10px 10px 10px;
+}
+
+.textareainput {
+    height: 175px;
+}
