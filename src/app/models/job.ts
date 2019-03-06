@@ -2,7 +2,7 @@ export class Job {
   id: number;
   date: string;
   idea: string;
-  organization: string;
+  organisation: string;
   city: string;
   category: string;
   email?: string;
