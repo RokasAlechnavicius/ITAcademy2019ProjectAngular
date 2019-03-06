@@ -3,14 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    MatButtonModule,
-    MatDividerModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatSidenavModule,
-    MatToolbarModule
+  MatButtonModule, MatCardModule,
+  MatDividerModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSidenavModule,
+  MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -44,15 +44,16 @@ describe('AppComponent', () => {
                 MatDatepickerModule,
                 MatSelectModule,
                 MatNativeDateModule,
-                MatInputModule
+                MatInputModule,
+                MatCardModule
             ],
             declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent]
         }).compileComponents();
     }));
 
     it('should create the app', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app).toBeTruthy();
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.debugElement.componentInstance;
+      expect(app).toBeTruthy();
     });
 });
