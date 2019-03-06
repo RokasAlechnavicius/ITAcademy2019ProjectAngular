@@ -46,16 +46,8 @@ export class JobRegistrationFormComponent implements OnInit {
     const stringedDate = moment(this.jobForm.get('date').value).format('DD.MM.YYYY');
     this.jobForm.controls.date.setValue(stringedDate);
     // we have a proper form  with values to pass into a service now, need a service to handle it
-    this.jobService.addJob(this.jobForm.value).subscribe(
-      ac => {
-        this.router.navigate(['/home']);
-      },
-      err => {
-
-      },
-    () => {}
-    );
-
+    this.jobService.addJob(this.jobForm.value).subscribe();
+    this.router.navigate(['/home']);
 
   }
 }
