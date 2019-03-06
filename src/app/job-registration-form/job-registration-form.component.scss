@@ -1,0 +1,23 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 10%;
+}
+
+mat-form-field {
+    width: 35%;
+}
+
+.job-form-field {
+    padding: 10px 10px 10px 10px;
+}
+
+.textareainput {
+    height: 175px;
+}
+
+.submit-event-register-button {
+  width: 10%;
+  margin-left: 25%;
+}
