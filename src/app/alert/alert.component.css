@@ -1,8 +1,15 @@
 .alert-danger {
-  background-color: red;
-  width: 50%;
-  border: solid;
-  border-color: black;
-  font-size: 200%;
-  margin: auto;
+    background-color: red;
+    width: 50%;
+    border: solid;
+    border-color: black;
+    font-size: 200%;
+    margin: auto;
+}
+
+.alert-success {
+    background-color: lightgreen;
+    width: 50%;
+    font-size: 200%;
+    margin: auto;
 }
