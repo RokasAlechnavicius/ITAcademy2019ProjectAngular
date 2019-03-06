@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import * as citiesData from './../../assets/cities.json';
 import * as categoriesData from './../../assets/categories.json';
 import {Router} from '@angular/router';
+import {JobService} from '../services/job.service';
 
 @Component({
   selector: 'app-job-registration-form',
@@ -17,11 +18,12 @@ export class JobRegistrationFormComponent implements OnInit {
   cities =   citiesData.cities;
   jobForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private jobService: JobService) {
   }
 
   ngOnInit() {
-
     this.createForm();
   }
 
@@ -44,7 +46,16 @@ export class JobRegistrationFormComponent implements OnInit {
     const stringedDate = moment(this.jobForm.get('date').value).format('DD.MM.YYYY');
     this.jobForm.controls.date.setValue(stringedDate);
     // we have a proper form  with values to pass into a service now, need a service to handle it
-    this.router.navigate(['/home']);
+    this.jobService.addJob(this.jobForm.value).subscribe(
+      ac => {
+        this.router.navigate(['/home']);
+      },
+      err => {
+
+      },
+    () => {}
+    );
+
 
   }
 }
