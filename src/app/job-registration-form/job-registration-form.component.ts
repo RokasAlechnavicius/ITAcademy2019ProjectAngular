@@ -37,7 +37,6 @@ export class JobRegistrationFormComponent implements OnInit {
     }
 
     createForm() {
-        console.log(this.minDate);
         this.jobForm = this.formBuilder.group({
             date: [null, [Validators.required]],
             idea: ['', [Validators.required, Validators.maxLength(256), this.noWhiteSpaceValidator]],
