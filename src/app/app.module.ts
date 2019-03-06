@@ -9,12 +9,17 @@ import { MatDividerModule } from '@angular/material';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HomePageComponent } from './home-page/home-page.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatListModule,
     MatDividerModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

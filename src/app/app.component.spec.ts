@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatDividerModule,
-  MatIconModule,
+  MatIconModule, MatInputModule,
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
@@ -14,6 +14,9 @@ import {
 import {LayoutModule} from '@angular/cdk/layout';
 import {HomePageComponent} from './home-page/home-page.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -30,6 +33,11 @@ describe('AppComponent', () => {
         MatListModule,
         MatDividerModule,
         FlexLayoutModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatCardModule,
+        MatInputModule,
+        MatFormFieldModule
       ],
       declarations: [
         AppComponent,
