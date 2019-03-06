@@ -1,17 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 
-import { JobService } from './job.service';
+import { AlertService } from './alert.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('JobService', () => {
+describe('AlertService', () => {
     beforeEach(() =>
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule]
+            imports: [HttpClientTestingModule, RouterTestingModule]
         })
     );
 
     it('should be created', () => {
-        const service: JobService = TestBed.get(JobService);
+        const service: AlertService = TestBed.get(AlertService);
         expect(service).toBeTruthy();
     });
 });

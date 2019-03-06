@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+    selector: 'app-home-page',
+    templateUrl: './home-page.component.html',
+    styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  title = 'Summer of Good Works';
+    title = 'Summer of Good Works';
 
-  constructor() { }
-
-
+    constructor() {}
 }

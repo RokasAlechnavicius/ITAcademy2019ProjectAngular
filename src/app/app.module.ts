@@ -5,7 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatDividerModule, MatNativeDateModule } from '@angular/material';
+import { MatCardModule, MatDialogModule, MatDividerModule, MatNativeDateModule } from '@angular/material';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -16,18 +16,16 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
-import { JobListComponent } from './job-list/job-list.component';
-import { MatTableModule } from '@angular/material/table';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
-    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, JobListComponent],
+    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatMenuModule,
         LayoutModule,
-
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
@@ -43,9 +41,11 @@ import { MatTableModule } from '@angular/material/table';
         MatSelectModule,
         MatNativeDateModule,
         HttpClientModule,
-        MatTableModule
+        MatDialogModule,
+        MatCardModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    entryComponents: [AlertComponent],
     providers: [],
     bootstrap: [AppComponent]
 })
