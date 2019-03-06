@@ -1,0 +1,11 @@
+<div
+    class="mat-dialog-content"
+    *ngIf="message"
+    [ngClass]="{
+        alert: message,
+        'alert-success': message.type === 'success',
+        'alert-danger': message.type === 'error'
+    }"
+>
+    <p>{{ message.text }}</p>
+</div>

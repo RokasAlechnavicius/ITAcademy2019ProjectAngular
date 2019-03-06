@@ -5,12 +5,12 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Idea</mat-label>
-                <input formControlName="idea" matInput placeholder="" required>
+                <input formControlName="idea" matInput placeholder="" required />
                 <mat-hint>Max 256 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls['idea'].invalid && jobForm.controls['idea'].touched">
-                <mat-error *ngIf="jobForm.controls['idea'].hasError('required')">
-                    Idea field cannot be empty
+                <mat-error *ngIf="jobForm.controls['idea'].hasError('whitespace')">
+                    Please enter valid Idea field data, cannot be empty
                 </mat-error>
                 <mat-error *ngIf="jobForm.controls['idea'].hasError('maxlength')">
                     Idea field cannot be longer than 256 characters
@@ -20,14 +20,14 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Organization</mat-label>
-                <input formControlName="organization" matInput placeholder="" required />
+                <input formControlName="organisation" matInput placeholder="" required />
                 <mat-hint>Max 128 characters</mat-hint>
             </mat-form-field>
-            <div *ngIf="jobForm.controls.organization.invalid && jobForm.controls.organization.touched">
-                <mat-error *ngIf="jobForm.controls.organization.hasError('required')">
-                    Organization field cannot be empty
+            <div *ngIf="jobForm.controls.organisation.invalid && jobForm.controls.organisation.touched">
+                <mat-error *ngIf="jobForm.controls.organisation.hasError('whitespace')">
+                    Organisation field cannot be empty
                 </mat-error>
-                <mat-error *ngIf="jobForm.controls.organization.hasError('maxlength')">
+                <mat-error *ngIf="jobForm.controls.organisation.hasError('maxlength')">
                     Organization field cannot be longer than 128 characters
                 </mat-error>
             </div>
@@ -43,7 +43,9 @@
                 <mat-hint>Select from a list</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.city.invalid && jobForm.controls.city.touched">
-                <mat-error *ngIf="jobForm.controls.city.hasError('required')">
+                <mat-error
+                    *ngIf="jobForm.controls.city.hasError('required') || jobForm.controls.city.hasError('whitespace')"
+                >
                     City/Location field cannot be empty
                 </mat-error>
                 <mat-error *ngIf="jobForm.controls.city.hasError('maxlength')">
@@ -62,7 +64,12 @@
                 <mat-hint>Select from a list</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.category.invalid && jobForm.controls.category.touched">
-                <mat-error *ngIf="jobForm.controls.category.hasError('required')">
+                <mat-error
+                    *ngIf="
+                        jobForm.controls.category.hasError('required') ||
+                        jobForm.controls.category.hasError('whitespace')
+                    "
+                >
                     Category field cannot be empty
                 </mat-error>
                 <mat-error *ngIf="jobForm.controls.category.hasError('maxlength')">
@@ -73,7 +80,14 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Event start date</mat-label>
-                <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date" required />
+                <input
+                    matInput
+                    [min]="minDate"
+                    formControlName="date"
+                    [matDatepicker]="picker"
+                    placeholder="Choose a date"
+                    required
+                />
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
                 <mat-hint></mat-hint>
@@ -94,7 +108,12 @@
                 <mat-hint>Max 64 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.contactName.invalid && jobForm.controls.contactName.touched">
-                <mat-error *ngIf="jobForm.controls.contactName.hasError('required')">
+                <mat-error
+                    *ngIf="
+                        jobForm.controls.contactName.hasError('required') ||
+                        jobForm.controls.contactName.hasError('whitespace')
+                    "
+                >
                     Contact person field cannot be empty
                 </mat-error>
                 <mat-error *ngIf="jobForm.controls.contactName.hasError('maxlength')">
@@ -109,7 +128,9 @@
                 <mat-hint></mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.phone.invalid && jobForm.controls.phone.touched">
-                <mat-error *ngIf="jobForm.controls.phone.hasError('required')">
+                <mat-error
+                    *ngIf="jobForm.controls.phone.hasError('required') || jobForm.controls.phone.hasError('whitespace')"
+                >
                     Phone field cannot be empty
                 </mat-error>
             </div>
@@ -147,11 +168,17 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <textarea class="textareainput" matInput formControlName="description" placeholder="" required> </textarea>
+                <textarea class="textareainput" matInput formControlName="description" placeholder="" required>
+                </textarea>
                 <mat-hint>Max 1024 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.description.invalid && jobForm.controls.description.touched">
-                <mat-error *ngIf="jobForm.controls.description.hasError('required')">
+                <mat-error
+                    *ngIf="
+                        jobForm.controls.description.hasError('required') ||
+                        jobForm.controls.description.hasError('whitespace')
+                    "
+                >
                     Description field cannot be empty
                 </mat-error>
                 <mat-error *ngIf="jobForm.controls.description.hasError('maxlength')">
@@ -159,7 +186,8 @@
                 </mat-error>
             </div>
         </div>
-      <button class="submit-event-register-button" [disabled]="!jobForm.valid" mat-raised-button type="submit">Register</button>
+        <button class="submit-event-register-button" [disabled]="!jobForm.valid" mat-raised-button type="submit">
+            Register
+        </button>
     </div>
-
 </form>

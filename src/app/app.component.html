@@ -1,47 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--<div style="text-align:center">-->
 <mat-toolbar color="primary" id="SummerDeeds">
-  <div fxShow="true" fxHide.gt-sm="true">
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
+    <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
 
-  <a mat-button class="companyName" routerLink="/">
-    <span>Summer Good Deeds Project</span>
-  </a>
-  <span class="example-spacer"></span>
-  <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="8px">
-    <a mat-button routerLink="home">Home</a>
-    <a mat-button routerLink="login">Events</a>
-    <a mat-button routerLink="create-job">New event</a>
-    <a mat-button routerLink="#">Register</a>
-    <a mat-button routerLink="#">Login</a>
-  </div>
+    <a mat-button class="companyName" routerLink="/">
+        <span>Summer Good Deeds Project</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="8px">
+        <a mat-button routerLink="home">Home</a>
+        <a mat-button routerLink="login">Events</a>
+        <a mat-button routerLink="create-job">New event</a>
+        <a mat-button routerLink="#">Register</a>
+        <a mat-button routerLink="#">Login</a>
+    </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill>
-  <mat-sidenav
-    color="primary"
-    #sidenav
-    fxLayout="column"
-    mode="over"
-    opened="false"
-    fxHide.gt-sm="true"
-  >
-    <div fxLayout="column">
-      <a mat-button routerLink="home">Home</a>
-      <a mat-button routerLink="login">Events</a>
-      <a mat-button routerLink="create-job">New event</a>
-      <a mat-button routerLink="#">Register</a>
-      <a mat-button routerLink="#">Login</a>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content fxFlexFill>
-    <main class="content">
-      <router-outlet></router-outlet>
-    </main>
-  </mat-sidenav-content>
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+            <a mat-button routerLink="home">Home</a>
+            <a mat-button routerLink="login">Events</a>
+            <a mat-button routerLink="create-job">New event</a>
+            <a mat-button routerLink="#">Register</a>
+            <a mat-button routerLink="#">Login</a>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+        <main class="content">
+            <app-alert></app-alert>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 <div class="footer">
-  <p>Text to be added</p>
+    <p>Text to be added</p>
 </div>
