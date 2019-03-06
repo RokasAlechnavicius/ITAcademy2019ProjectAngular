@@ -28,7 +28,6 @@ import { MatTableModule } from '@angular/material/table';
         BrowserAnimationsModule,
         MatMenuModule,
         LayoutModule,
-
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
