@@ -5,7 +5,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Idea</mat-label>
-                <input formControlName="idea" matInput placeholder="" />
+                <input formControlName="idea" matInput placeholder="" required>
                 <mat-hint>Max 256 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls['idea'].invalid && jobForm.controls['idea'].touched">
@@ -20,7 +20,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Organization</mat-label>
-                <input formControlName="organization" matInput placeholder="" />
+                <input formControlName="organization" matInput placeholder="" required />
                 <mat-hint>Max 128 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.organization.invalid && jobForm.controls.organization.touched">
@@ -35,7 +35,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>City/Location</mat-label>
-                <mat-select formControlName="city">
+                <mat-select formControlName="city" required>
                     <mat-option *ngFor="let city of cities" [value]="city">
                         {{ city }}
                     </mat-option>
@@ -54,9 +54,9 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Category</mat-label>
-                <mat-select formControlName="category">
-                    <mat-option *ngFor="let category of categories" [value]="category.value">
-                        {{ category.value }}
+                <mat-select formControlName="category" required>
+                    <mat-option *ngFor="let category of categories" [value]="category">
+                        {{ category }}
                     </mat-option>
                 </mat-select>
                 <mat-hint>Select from a list</mat-hint>
@@ -73,7 +73,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Event start date</mat-label>
-                <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date" />
+                <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date" required />
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
                 <mat-hint></mat-hint>
@@ -90,7 +90,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Contact person</mat-label>
-                <input formControlName="contactName" matInput placeholder="" />
+                <input formControlName="contactName" matInput placeholder="" required />
                 <mat-hint>Max 64 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.contactName.invalid && jobForm.controls.contactName.touched">
@@ -105,7 +105,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Phone number</mat-label>
-                <input type="number" formControlName="phone" matInput placeholder="" />
+                <input type="number" formControlName="phone" matInput placeholder="" required />
                 <mat-hint></mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.phone.invalid && jobForm.controls.phone.touched">
@@ -147,7 +147,7 @@
         <div class="job-form-field">
             <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <textarea class="textareainput" matInput formControlName="description" placeholder=""> </textarea>
+                <textarea class="textareainput" matInput formControlName="description" placeholder="" required> </textarea>
                 <mat-hint>Max 1024 characters</mat-hint>
             </mat-form-field>
             <div *ngIf="jobForm.controls.description.invalid && jobForm.controls.description.touched">

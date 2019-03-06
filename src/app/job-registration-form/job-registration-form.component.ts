@@ -3,11 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import * as moment from 'moment';
 // @ts-ignore
 import * as citiesData from './../../assets/cities.json';
+import * as categoriesData from './../../assets/categories.json';
 import {Router} from '@angular/router';
-
-export interface Category {
-  value: string;
-}
 
 @Component({
   selector: 'app-job-registration-form',
@@ -16,23 +13,12 @@ export interface Category {
 })
 export class JobRegistrationFormComponent implements OnInit {
   date: string;
-
-  categories: Category[] = [
-    {value: 'Time and help for another'},
-    {value: 'Time for the environment'},
-    {value: 'Time for sharing knowledge'},
-    {value: 'Professional volunteering'},
-  ];
-
+  categories = categoriesData.categories;
   cities =   citiesData.cities;
-
   jobForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
-
   }
-
-
 
   ngOnInit() {
 
