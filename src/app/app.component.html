@@ -1,37 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--<div style="text-align:center">-->
-<mat-toolbar id="SummerDeeds">
+<mat-toolbar color="primary" id="SummerDeeds">
     <div fxShow="true" fxHide.gt-sm="true">
         <button mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <div class="navlinks">
+
     <a mat-button class="companyName" routerLink="/">
-        <span class="summer">summer</span>
-      <span class="GDP"> GDP</span>
+        <span>Summer Good Deeds Project</span>
     </a>
-    </div>
-  <img  class="square" src="assets/square.png" alt="">
     <span class="example-spacer"></span>
-  <div class="navlinks">
-    <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
-        <a class="navtext" mat-button routerLink="home">home</a>
-        <a class="navtext" mat-button routerLink="login">events</a>
-        <a class="navtext" mat-button routerLink="create-job">new event</a>
-        <a class="navtext" mat-button routerLink="#">register</a>
-        <a class="navtext" mat-button routerLink="#">login</a>
+    <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="8px">
+        <a mat-button routerLink="home">Home</a>
+        <a mat-button routerLink="jobs">Events</a>
+        <a mat-button routerLink="create-job">New event</a>
+        <a mat-button routerLink="#">Register</a>
+        <a mat-button routerLink="#">Login</a>
     </div>
-  </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
         <div fxLayout="column">
-            <a mat-button routerLink="home">home</a>
-            <a mat-button routerLink="login">events</a>
-            <a mat-button routerLink="create-job">new event</a>
-            <a mat-button routerLink="#">register</a>
-            <a mat-button routerLink="#">login</a>
+            <a mat-button routerLink="home">Home</a>
+            <a mat-button routerLink="jobs">Events</a>
+            <a mat-button routerLink="create-job">New event</a>
+            <a mat-button routerLink="#">Register</a>
+            <a mat-button routerLink="#">Login</a>
         </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
@@ -42,6 +37,5 @@
     </mat-sidenav-content>
 </mat-sidenav-container>
 <div class="footer">
-    <p class="footer-it-academy">@ITAcademy</p>
-    <p class="footer-text">If you have any questions or concerns regarding the project, please contact: name.surname@gmail.com</p>
+    <p>Text to be added</p>
 </div>
