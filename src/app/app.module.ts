@@ -15,17 +15,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './alert/alert.component';
-import {LoginComponent} from './login/login.component';
+import { LoginComponent } from './login/login.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
 
 @NgModule({
-    declarations: [
-      AppComponent,
-      HomePageComponent,
-      JobRegistrationFormComponent,
-      AlertComponent,
-      LoginComponent],
+    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent, LoginComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -52,7 +48,7 @@ import {LoginComponent} from './login/login.component';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     entryComponents: [AlertComponent],
-    providers: [],
+    providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

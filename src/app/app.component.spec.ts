@@ -3,14 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCardModule,
-  MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatSidenavModule,
-  MatToolbarModule
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -22,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AlertComponent } from './alert/alert.component';
+import { LoginComponent } from './login/login.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -45,18 +48,22 @@ describe('AppComponent', () => {
                 MatSelectModule,
                 MatNativeDateModule,
                 MatInputModule,
-                MatCardModule
+                MatCardModule,
+                HttpClientTestingModule
             ],
-            declarations: [AppComponent,
-              HomePageComponent,
-              JobRegistrationFormComponent,
-              AlertComponent]
+            declarations: [
+                AppComponent,
+                HomePageComponent,
+                JobRegistrationFormComponent,
+                AlertComponent,
+                LoginComponent
+            ]
         }).compileComponents();
     }));
 
     it('should create the app', () => {
-      const fixture = TestBed.createComponent(AppComponent);
-      const app = fixture.debugElement.componentInstance;
-      expect(app).toBeTruthy();
+        const fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.debugElement.componentInstance;
+        expect(app).toBeTruthy();
     });
 });
