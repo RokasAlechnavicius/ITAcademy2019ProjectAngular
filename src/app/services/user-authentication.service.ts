@@ -22,7 +22,7 @@ export class UserAuthenticationService {
     }
 
     login(email: string, password: string) {
-        return this.http.post<any>(herokuUrl + '/users/authenticate', { email, password }).pipe(
+        return this.http.post<any>(herokuUrl + '/login', { email, password }).pipe(
             map(user => {
                 if (user && user.token) {
                     localStorage.setItem('currentUser', JSON.stringify(user));

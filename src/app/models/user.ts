@@ -2,7 +2,7 @@ export class User {
     name: string;
     surname: string;
     email: string;
-    city: string;
+    region: string;
     id: number;
     token?: string;
 }
