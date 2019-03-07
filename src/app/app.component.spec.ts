@@ -50,7 +50,7 @@ describe('AppComponent', () => {
                 MatNativeDateModule,
                 MatInputModule,
                 MatCardModule,
-                HttpClientTestingModule
+                HttpClientTestingModule,
                 MatTableModule
             ],
             declarations: [
