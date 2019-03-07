@@ -6,7 +6,7 @@ import {Job} from '../models';
 @Component({
     selector: 'app-job-list',
     templateUrl: './job-list.component.html',
-    styleUrls: ['./job-list.component.css'],
+    styleUrls: ['./job-list.component.scss'],
     animations: [
         trigger('detailExpand', [
             state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),

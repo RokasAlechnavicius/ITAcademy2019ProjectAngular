@@ -27,9 +27,3 @@ export class JobService {
   }
 
 }
-
-
-
-
-
-
