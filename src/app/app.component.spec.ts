@@ -47,7 +47,10 @@ describe('AppComponent', () => {
                 MatInputModule,
                 MatCardModule
             ],
-            declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent]
+            declarations: [AppComponent,
+              HomePageComponent,
+              JobRegistrationFormComponent,
+              AlertComponent]
         }).compileComponents();
     }));
 
