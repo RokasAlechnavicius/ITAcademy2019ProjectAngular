@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AlertComponent } from './alert/alert.component';
+import {MatTableModule} from '@angular/material/table';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -44,7 +45,8 @@ describe('AppComponent', () => {
                 MatDatepickerModule,
                 MatSelectModule,
                 MatNativeDateModule,
-                MatInputModule
+                MatInputModule,
+                MatTableModule,
             ],
             declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent]
         }).compileComponents();
