@@ -17,9 +17,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './alert/alert.component';
+import { JobListComponent } from './job-list/job-list.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent],
+    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent, JobListComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -42,7 +44,8 @@ import { AlertComponent } from './alert/alert.component';
         MatNativeDateModule,
         HttpClientModule,
         MatDialogModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     entryComponents: [AlertComponent],
