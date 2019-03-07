@@ -41,7 +41,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        HomePageComponent
+        HomePageComponent,
       ],
     }).compileComponents();
   }));
