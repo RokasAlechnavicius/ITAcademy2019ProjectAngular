@@ -20,6 +20,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -28,6 +29,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         BrowserAnimationsModule,
         MatMenuModule,
+        MatTableModule,
         LayoutModule,
         MatToolbarModule,
         MatButtonModule,

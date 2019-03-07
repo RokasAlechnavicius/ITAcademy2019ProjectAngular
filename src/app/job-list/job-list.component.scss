@@ -6,7 +6,7 @@
 
 .mat-footer-row {
     .mat-row {
-        height: 0px;
+        height: 0;
     }
 }
 
@@ -19,16 +19,16 @@
 }
 
 .detail-row {
-    padding: 0px;
+    padding: 0;
 }
 
 .mat-footer-row,
 mat-row {
-    min-height: 0px;
+    min-height: 0;
 }
 
 .mat-header-cell {
-    padding: 0% 10px;
+    padding: 0 10px;
 }
 
 .element-row:not(.expanded-row):hover {
@@ -54,6 +54,5 @@ mat-row {
 }
 
 .handle {
-    margin: auto;
     text-align: left;
 }

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { JobListComponent } from './job-list.component';
+import {MatTableModule} from '@angular/material/table';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('JobListComponent', () => {
   let component: JobListComponent;
@@ -8,7 +10,11 @@ describe('JobListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JobListComponent ]
+      declarations: [ JobListComponent ],
+      imports: [
+        MatTableModule,
+        HttpClientTestingModule,
+      ]
     })
     .compileComponents();
   }));
