@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatTableModule } from '@angular/material/table';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -50,6 +51,7 @@ describe('AppComponent', () => {
                 MatInputModule,
                 MatCardModule,
                 HttpClientTestingModule
+                MatTableModule
             ],
             declarations: [
                 AppComponent,

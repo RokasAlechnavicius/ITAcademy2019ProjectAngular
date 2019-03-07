@@ -19,9 +19,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { JobListComponent } from './job-list/job-list.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent, LoginComponent],
+    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent, LoginComponent, JobListComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -44,7 +46,8 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
         MatNativeDateModule,
         HttpClientModule,
         MatDialogModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     entryComponents: [AlertComponent],
