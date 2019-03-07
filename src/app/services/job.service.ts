@@ -20,6 +20,6 @@ export class JobService {
     }
 
     getJobList() {
-      return this.http.get<Job[]>(herokuUrl + '/jobs/all');
+        return this.http.get<Job[]>(herokuUrl + '/jobs/all');
     }
 }

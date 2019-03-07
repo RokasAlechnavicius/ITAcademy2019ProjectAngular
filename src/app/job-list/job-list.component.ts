@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {JobService} from '../services/job.service';
-import {Job} from '../models';
+import { Component } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { JobService } from '../services/job.service';
+import { Job } from '../models';
 
 @Component({
     selector: 'app-job-list',
@@ -22,7 +22,6 @@ export class JobListComponent {
 
     constructor(private jobService: JobService) {
         this.jobService.getJobList().subscribe(value => {
-            console.log(value);
             this.dataSource = value;
         });
     }

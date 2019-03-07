@@ -4,13 +4,8 @@
     text-align: left;
 }
 
-.mat-footer-row {
-    .mat-row {
-        height: 0;
-    }
-}
-
-.mat-cell, .mat-header-cell {
+.mat-cell,
+.mat-header-cell {
     padding: 0 8px;
 }
 
@@ -54,6 +49,6 @@
 }
 
 .handle {
-  margin: auto;
+    margin: auto;
     text-align: left;
 }
