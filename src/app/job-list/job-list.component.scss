@@ -1,13 +1,34 @@
 .table-container {
     width: 90%;
     margin: 2% auto;
+    text-align: left;
 }
 
 .mat-footer-row {
-  .mat-row {
-    height: 0px;
-  }
+    .mat-row {
+        height: 0px;
+    }
+}
 
+.mat-cell, mat-header-cell {
+    padding: 0 8px;
+}
+
+.mat-row {
+    padding: 10px;
+}
+
+.detail-row {
+    padding: 0px;
+}
+
+.mat-footer-row,
+mat-row {
+    min-height: 0px;
+}
+
+.mat-header-cell {
+    padding: 0% 10px;
 }
 
 .element-row:not(.expanded-row):hover {
