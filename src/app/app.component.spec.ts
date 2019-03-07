@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatButtonModule,
+    MatCardModule,
     MatDividerModule,
     MatIconModule,
     MatListModule,
@@ -22,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AlertComponent } from './alert/alert.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatTableModule } from '@angular/material/table';
 
 describe('AppComponent', () => {
@@ -46,9 +49,17 @@ describe('AppComponent', () => {
                 MatSelectModule,
                 MatNativeDateModule,
                 MatInputModule,
+                MatCardModule,
+                HttpClientTestingModule,
                 MatTableModule
             ],
-            declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent]
+            declarations: [
+                AppComponent,
+                HomePageComponent,
+                JobRegistrationFormComponent,
+                AlertComponent,
+                LoginComponent
+            ]
         }).compileComponents();
     }));
 
