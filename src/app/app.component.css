@@ -15,7 +15,6 @@ main {
 }
 
 .mat-sidenav-container {
-    /*width: 100%;*/
     min-height: 93vh !important;
     background-color: white;
     margin-top: 7vh;
