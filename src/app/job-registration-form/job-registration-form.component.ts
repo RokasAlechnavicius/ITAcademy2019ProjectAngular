@@ -23,7 +23,7 @@ export class JobRegistrationFormComponent implements OnInit {
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
-    cities = citiesData.cities;
+    cities = citiesData.regions;
     jobForm: FormGroup;
 
     public noWhiteSpaceValidator(control: FormControl) {
