@@ -11,8 +11,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
-    { path: 'jobs', component: JobListComponent },
-
+    { path: 'jobs', component: JobListComponent }
 ];
 
 @NgModule({

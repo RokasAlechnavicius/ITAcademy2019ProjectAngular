@@ -24,9 +24,9 @@ export class AppComponent {
         this.router.navigate(['/login']);
     }
 
-  user() {
-    return localStorage.getItem('currentUser');
-  }
+    user() {
+        return localStorage.getItem('currentUser');
+    }
 
     constructor(
         private breakpointObserver: BreakpointObserver,
