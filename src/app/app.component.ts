@@ -32,7 +32,5 @@ export class AppComponent {
         private breakpointObserver: BreakpointObserver,
         private router: Router,
         private userAuthenticationService: UserAuthenticationService
-    ) {
-        // this.userAuthenticationService.currentUser.subscribe(userLoggedIn => (this.currentUser = userLoggedIn));
-    }
+    ) {}
 }
