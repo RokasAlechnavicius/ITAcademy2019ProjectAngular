@@ -1,0 +1,29 @@
+.registration-class {
+    max-width: 30%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto auto;
+}
+.register-form-field {
+    width: 60%;
+    max-width: 60%;
+}
+
+mat-card-title {
+    padding-bottom: 2%;
+}
+mat-card-subtitle {
+    padding-bottom: 2%;
+}
+
+.register-btn {
+    position: absolute;
+    right: 0;
+    padding-right: 20%;
+}
+
+mat-error {
+    font-size: small;
+}
