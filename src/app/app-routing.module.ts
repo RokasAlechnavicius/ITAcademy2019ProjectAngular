@@ -5,10 +5,12 @@ import { JobRegistrationFormComponent } from './job-registration-form/job-regist
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { JobListComponent } from './job-list/job-list.component';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: UserRegistrationFormComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent }

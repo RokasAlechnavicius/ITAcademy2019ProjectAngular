@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { JobListComponent } from './job-list/job-list.component';
 import { MatTableModule } from '@angular/material/table';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { MatTableModule } from '@angular/material/table';
         JobRegistrationFormComponent,
         AlertComponent,
         LoginComponent,
-        JobListComponent
+        JobListComponent,
+        UserRegistrationFormComponent
     ],
     imports: [
         BrowserModule,

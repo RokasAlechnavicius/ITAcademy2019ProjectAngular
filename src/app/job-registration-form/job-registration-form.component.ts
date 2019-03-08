@@ -23,7 +23,7 @@ export class JobRegistrationFormComponent implements OnInit {
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
-    cities = citiesData.cities;
+    regions = citiesData.regions;
     jobForm: FormGroup;
 
     public noWhiteSpaceValidator(control: FormControl) {
@@ -39,15 +39,15 @@ export class JobRegistrationFormComponent implements OnInit {
     createForm() {
         this.jobForm = this.formBuilder.group({
             date: [null, [Validators.required]],
-            idea: ['', [Validators.required, Validators.maxLength(256), this.noWhiteSpaceValidator]],
-            organisation: ['', [Validators.required, Validators.maxLength(128), this.noWhiteSpaceValidator]],
-            city: ['', [Validators.required, Validators.maxLength(40), this.noWhiteSpaceValidator]],
-            category: ['', [Validators.required, Validators.maxLength(40), this.noWhiteSpaceValidator]],
-            email: ['', [Validators.email, Validators.maxLength(50)]],
+            idea: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            organisation: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            region: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            category: ['', [Validators.required, Validators.maxLength(32), this.noWhiteSpaceValidator]],
+            email: ['', [Validators.email, Validators.maxLength(32)]],
             contactName: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
-            website: ['', [Validators.maxLength(64)]],
-            phone: ['', [Validators.required, Validators.max(999999999999999999)]],
-            description: ['', [Validators.required, Validators.maxLength(1024), this.noWhiteSpaceValidator]]
+            website: ['', [Validators.maxLength(32)]],
+            phone: ['', [Validators.required, Validators.max(999999999999)]],
+            description: ['', [Validators.required, Validators.maxLength(512), this.noWhiteSpaceValidator]]
         });
     }
 
