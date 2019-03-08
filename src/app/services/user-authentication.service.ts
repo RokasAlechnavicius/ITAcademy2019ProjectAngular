@@ -9,14 +9,9 @@ const herokuUrl = 'https://login-test-backend.herokuapp.com';
     providedIn: 'root'
 })
 export class UserAuthenticationService {
-    private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient) {
-    }
-
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
     }
 
     login(email: string, password: string) {
