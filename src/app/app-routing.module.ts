@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'create-job', component: JobRegistrationFormComponent },
+    { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent },
 
 ];
