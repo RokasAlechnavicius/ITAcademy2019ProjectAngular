@@ -24,11 +24,13 @@ export class AppComponent {
         this.router.navigate(['/login']);
     }
 
+    user() {
+        return localStorage.getItem('currentUser');
+    }
+
     constructor(
         private breakpointObserver: BreakpointObserver,
         private router: Router,
         private userAuthenticationService: UserAuthenticationService
-    ) {
-        this.userAuthenticationService.currentUser.subscribe(x => (this.currentUser = x));
-    }
+    ) {}
 }

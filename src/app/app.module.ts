@@ -23,7 +23,14 @@ import { JobListComponent } from './job-list/job-list.component';
 import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-    declarations: [AppComponent, HomePageComponent, JobRegistrationFormComponent, AlertComponent, LoginComponent, JobListComponent],
+    declarations: [
+        AppComponent,
+        HomePageComponent,
+        JobRegistrationFormComponent,
+        AlertComponent,
+        LoginComponent,
+        JobListComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
