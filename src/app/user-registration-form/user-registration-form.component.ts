@@ -8,7 +8,8 @@ import { passwordsMustMatch } from '../helpers/passwords-must-match.validator';
 
 // @ts-ignore
 import * as citiesData from './../../assets/cities.json';
-
+import { first } from 'rxjs/operators';
+const returnUrl = '/login';
 @Component({
     selector: 'app-user-registration-form',
     templateUrl: './user-registration-form.component.html',
@@ -18,7 +19,6 @@ export class UserRegistrationFormComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-    returnUrl: string;
     regions = citiesData.regions;
     constructor(
         private formBuilder: FormBuilder,
@@ -30,7 +30,7 @@ export class UserRegistrationFormComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
-        this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/login';
+        this.userAuthenticationService.logout();
     }
 
     public noWhiteSpaceValidator(control: FormControl) {
@@ -69,5 +69,20 @@ export class UserRegistrationFormComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
+
+        this.loading = true;
+        this.userAuthenticationService
+            .registerUser(this.registerForm.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.alertService.createSuccessAlert('User registration was successful', true);
+                    this.router.navigate([returnUrl]);
+                },
+                error => {
+                    this.alertService.createErrorAlert(error);
+                    this.loading = false;
+                }
+            );
     }
 }
