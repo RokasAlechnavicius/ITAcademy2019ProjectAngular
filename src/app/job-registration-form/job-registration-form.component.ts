@@ -46,7 +46,7 @@ export class JobRegistrationFormComponent implements OnInit {
             email: ['', [Validators.email, Validators.maxLength(50)]],
             contactName: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
             website: ['', [Validators.maxLength(64)]],
-            phone: ['', [Validators.required]],
+            phone: ['', [Validators.required, Validators.max(999999999999999999)]],
             description: ['', [Validators.required, Validators.maxLength(1024), this.noWhiteSpaceValidator]]
         });
     }
