@@ -2,7 +2,7 @@
     <mat-card-title>Summer Good Deeds</mat-card-title>
     <mat-card-subtitle>Registration</mat-card-subtitle>
     <div class="registration-fields">
-        <form (ngSubmit)="(registerForm)" [formGroup]="registerForm">
+        <form (ngSubmit)="registerUser()" [formGroup]="registerForm">
             <div class="registration-form-field">
                 <mat-form-field appearance="outline" class="register-form-field">
                     <mat-label>First name</mat-label>

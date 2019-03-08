@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../models';
-import { HttpClient } from '@angular/common/http';
+import { Job, User } from '../models';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { userError } from '@angular/compiler-cli/src/transformers/util';
 const herokuUrl = 'https://login-test-backend.herokuapp.com';
 
 @Injectable({
@@ -27,5 +28,9 @@ export class UserAuthenticationService {
 
     logout() {
         localStorage.removeItem('currentUser');
+    }
+
+    registerUser(user: User) {
+        return this.http.post(herokuUrl + '/sign-up', user);
     }
 }

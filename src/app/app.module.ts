@@ -22,6 +22,7 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { JobListComponent } from './job-list/job-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { LogoutUserComponent } from './logout-user/logout-user.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
         AlertComponent,
         LoginComponent,
         JobListComponent,
-        UserRegistrationFormComponent
+        UserRegistrationFormComponent,
+        LogoutUserComponent
     ],
     imports: [
         BrowserModule,
@@ -59,7 +61,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
         MatTableModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent],
+    entryComponents: [AlertComponent, HomePageComponent],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })
