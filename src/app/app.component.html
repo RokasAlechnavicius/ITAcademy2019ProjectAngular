@@ -14,7 +14,7 @@
     <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="8px">
         <a mat-button routerLink="home">Home</a>
         <a mat-button routerLink="jobs">Events</a>
-        <a *ngIf="currentUser" mat-button routerLink="create-job">New event</a>
+        <a *ngIf="user()" mat-button routerLink="create-job">New event</a>
         <a mat-button routerLink="#">Register</a>
         <a mat-button routerLink="login">Login</a>
     </div>
@@ -24,7 +24,7 @@
         <div fxLayout="column">
             <a mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Events</a>
-            <a *ngIf="currentUser" mat-button routerLink="create-job">New event</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New event</a>
             <a mat-button routerLink="#">Register</a>
             <a mat-button routerLink="login">Login</a>
         </div>
