@@ -57,7 +57,7 @@ export class JobRegistrationFormComponent implements OnInit {
         // we have a proper form  with values to pass into a service now, need a service to handle it
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {
-                this.router.navigate(['/home']);
+                this.router.navigate(['/jobs']);
             },
             err => {
                 this.alertService.createErrorAlert('an error has occurred: ' + err);

@@ -1,18 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobRegistrationFormComponent } from './job-registration-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule, MatInputModule, MatNativeDateModule, MatSelectModule } from '@angular/material';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JobService } from '../services/job.service';
+import { Job } from '../models';
+import { of } from 'rxjs';
 
 describe('JobRegistrationFormComponent', () => {
     let component: JobRegistrationFormComponent;
     let fixture: ComponentFixture<JobRegistrationFormComponent>;
+    let control: FormControl;
+    let jobService: JobService;
+    class MockJobService {
+        static addJob(job: Job) {
+            return of(job);
+        }
+    }
 
-    beforeEach(async(() => {
+    beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [JobRegistrationFormComponent],
             imports: [
@@ -26,16 +35,63 @@ describe('JobRegistrationFormComponent', () => {
                 HttpClientTestingModule,
                 BrowserAnimationsModule
             ],
+            providers: [{ provide: JobService, useClass: MockJobService }],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]
-        }).compileComponents();
-    }));
+        });
 
-    beforeEach(() => {
         fixture = TestBed.createComponent(JobRegistrationFormComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+        control = new FormControl();
+        jobService = TestBed.get(JobService);
+        spyOn(jobService, 'addJob').and.callThrough();
     });
-    it('should create', () => {
+
+    it('JobRegistrationFormComponent should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('createForm should create jobForm', () => {
+        component.jobForm = null;
+        component.createForm();
+        expect(component.jobForm.getRawValue().toString()).toBe(
+            {
+                date: null,
+                idea: '',
+                organisation: '',
+                city: '',
+                category: '',
+                email: '',
+                contactName: '',
+                website: '',
+                phone: '',
+                description: ''
+            }.toString()
+        );
+    });
+
+    it('noWhiteSpaceValidator function should return that empty string is invalid', () => {
+        control.setValue('');
+        expect(component.noWhiteSpaceValidator(control)).toBeTruthy();
+    });
+
+    it('noWhiteSpaceValidator function should return that spaces only are invalid', () => {
+        control.setValue('                                   ');
+        expect(component.noWhiteSpaceValidator(control)).toBeTruthy();
+    });
+
+    it('noWhiteSpaceValidator function should return that null is invalid', () => {
+        control.setValue(null);
+        expect(component.noWhiteSpaceValidator(control)).toBeTruthy();
+    });
+
+    it('noWhiteSpaceValidator function should return that text is not considered invalid', () => {
+        control.setValue('valid text');
+        expect(component.noWhiteSpaceValidator(control)).toBe(null);
+    });
+
+    it('addJob should call JobService', () => {
+        component.addJob();
+        expect(jobService.addJob).toHaveBeenCalled();
     });
 });
