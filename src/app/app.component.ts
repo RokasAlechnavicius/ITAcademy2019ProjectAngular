@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
@@ -16,4 +16,7 @@ export class AppComponent {
         .pipe(map(result => result.matches));
 
     constructor(private breakpointObserver: BreakpointObserver) {}
+
+
+
 }
