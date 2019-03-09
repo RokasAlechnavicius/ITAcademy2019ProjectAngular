@@ -37,6 +37,8 @@ describe('JobRegistrationFormComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         control = new FormControl();
+        jobService = TestBed.get(JobService);
+        spyOn(jobService, 'addJob').and.callThrough();
     });
 
     it('JobRegistrationFormComponent should create', () => {
@@ -51,7 +53,7 @@ describe('JobRegistrationFormComponent', () => {
                 date: null,
                 idea: '',
                 organisation: '',
-                city: '',
+                region: '',
                 category: '',
                 email: '',
                 contactName: '',
