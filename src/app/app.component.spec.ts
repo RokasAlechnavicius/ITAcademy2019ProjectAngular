@@ -26,8 +26,8 @@ import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatTableModule } from '@angular/material/table';
-import {UserRegistrationFormComponent} from './user-registration-form/user-registration-form.component';
-import {LogoutUserComponent} from './logout-user/logout-user.component';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { LogoutUserComponent } from './logout-user/logout-user.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {

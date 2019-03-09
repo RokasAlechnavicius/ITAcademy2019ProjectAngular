@@ -11,10 +11,7 @@ describe('LogoutUserComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [LogoutUserComponent],
-            imports: [
-                HttpClientTestingModule,
-                RouterTestingModule
-            ]
+            imports: [HttpClientTestingModule, RouterTestingModule]
         }).compileComponents();
     }));
 
