@@ -16,7 +16,7 @@ describe('JobRegistrationFormComponent', () => {
     let control: FormControl;
     let jobService: JobService;
     class MockJobService {
-        static addJob(job: Job) {
+        addJob(job: Job) {
             return of(job);
         }
     }
@@ -43,8 +43,6 @@ describe('JobRegistrationFormComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         control = new FormControl();
-        jobService = TestBed.get(JobService);
-        spyOn(jobService, 'addJob').and.callThrough();
     });
 
     it('JobRegistrationFormComponent should create', () => {
@@ -91,6 +89,8 @@ describe('JobRegistrationFormComponent', () => {
     });
 
     it('addJob should call JobService', () => {
+        jobService = TestBed.get(JobService);
+        spyOn(jobService, 'addJob').and.callThrough();
         component.addJob();
         expect(jobService.addJob).toHaveBeenCalled();
     });
