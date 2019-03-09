@@ -7,19 +7,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JobService } from '../services/job.service';
-import { Job } from '../models';
-import { of } from 'rxjs';
 
 describe('JobRegistrationFormComponent', () => {
     let component: JobRegistrationFormComponent;
     let fixture: ComponentFixture<JobRegistrationFormComponent>;
     let control: FormControl;
     let jobService: JobService;
-    class MockJobService {
-        addJob(job: Job) {
-            return of(job);
-        }
-    }
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -35,7 +28,7 @@ describe('JobRegistrationFormComponent', () => {
                 HttpClientTestingModule,
                 BrowserAnimationsModule
             ],
-            providers: [{ provide: JobService, useClass: MockJobService }],
+            providers: [JobService],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]
         });
 
@@ -88,7 +81,7 @@ describe('JobRegistrationFormComponent', () => {
         expect(component.noWhiteSpaceValidator(control)).toBe(null);
     });
 
-    it('addJob should call JobService', () => {
+    fit('addJob should call JobService', () => {
         jobService = TestBed.get(JobService);
         spyOn(jobService, 'addJob').and.callThrough();
         component.addJob();
