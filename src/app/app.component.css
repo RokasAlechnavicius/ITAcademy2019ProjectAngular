@@ -1,13 +1,16 @@
 .companyName {
     font-size: 90%;
     font-family: 'Raleway', sans-serif;
+  padding-top: 10px;
 }
 
 .mat-toolbar {
-    height: 7vh;
+    /*padding-top: 3vh;*/
+    height: 6vh;
     position: fixed;
     top: 0;
     z-index: 999;
+    font-size: 150%;
 }
 main {
     padding-top: 0;
@@ -46,7 +49,7 @@ button {
 
 .example-spacer {
   flex: 1 1 auto;
-  height: 7vh;
+  height: 6vh;
   border-bottom: 1.5px solid green;
   background-color:rgba(255,255,255,0.5);
 }
@@ -64,12 +67,17 @@ button {
 
 .GDP {
   font-weight: bold;
+  padding-top: 10px;
 }
 
 .navlinks {
-  border-bottom: 1px solid green;
+  border-bottom: 1.5px solid green;
   background-color: white;
-  height: 7vh;
+  height: 6vh;
+}
+
+.navtext {
+  padding-top: 10px;
 }
 
 .square {
