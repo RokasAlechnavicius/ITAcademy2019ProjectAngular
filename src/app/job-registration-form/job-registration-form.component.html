@@ -133,6 +133,9 @@
                 >
                     Phone field cannot be empty
                 </mat-error>
+                <mat-error *ngIf="jobForm.controls.phone.hasError('max')">
+                    Phone field is too long
+                </mat-error>
             </div>
         </div>
         <div class="job-form-field">
