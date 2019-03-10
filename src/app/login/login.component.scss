@@ -1,0 +1,38 @@
+.login-fields {
+    margin: auto;
+}
+
+.login-field {
+    font-size: small;
+}
+
+mat-card-title {
+    padding-bottom: 2%;
+}
+mat-card-subtitle {
+    padding-bottom: 2%;
+}
+
+.create-account-btn {
+    position: absolute;
+    left: 0;
+    font-size: small;
+    padding-left: 15%;
+    padding-top: 5%;
+}
+
+.login-btn {
+    position: absolute;
+    right: 0;
+    padding-right: 20%;
+}
+
+.loginBtnBtn {
+    background-color: #008000;
+    color: #ffffff;
+}
+
+.create-account-btn a {
+    color: #1e90ff;
+    text-decoration: none;
+}

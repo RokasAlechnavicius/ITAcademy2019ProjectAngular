@@ -1,0 +1,67 @@
+<div class="table-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" multiTemplateDataRows>
+        <!-- Organization Column -->
+        <ng-container matColumnDef="organisation">
+            <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.organisation }}</mat-cell>
+        </ng-container>
+
+        <!-- Idea Column -->
+        <ng-container matColumnDef="idea">
+            <mat-header-cell *matHeaderCellDef>Idea</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.idea }}</mat-cell>
+        </ng-container>
+
+        <!-- Location Column -->
+        <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.region }}</mat-cell>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+            <mat-header-cell *matHeaderCellDef>Category</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.category }}</mat-cell>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.date }}</mat-cell>
+        </ng-container>
+
+        <!-- Button Column -->
+        <ng-container matColumnDef="button">
+            <mat-header-cell *matHeaderCellDef
+                ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
+            >
+            <mat-cell *matCellDef="let element"></mat-cell>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <div class="element-description detail-text">
+                        <p><strong>Description: </strong></p>
+                        <p>{{ element.description }}</p>
+                        <p><strong>Contacts: </strong></p>
+                        <p>Name: {{ element.contactName }}</p>
+                        <p>Phone: {{ element.phone }}</p>
+                        <p [hidden]="!element.email">Email: {{ element.email }}</p>
+                    </div>
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row
+            *matRowDef="let element; columns: columnsToDisplay"
+            class="element-row"
+            [class.expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element"
+        >
+        </mat-row>
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
+    </mat-table>
+</div>
