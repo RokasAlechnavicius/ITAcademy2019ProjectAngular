@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Job, User } from '../models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { userError } from '@angular/compiler-cli/src/transformers/util';
-const herokuUrl = 'https://login-test-backend.herokuapp.com';
+const herokuUrl = 'https://test2-backend.herokuapp.com';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserAuthenticationService {
-    public currentUser: Observable<User>;
-
     constructor(private http: HttpClient) {}
 
     login(email: string, password: string) {
@@ -19,8 +17,8 @@ export class UserAuthenticationService {
             map(user => {
                 if (user) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('currentUserToken', JSON.stringify(user.headers.get('Authorization')));
                 }
-
                 return user;
             })
         );
@@ -28,6 +26,7 @@ export class UserAuthenticationService {
 
     logout() {
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('currentUserToken');
     }
 
     registerUser(user: User) {

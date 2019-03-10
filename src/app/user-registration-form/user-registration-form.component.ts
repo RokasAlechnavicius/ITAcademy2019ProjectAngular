@@ -76,7 +76,6 @@ export class UserRegistrationFormComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.createSuccessAlert('User registration was successful', true);
                     this.router.navigate([returnUrl]);
                 },
                 error => {

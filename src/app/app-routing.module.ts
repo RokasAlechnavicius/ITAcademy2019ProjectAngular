@@ -12,9 +12,9 @@ const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: UserRegistrationFormComponent },
-    { path: 'logout', component: LogoutUserComponent },
+    { path: 'logout', component: LogoutUserComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'create-job', component: JobRegistrationFormComponent },
+    { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent }
 ];
 

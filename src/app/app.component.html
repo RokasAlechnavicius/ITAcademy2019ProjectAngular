@@ -16,11 +16,12 @@
     <span class="example-spacer"></span>
     <div class="navlinks">
         <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
-            <a mat-button routerLink="home">Home</a>
+            <a class="navtext" mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Events</a>
-            <a mat-button routerLink="create-job">New event</a>
-            <a mat-button routerLink="#">Register</a>
-            <a mat-button routerLink="login">Login</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New event</a>
+            <a *ngIf="!user()" mat-button routerLink="register">Register</a>
+            <a *ngIf="!user()" mat-button routerLink="login">Login</a>
+            <a *ngIf="user()" mat-button routerLink="logout">Logout</a>
         </div>
     </div>
 </mat-toolbar>

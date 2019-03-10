@@ -9,13 +9,7 @@ const herokuUrl = 'https://project-backend.herokuapp.com';
 export class JobService {
     constructor(private http: HttpClient) {}
 
-    createAuthorizationHeaders(headers: HttpHeaders) {
-        headers.append('Content-Type', 'application/json');
-    }
-
     addJob(job: Job) {
-        const headers = new HttpHeaders();
-        this.createAuthorizationHeaders(headers);
         return this.http.post(herokuUrl + '/job', job);
     }
 
