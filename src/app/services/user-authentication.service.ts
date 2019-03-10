@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Job, User } from '../models';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../models';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { userError } from '@angular/compiler-cli/src/transformers/util';
 const herokuUrl = 'https://test2-backend.herokuapp.com';
 
 @Injectable({
