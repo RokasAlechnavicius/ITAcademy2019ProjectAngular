@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JobService } from '../services/job.service';
+import { By } from '@angular/platform-browser';
 
 describe('JobRegistrationFormComponent', () => {
     let component: JobRegistrationFormComponent;
@@ -81,10 +82,58 @@ describe('JobRegistrationFormComponent', () => {
         expect(component.noWhiteSpaceValidator(control)).toBe(null);
     });
 
-    fit('addJob should call JobService', () => {
+    it('addJob should call JobService', () => {
         jobService = TestBed.get(JobService);
         spyOn(jobService, 'addJob').and.callThrough();
         component.addJob();
         expect(jobService.addJob).toHaveBeenCalled();
+    });
+
+    it('should not call addJob when form fields are empty', () => {
+        const el = fixture.debugElement.query(By.css('form')).nativeElement;
+        spyOn(component, 'addJob');
+        el.click();
+        expect(component.addJob).toHaveBeenCalledTimes(0);
+    });
+
+    it('should validate that email structure is correct', () => {
+        // prepare other job form fields
+        component.jobForm.controls.organisation.setValue('test');
+        component.jobForm.controls.idea.setValue('test');
+        component.jobForm.controls.city.setValue('test');
+        component.jobForm.controls.date.setValue('2019-12-12');
+        component.jobForm.controls.category.setValue('test');
+        component.jobForm.controls.contactName.setValue('test');
+        component.jobForm.controls.phone.setValue('12345678');
+        component.jobForm.controls.description.setValue('test');
+        // test email structures
+        component.jobForm.controls.email.setValue('test@test.ng');
+        expect(component.jobForm.valid).toBeTruthy();
+        component.jobForm.controls.email.setValue('test@test');
+        expect(component.jobForm.valid).toBeTruthy();
+        component.jobForm.controls.email.setValue('@test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.email.setValue('test@');
+        expect(component.jobForm.valid).toBeFalsy();
+    });
+
+    it('should say form invalid until all required fields are filled', () => {
+        component.createForm();
+        component.jobForm.controls.organisation.setValue('test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.idea.setValue('test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.city.setValue('test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.date.setValue('2019-12-12');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.category.setValue('test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.contactName.setValue('test');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.phone.setValue('12345678');
+        expect(component.jobForm.valid).toBeFalsy();
+        component.jobForm.controls.description.setValue('test');
+        expect(component.jobForm.valid).toBeTruthy();
     });
 });
