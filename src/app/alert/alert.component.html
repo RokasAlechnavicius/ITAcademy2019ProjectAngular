@@ -7,5 +7,8 @@
         'alert-danger': message.type === 'error'
     }"
 >
+    <div *ngIf="message.type === 'success'"></div>
+    <div *ngIf="message.type === 'error'"><img src="assets/warning-sign.png" alt="" /></div>
+    <div *ngIf="message.type === 'success'"><img src="assets/check-solid.png" alt="" /></div>
     <p>{{ message.text }}</p>
 </div>
