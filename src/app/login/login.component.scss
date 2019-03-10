@@ -6,6 +6,8 @@
     flex-direction: column;
     margin: 5% auto auto;
     border: 1.5px solid green;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .login-fields {
@@ -35,6 +37,11 @@ mat-card-subtitle {
     position: absolute;
     right: 0;
     padding-right: 20%;
+}
+
+.loginBtnBtn {
+    background-color: green;
+    color: white;
 }
 
 mat-error {

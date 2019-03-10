@@ -17,8 +17,8 @@
     <div class="navlinks">
         <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
             <a class="navtext" mat-button routerLink="home">Home</a>
-            <a mat-button routerLink="jobs">Events</a>
-            <a *ngIf="user()" mat-button routerLink="create-job">New event</a>
+            <a mat-button routerLink="jobs">Jobs</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New job</a>
             <a *ngIf="!user()" mat-button routerLink="register">Register</a>
             <a *ngIf="!user()" mat-button routerLink="login">Login</a>
             <a *ngIf="user()" mat-button routerLink="logout">Logout</a>
@@ -29,8 +29,8 @@
     <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
         <div fxLayout="column">
             <a mat-button routerLink="home">Home</a>
-            <a mat-button routerLink="jobs">Events</a>
-            <a *ngIf="user()" mat-button routerLink="create-job">New event</a>
+            <a mat-button routerLink="jobs">Jobs</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New job</a>
             <a *ngIf="!user()" mat-button routerLink="register">Register</a>
             <a *ngIf="!user()" mat-button routerLink="login">Login</a>
             <a *ngIf="user()" mat-button routerLink="logout">Logout</a>

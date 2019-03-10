@@ -79,7 +79,7 @@ export class UserRegistrationFormComponent implements OnInit {
                     this.router.navigate([returnUrl]);
                 },
                 error => {
-                    this.alertService.createErrorAlert(error);
+                    this.alertService.createErrorAlert('An error has occured: ' + error.error.message);
                     this.loading = false;
                 }
             );

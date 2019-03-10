@@ -25,9 +25,9 @@
                 </mat-form-field>
             </div>
             <div>
-                <div class="create-account-btn"><a href="#">Create account</a></div>
+                <div class="create-account-btn"><a routerLink="/register">Create account</a></div>
                 <mat-card-actions class="login-btn">
-                    <button [disabled]="!loginForm.valid" mat-raised-button>Login</button>
+                    <button class="loginBtnBtn" [disabled]="!loginForm.valid" mat-raised-button>Login</button>
                 </mat-card-actions>
             </div>
         </form>
