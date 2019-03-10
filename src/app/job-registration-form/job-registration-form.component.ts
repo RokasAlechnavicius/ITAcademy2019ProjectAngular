@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 // @ts-ignore
-import * as citiesData from './../../assets/cities.json';
+import * as regionsData from './../../assets/regions.json';
 import * as categoriesData from './../../assets/categories.json';
 import { Router } from '@angular/router';
 import { JobService } from '../services/job.service';
@@ -23,7 +23,7 @@ export class JobRegistrationFormComponent implements OnInit {
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
-    regions = citiesData.regions;
+    regions = regionsData.regions;
     jobForm: FormGroup;
 
     public noWhiteSpaceValidator(control: FormControl) {

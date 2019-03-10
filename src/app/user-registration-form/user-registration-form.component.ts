@@ -7,19 +7,19 @@ import { UserAuthenticationService } from '../services/user-authentication.servi
 import { passwordsMustMatch } from '../helpers/passwords-must-match.validator';
 
 // @ts-ignore
-import * as citiesData from './../../assets/cities.json';
+import * as regionsData from '../../assets/regions.json';
 import { first } from 'rxjs/operators';
 const returnUrl = '/login';
 @Component({
     selector: 'app-user-registration-form',
     templateUrl: './user-registration-form.component.html',
-    styleUrls: ['./user-registration-form.component.css']
+    styleUrls: ['./user-registration-form.component.scss', '../app.component.scss']
 })
 export class UserRegistrationFormComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-    regions = citiesData.regions;
+    regions = regionsData.regions;
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,

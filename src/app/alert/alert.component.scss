@@ -1,6 +1,7 @@
 .alert-danger {
     font-size: 120%;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: #ffffff;
+    opacity: 0.3;
     width: 30%;
     height: 30%;
     border-radius: 5px;
@@ -9,8 +10,8 @@
 }
 
 .alert-success {
-    background-color: lightgreen;
-    background-color: rgba(84, 254, 120, 0.3);
+    background-color: #54fe784d;
+    opacity: 0.3;
     width: 30%;
     height: 50%;
     border-radius: 5px;
