@@ -7,23 +7,22 @@
         </button>
     </div>
     <div class="navlinks">
-    <a mat-button class="companyName" routerLink="/">
-        <span class="summer">summer</span>
-      <span class="GDP"> GDP</span>
-    </a>
+        <a mat-button class="companyName" routerLink="/">
+            <span class="summer">summer</span>
+            <span class="GDP"> GDP</span>
+        </a>
     </div>
-  <img  class="square" src="assets/square.png" alt="">
+    <img class="square" src="assets/square.png" alt="" />
     <span class="example-spacer"></span>
-  <div class="navlinks">
-    <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
-    <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="8px">
-        <a mat-button routerLink="home">Home</a>
-        <a mat-button routerLink="jobs">Events</a>
-        <a mat-button routerLink="create-job">New event</a>
-        <a mat-button routerLink="#">Register</a>
-        <a mat-button routerLink="login">Login</a>
+    <div class="navlinks">
+        <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
+            <a mat-button routerLink="home">Home</a>
+            <a mat-button routerLink="jobs">Events</a>
+            <a mat-button routerLink="create-job">New event</a>
+            <a mat-button routerLink="#">Register</a>
+            <a mat-button routerLink="login">Login</a>
+        </div>
     </div>
-  </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
@@ -44,5 +43,7 @@
 </mat-sidenav-container>
 <div class="footer">
     <p class="footer-it-academy">@ITAcademy</p>
-    <p class="footer-text">If you have any questions or concerns regarding the project, please contact: name.surname@gmail.com</p>
+    <p class="footer-text">
+        If you have any questions or concerns regarding the project, please contact: name.surname@gmail.com
+    </p>
 </div>
