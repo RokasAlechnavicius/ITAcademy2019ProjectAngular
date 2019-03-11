@@ -3,7 +3,7 @@ export class Job {
     date: string;
     idea: string;
     organisation: string;
-    city: string;
+    region: string;
     category: string;
     email?: string;
     contactName: string;
