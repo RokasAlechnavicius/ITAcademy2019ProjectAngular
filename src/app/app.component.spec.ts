@@ -3,15 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatSidenavModule,
-    MatToolbarModule
+  MatButtonModule,
+  MatCardModule,
+  MatDividerModule, MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSidenavModule,
+  MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -53,7 +53,8 @@ describe('AppComponent', () => {
                 MatInputModule,
                 MatCardModule,
                 HttpClientTestingModule,
-                MatTableModule
+                MatTableModule,
+                MatGridListModule
             ],
             declarations: [
                 AppComponent,
