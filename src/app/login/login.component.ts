@@ -8,7 +8,7 @@ import { AlertService } from '../services/alert.service';
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+    styleUrls: ['./login.component.scss', '../app.component.scss']
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.createErrorAlert('invalid email or password provided', true);
+                    this.alertService.createErrorAlert('invalid email or password provided', false);
                     this.loading = false;
                 }
             );

@@ -25,4 +25,7 @@ export class JobListComponent {
             this.dataSource = value;
         });
     }
+    user() {
+        return localStorage.getItem('currentUser');
+    }
 }
