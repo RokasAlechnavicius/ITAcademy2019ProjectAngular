@@ -23,6 +23,7 @@ import { JobListComponent } from './job-list/job-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './logout-user/logout-user.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
     declarations: [
@@ -58,7 +59,8 @@ import { LogoutUserComponent } from './logout-user/logout-user.component';
         HttpClientModule,
         MatDialogModule,
         MatCardModule,
-        MatTableModule
+        MatTableModule,
+        MatGridListModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     entryComponents: [AlertComponent, HomePageComponent],

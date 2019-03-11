@@ -1,24 +1,45 @@
-.example-container {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding-left: 10%;
-}
-
-mat-form-field {
-    width: 35%;
-}
-
 .job-form-field {
     padding: 10px 10px 10px 10px;
 }
 
-.textareainput {
-    height: 175px;
+.contact-title{
+  padding-left: 10px;
+  text-align: left;
+}
+
+.authentication-card {
+  max-width: 40%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  margin: 5% auto auto;
+  border: 1.5px solid #008000;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.idea-field{
+  padding-top: 3%;
+  width: 87%;
+  padding-left: 8%;
+}
+
+.description-field{
+  width: 87%;
+  padding-left: 8%;
+}
+
+.job-form-field{
+  width: 110%;
 }
 
 .submit-event-register-button {
-    width: 10%;
+    width: 15%;
     margin-left: 25%;
     background-color: #008000;
     color: #ffffff;
