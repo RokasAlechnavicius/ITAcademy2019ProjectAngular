@@ -6,10 +6,10 @@ html{
     background-color: #FFFFFF;
     width: 100%;
     overflow-x: hidden;
-
 }
+
 body {
-    width: 97%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -17,10 +17,10 @@ body {
 .footer {
     border-top: 1.5px solid #008000;
     bottom: 0;
-    width: 100%;
+    width: 98%;
     height: 30px;
     color: #000000;
     text-align: center;
-    padding: 5px 10px 5px 10px;
+    margin: 0 auto;
 }
 

@@ -60,6 +60,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatDialogModule,
         MatCardModule,
         MatTableModule,
+        MatGridListModule,
         MatGridListModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

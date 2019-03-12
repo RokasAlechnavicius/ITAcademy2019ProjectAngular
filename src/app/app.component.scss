@@ -1,122 +1,123 @@
 .companyName {
-    font-size: 90%;
-    font-family: 'Raleway', sans-serif;
-    padding-top: 10px;
+  font-size: 90%;
+  font-family: 'Raleway', sans-serif;
+
 }
 
 .mat-toolbar {
-    height: 6vh;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    font-size: 150%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  font-size: 150%;
+  padding-bottom: 15px;
 }
 main {
-    padding-top: 0;
-    background-color: #ffffff;
+  padding-top: 0;
+  background-color: #ffffff;
 }
 
 mat-card-title {
-    padding-bottom: 2%;
+  padding-bottom: 2%;
 }
 mat-card-subtitle {
-    padding-bottom: 2%;
+  padding-bottom: 2%;
 }
 
 .authentication-card {
-    max-width: 25%;
-    padding-top: 5%;
-    padding-bottom: 10%;
-    display: flex;
-    flex-direction: column;
-    margin: 5% auto auto;
-    border: 1.5px solid #008000;
-    border-radius: 5%;
-    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+  max-width: 25%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  margin: 5% auto auto;
+  border: 1.5px solid #008000;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
 }
 
 .mat-sidenav-container {
-    min-height: 93vh !important;
-    background-color: #ffffff;
-    margin-top: 7vh;
+  min-height: 93vh !important;
+  background-color: #ffffff;
+  margin-top: 7vh;
 }
 
 .vertical-divider {
-    border-top-width: 0;
-    border-right-width: 1px;
-    border-right-style: solid;
-    height: 110%;
+  border-top-width: 0;
+  border-right-width: 1px;
+  border-right-style: solid;
+  height: 110%;
 }
 
 a {
-    text-decoration: none;
-    font-size: 80%;
-    white-space: normal;
-    font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  font-size: 80%;
+  white-space: normal;
+  font-family: 'Raleway', sans-serif;
 }
 
 button {
-    font-size: 110%;
-    min-width: min-content;
+  font-size: 110%;
+  min-width: min-content;
 }
 
 .example-icon {
-    padding: 0 14px;
+  padding: 0 14px;
 }
 
 .example-spacer {
-    flex: 1 1 auto;
-    height: 6vh;
-    border-bottom: 1.5px solid #008000;
-    background-color: #ffffff80;
+  flex: 1 1 auto;
+  height: 6vh;
+  border-bottom: 1.5px solid #008000;
+  background-color: #ffffff;
 }
 
 .mat-sidenav-content {
-    font-size: 100%;
-    text-align: center;
-    height: 100%;
+  font-size: 100%;
+  text-align: center;
+  height: 100%;
 }
 
 #SummerDeeds {
-    background-color: transparent;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
+
 }
 
 .GDP {
-    font-weight: bold;
-    padding-top: 10px;
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 .navlinks {
-    border-bottom: 1.5px solid #008000;
-    background-color: #ffffff;
-    height: 6vh;
+  border-bottom: 1.5px solid #008000;
+  background-color: #ffffff;
+  height: 6vh;
 }
 
 .square {
-    width: 20px;
-    height: 20px;
-    transform: rotate(45deg);
-    margin-top: 3.2%;
-    padding-left: 2.9%;
-    padding-right: 2.9%;
-}
-
-.navtext {
-    padding-top: 10px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  margin-top: 35px;
+  padding-left: 2.9%;
+  padding-right: 2.9%;
 }
 
 .footer-it-academy {
-    float: left;
+  float: left;
+  padding-left: 2%;
+  font-family: 'Raleway', sans-serif;
 }
 
 .footer-text {
-    float: right;
-    display: block;
-    width: 50%;
-    text-align: right;
+  float: right;
+  display: block;
+  width: 50%;
+  text-align: right;
+  padding-right: 2%;
+  font-family: 'Raleway', sans-serif;
 }
 
 .footer {
-    margin-top: 10%;
+  margin-top: 10%;
 }
