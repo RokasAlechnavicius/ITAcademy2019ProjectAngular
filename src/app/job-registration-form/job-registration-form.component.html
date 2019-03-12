@@ -2,8 +2,8 @@
     <form class="jobForm" [formGroup]="jobForm" (ngSubmit)="addJob()">
       <h1>Job registration</h1>
       <div class="example-container">
-      <div class="idea-field">
-        <mat-form-field appearance="outline">
+      <div>
+        <mat-form-field appearance="outline" class="idea-field">
           <mat-label>Idea</mat-label>
           <input formControlName="idea" matInput placeholder="" required maxlength="64" />
           <mat-hint>Max 64 characters</mat-hint>
@@ -18,11 +18,11 @@
         </mat-form-field>
       </div>
       </div>
-          <mat-grid-list cols="2" rowHeight="475px">
+          <mat-grid-list cols="2" rowHeight="475px" [cols]="breakpoint" (window:resize)="onResize($event)">
             <mat-grid-tile>
               <div class="example-container">
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Organization</mat-label>
                     <input formControlName="organisation" matInput placeholder="" required maxlength="64" />
                     <mat-hint>Max 64 characters</mat-hint>
@@ -37,7 +37,7 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Region</mat-label>
                     <mat-select formControlName="region" required>
                       <mat-option *ngFor="let region of regions" [value]="region">
@@ -61,7 +61,7 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Category</mat-label>
                     <mat-select formControlName="category" required>
                       <mat-option *ngFor="let category of categories" [value]="category">
@@ -85,18 +85,19 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="date-input grid-tile-field">
                     <mat-label>Event start date</mat-label>
                     <input
+                      readonly
                       matInput
                       [min]="minDate"
                       formControlName="date"
                       [matDatepicker]="picker"
                       placeholder="Choose a date"
                       required
-                    />
+                    >
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker disabled="false" #picker></mat-datepicker>
                     <mat-hint></mat-hint>
                     <mat-error *ngIf="jobForm.controls.date.invalid && jobForm.controls.date.touched">
                       <mat-error *ngIf="jobForm.controls.date.hasError('required')">
@@ -107,11 +108,10 @@
                 </div>
               </div>
             </mat-grid-tile>
-            <mat-grid-tile class="second-grid-tile">
+            <mat-grid-tile>
               <div class="example-container">
-                <!--<h3 class="contact-title">Contact</h3>-->
-                <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                <div class="job-form-field job-second-row">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Contact person</mat-label>
                     <input formControlName="contactName" matInput placeholder="" required maxlength="64" />
                     <mat-hint>Max 64 characters</mat-hint>
@@ -131,7 +131,7 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Phone number</mat-label>
                     <input type="number" formControlName="phone" matInput placeholder="" required maxlength="12" />
                     <mat-hint></mat-hint>
@@ -151,7 +151,7 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Website</mat-label>
                     <input formControlName="website" matInput placeholder="" maxlength="32" />
                     <mat-hint>Max 32 characters, not required</mat-hint>
@@ -163,13 +163,13 @@
                   </mat-form-field>
                 </div>
                 <div class="job-form-field">
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Email</mat-label>
-                    <input formControlName="email" matInput placeholder="" maxlength="32" />
-                    <mat-hint>Must be a valid email if present, not required, max 32 characters</mat-hint>
+                    <input formControlName="email" matInput placeholder="" maxlength="64" />
+                    <mat-hint>Must be a valid email if present, not required, max 64 characters</mat-hint>
                     <mat-error *ngIf="jobForm.controls.email.invalid && jobForm.controls.email.touched">
                       <mat-error *ngIf="jobForm.controls.email.hasError('maxlength')">
-                        Website field cannot be longer than 32 characters
+                        Email field cannot be longer than 64 characters
                       </mat-error>
                       <mat-error *ngIf="jobForm.controls.email.hasError('email')">
                         Not a valid email address
@@ -180,10 +180,9 @@
               </div>
             </mat-grid-tile>
           </mat-grid-list>
-
         <div class="example-container">
-            <div class="description-field">
-                <mat-form-field appearance="outline">
+            <div>
+                <mat-form-field appearance="outline" class="description-field">
                     <mat-label>Description</mat-label>
                     <textarea
                         class="textareainput"
