@@ -1,15 +1,17 @@
 <div id="HomePageInfo">
     <div id="DeedsVideo">
         <div class="video-title">Summer good deeds project!</div>
+      <div class="video-container">
         <iframe
-            id="video"
-            width="1230"
-            height="650"
-            src="https://www.youtube.com/embed/Mxz9pmsHfgk"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+          id="video"
+          width="560"
+          height="349"
+          src="https://www.youtube.com/embed/Mxz9pmsHfgk"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
         ></iframe>
+      </div>
     </div>
     <div class="main-text">
         Volunteers were interested in who most needed their help in their communities, talked with elders,
@@ -17,9 +19,7 @@
         Many of us, together, can change the environment and society. That's why we invite you to participate!
     </div>
     <div class="divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+        <img class="line-divider" src="assets/devider.png" />
     </div>
     <div class="text-div">
         <div>
@@ -32,36 +32,32 @@
         </div>
     </div>
     <div class="divider inner-divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+      <img class="line-divider" src="assets/devider.png" />
     </div>
-    <div class="text-div">
+    <mat-grid-list cols="2">
+      <mat-grid-tile [colspan]="2" [rowspan]="2" >
         <div class="how-text">
-            <img id="u42_img" class="img img-icon" src="assets/u42.png" />
+          <img id="u42_img" class="img img-icon" src="assets/u42.png" />
         </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span class="question-text">How?</span>
+        <div class="text-block">
+          You can choose activities that seem meaningful and important to you. Let's go to the nearest
+          communities, our native cities, let's talk to nearby organizations, neighborhoods, hard-working
+          families. You can also get ideas for good job from the list provided. Click the "Register" button next to
+          the suggested ideas and the selected jobs will be automatically assigned to you.
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div class="text-div">
         <div>
-            <span class="question-text">How?</span>
 
-            <div class="text-block">
-                <ul>
-                    <li>
-                        You can choose activities that seem meaningful and important to you. Let's go to the nearest
-                        communities, our native cities, let's talk to nearby organizations, neighborhoods, hard-working
-                        families.
-                    </li>
-                    <li>
-                        You can also get ideas for good job from the list provided. Click the "Register" button next to
-                        the suggested ideas and the selected jobs will be automatically assigned to you.
-                    </li>
-                </ul>
-            </div>
+
         </div>
     </div>
     <div class="divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+      <img class="line-divider" src="assets/devider.png" />
     </div>
     <div class="text-div">
         <div>
