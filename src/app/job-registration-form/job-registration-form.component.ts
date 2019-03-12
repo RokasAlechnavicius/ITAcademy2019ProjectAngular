@@ -25,6 +25,7 @@ export class JobRegistrationFormComponent implements OnInit {
     categories = categoriesData.categories;
     regions = regionsData.regions;
     jobForm: FormGroup;
+    breakpoint: number;
 
     public noWhiteSpaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;
@@ -34,6 +35,7 @@ export class JobRegistrationFormComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
+        this.breakpoint = window.innerWidth <= 1375 ? 1 : 2;
     }
 
     createForm() {
@@ -43,7 +45,7 @@ export class JobRegistrationFormComponent implements OnInit {
             organisation: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
             region: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
             category: ['', [Validators.required, Validators.maxLength(32), this.noWhiteSpaceValidator]],
-            email: ['', [Validators.email, Validators.maxLength(32)]],
+            email: ['', [Validators.email, Validators.maxLength(64)]],
             contactName: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
             website: ['', [Validators.maxLength(32)]],
             phone: ['', [Validators.required, Validators.max(999999999999)]],
@@ -63,5 +65,9 @@ export class JobRegistrationFormComponent implements OnInit {
                 this.alertService.createErrorAlert('an error has occurred: ' + err);
             }
         );
+    }
+
+    onResize(event) {
+        this.breakpoint = event.target.innerWidth <= 1375 ? 1 : 2;
     }
 }

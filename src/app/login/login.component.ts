@@ -8,7 +8,7 @@ import { AlertService } from '../services/alert.service';
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss', '../app.component.scss']
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
+                    this.alertService.createSuccessAlert('You have successfully logged in!', true);
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
