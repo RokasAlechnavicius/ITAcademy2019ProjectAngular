@@ -1,15 +1,17 @@
 <div id="HomePageInfo">
     <div id="DeedsVideo">
         <div class="video-title">Summer good deeds project!</div>
-        <iframe
-            id="video"
-            width="1230"
-            height="650"
-            src="https://www.youtube.com/embed/Mxz9pmsHfgk"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-        ></iframe>
+        <div class="video-container">
+            <iframe
+                id="video"
+                width="560"
+                height="349"
+                src="https://www.youtube.com/embed/Mxz9pmsHfgk"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
     </div>
     <div class="main-text">
         Volunteers were interested in who most needed their help in their communities, talked with elders,
@@ -17,60 +19,52 @@
         Many of us, together, can change the environment and society. That's why we invite you to participate!
     </div>
     <div class="divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+        <img class="line-divider" src="assets/devider.png" />
     </div>
-    <div class="text-div">
-        <div>
+
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="100">
+        <mat-grid-tile [rowspan]="rowspanText">
             <img id="u40_img" class="img img-icon" src="assets/u40.png" />
             <span class="question-text">Who?</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
                 Participants are invited to do good jobs together - to create volunteer teams. The captain has to
                 register the team - others join the specific job independently.
             </div>
-        </div>
-    </div>
+        </mat-grid-tile>
+    </mat-grid-list>
     <div class="divider inner-divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+        <img class="line-divider" src="assets/devider.png" />
     </div>
-    <div class="text-div">
-        <div class="how-text">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="225">
+        <mat-grid-tile [rowspan]="rowspanIcon">
             <img id="u42_img" class="img img-icon" src="assets/u42.png" />
-        </div>
-        <div>
             <span class="question-text">How?</span>
-
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
-                <ul>
-                    <li>
-                        You can choose activities that seem meaningful and important to you. Let's go to the nearest
-                        communities, our native cities, let's talk to nearby organizations, neighborhoods, hard-working
-                        families.
-                    </li>
-                    <li>
-                        You can also get ideas for good job from the list provided. Click the "Register" button next to
-                        the suggested ideas and the selected jobs will be automatically assigned to you.
-                    </li>
-                </ul>
+                You can choose activities that seem meaningful and important to you. Let's go to the nearest
+                communities, our native cities, let's talk to nearby organizations, neighborhoods, hard-working
+                families. You can also get ideas for good job from the list provided. Click the "Register" button next
+                to the suggested ideas and the selected jobs will be automatically assigned to you.
             </div>
-        </div>
-    </div>
+        </mat-grid-tile>
+    </mat-grid-list>
     <div class="divider">
-        <img class="img line line-divider" src="assets/u19.png" />
-        <img class="square" src="assets/square.png" alt="" />
-        <img class="img line line-divider" src="assets/u19.png" />
+        <img class="line-divider" src="assets/devider.png" />
     </div>
-    <div class="text-div">
-        <div>
+
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="150">
+        <mat-grid-tile>
             <img id="u43_img" class="img img-icon" src="assets/u43.png" />
             <span class="question-text">When?</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
                 The time when volunteers can do the jobs can be determined by the team leader or volunteer who created
                 the job description. As a participant, you could choose the time, which is convenient for him.
             </div>
-        </div>
-    </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
