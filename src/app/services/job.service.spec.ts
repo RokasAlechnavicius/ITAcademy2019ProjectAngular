@@ -50,7 +50,7 @@ describe('JobService', () => {
       date: '2019-03-20',
       idea: 'Ideja 1223',
       organisation: 'Tikrai ne bankas',
-      city: 'Ignalinos rajono savivaldybė',
+      region: 'Ignalinos rajono savivaldybė',
       category: 'Time for the environment',
       email: '',
       contactName: 'Kontaktas viens du trys',

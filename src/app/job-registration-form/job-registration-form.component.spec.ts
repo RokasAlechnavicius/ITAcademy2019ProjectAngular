@@ -102,7 +102,7 @@ describe('JobRegistrationFormComponent', () => {
         // prepare other job form fields
         component.jobForm.controls.organisation.setValue('test');
         component.jobForm.controls.idea.setValue('test');
-        component.jobForm.controls.city.setValue('test');
+        component.jobForm.controls.region.setValue('test');
         component.jobForm.controls.date.setValue('2019-12-12');
         component.jobForm.controls.category.setValue('test');
         component.jobForm.controls.contactName.setValue('test');
@@ -125,7 +125,7 @@ describe('JobRegistrationFormComponent', () => {
         expect(component.jobForm.valid).toBeFalsy();
         component.jobForm.controls.idea.setValue('test');
         expect(component.jobForm.valid).toBeFalsy();
-        component.jobForm.controls.city.setValue('test');
+        component.jobForm.controls.region.setValue('test');
         expect(component.jobForm.valid).toBeFalsy();
         component.jobForm.controls.date.setValue('2019-12-12');
         expect(component.jobForm.valid).toBeFalsy();
