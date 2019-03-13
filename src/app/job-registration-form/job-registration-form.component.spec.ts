@@ -37,8 +37,6 @@ describe('JobRegistrationFormComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         control = new FormControl();
-        jobService = TestBed.get(JobService);
-        spyOn(jobService, 'addJob').and.callThrough();
     });
 
     it('JobRegistrationFormComponent should create', () => {
@@ -88,7 +86,7 @@ describe('JobRegistrationFormComponent', () => {
         jobService = TestBed.get(JobService);
         spyOn(jobService, 'addJob').and.callThrough();
         component.addJob();
-        expect(jobService.addJob).toHaveBeenCalled();
+        expect(jobService.addJob).toHaveBeenCalledTimes(1);
     });
 
     it('should not call addJob when form fields are empty', () => {
