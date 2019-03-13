@@ -12,6 +12,11 @@ import { Router } from '@angular/router';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    constructor(
+        private breakpointObserver: BreakpointObserver,
+        private router: Router,
+        private userAuthenticationService: UserAuthenticationService
+    ) {}
     title = 'Summer Good Deeds';
     currentUser: User;
 
@@ -27,10 +32,4 @@ export class AppComponent {
     user() {
         return localStorage.getItem('currentUser');
     }
-
-    constructor(
-        private breakpointObserver: BreakpointObserver,
-        private router: Router,
-        private userAuthenticationService: UserAuthenticationService
-    ) {}
 }

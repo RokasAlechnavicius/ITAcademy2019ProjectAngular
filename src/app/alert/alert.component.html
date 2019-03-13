@@ -1,13 +1,13 @@
 <div
     class="mat-dialog-content"
-    *ngIf="message"
+    *ngIf="alert"
     [ngClass]="{
-        alert: message,
-        'alert-success': message.type === 'success',
-        'alert-danger': message.type === 'error'
+        alert: alert,
+        'alert-danger': alert.type === messageType.alertError,
+        'alert-success': alert.type === messageType.alertSuccess
     }"
 >
-    <div *ngIf="message.type === 'error'"><img src="assets/warning-sign.png" alt="" /></div>
-    <div *ngIf="message.type === 'success'"><img class="img-success" src="assets/check-solid.png" alt="" /></div>
-    <p class="alert-text">{{ message.text }}</p>
+    <div *ngIf="alert.type === 'error'"><img src="assets/warning-sign.png" alt="" /></div>
+    <div *ngIf="alert.type === 'success'"><img class="img-success" src="assets/check-solid.png" alt="" /></div>
+    <p class="alert-text">{{ alert.text }}</p>
 </div>
