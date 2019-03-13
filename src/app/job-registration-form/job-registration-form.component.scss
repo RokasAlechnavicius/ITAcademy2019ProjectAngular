@@ -8,7 +8,9 @@
 }
 
 .authentication-card {
-  max-width: 40%;
+  width: 40%;
+  min-width: 300px;
+  min-height: 650px;
   padding-top: 1%;
   padding-bottom: 2%;
   display: flex;
@@ -19,27 +21,23 @@
   box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
 }
 
-mat-form-field{
-  width: 100%;
-}
-
 .idea-field{
   padding-top: 3%;
   width: 87%;
-  padding-left: 8%;
+}
+
+.grid-tile-field{
+  width: 45%;
+  min-width: 260px;
 }
 
 .description-field{
   width: 87%;
-  padding-left: 8%;
-}
-
-.job-form-field{
-  width: 110%;
 }
 
 .submit-event-register-button {
     width: 15%;
+    min-width: 100px;
     margin-left: 25%;
     background-color: #008000;
     color: #ffffff;

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserRegistrationFormComponent } from './user-registration-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCardModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {MatCardModule, MatGridListModule, MatInputModule, MatSelectModule} from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +22,8 @@ describe('UserRegistrationFormComponent', () => {
                 RouterTestingModule,
                 MatSelectModule,
                 HttpClientTestingModule,
-                BrowserAnimationsModule
+                BrowserAnimationsModule,
+                MatGridListModule
             ]
         }).compileComponents();
     }));
