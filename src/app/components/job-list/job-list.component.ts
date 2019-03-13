@@ -1,25 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
-import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
-import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
-
-const JOB_LIST_OPTIONS = {
-    maxParticipantsCount: 14,
-    itemsPerPage: 10,
-    bigWidth: 1240,
-    mediumWidth: 900,
-    mediumCollumns: ['expand', 'idea'],
-    bigCollumns: ['expand', 'organisation', 'idea', 'city', 'date'],
-    allCollumns: ['expand', 'organisation', 'idea', 'city', 'category', 'date'],
-};
-
-const ALERT_MESSAGES = {
-    successJoin: 'You have been succesfully added to the job',
-    successLeave: 'You have successfully left the job'
-};
 
 @Component({
     selector: 'app-job-list',
@@ -33,89 +16,27 @@ const ALERT_MESSAGES = {
         ])
     ]
 })
-export class JobListComponent implements OnInit {
-    jobListOptions = JOB_LIST_OPTIONS;
-    jobsData = new MatTableDataSource<Job>();
-    columnsToDisplay: string[];
-    expandedElement: Job;
-    isLoading = true;
-    dialogRef;
+export class JobListComponent {
+    dataSource: Job[];
+    columnsToDisplay = ['organisation', 'idea', 'city', 'category', 'date', 'button'];
+    expandedElement: Job | null;
 
-    @ViewChild(MatPaginator) paginator: MatPaginator;
-
-    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
-        this.getJobs();
-        this.adjustTable(window);
-    }
-
-    ngOnInit() {
-        this.jobsData.paginator = this.paginator;
-    }
-
-    adjustTable(event) {
-        if (window.innerWidth <= JOB_LIST_OPTIONS.mediumWidth) {
-            this.columnsToDisplay = JOB_LIST_OPTIONS.mediumCollumns;
-        } else if (window.innerWidth <= JOB_LIST_OPTIONS.bigWidth) {
-            this.columnsToDisplay = JOB_LIST_OPTIONS.bigCollumns;
-        } else {
-            this.columnsToDisplay = JOB_LIST_OPTIONS.allCollumns;
-        }
-        if (this.user()) {
-            this.columnsToDisplay.push('join');
-        }
-    }
-
-    getJobs() {
-        this.jobService.getJobList().subscribe(
-            value => {
-                this.jobsData.data = value;
-                this.isLoading = false;
-            },
-            error => {
-                this.isLoading = false;
-            }
-        );
-    }
-
-    openDialog(job: Job): void {
-        this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
-            width: '30%',
-            data: job
+    constructor(private jobService: JobService, private alertService: AlertService) {
+        this.jobService.getJobList().subscribe(value => {
+            this.dataSource = value;
         });
     }
     user() {
         return localStorage.getItem('currentUser');
     }
-    userEmail() {
-        return localStorage.getItem('currentUserEmail');
-    }
 
-    joinJob(job: Job) {
+    joinAJob(job: Job) {
         this.jobService.joinJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert(ALERT_MESSAGES.successJoin);
-                window.scroll(0, 0);
-                event.stopPropagation();
-                this.getJobs();
+                this.alertService.createSuccessAlert('You have been succesfully added to the job');
             },
             error => {
-                this.alertService.createErrorAlert(error.error.message);
-                window.scroll(0, 0);
-            }
-        );
-    }
-
-    leaveJob(job: Job) {
-        this.jobService.leaveJob(job.id).subscribe(
-            success => {
-                this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);
-                window.scroll(0, 0);
-                event.stopPropagation();
-                this.getJobs();
-            },
-            error => {
-                this.alertService.createErrorAlert(error.error.message);
-                window.scroll(0, 0);
+                this.alertService.createErrorAlert('An error occurred:' + error);
             }
         );
     }

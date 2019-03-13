@@ -1,12 +1,5 @@
-<div class="">
-    <p class="title">JOBS</p>
-    <p class="title-desc">Browse activities you could be a part of</p>
-</div>
-<div class="create-div" *ngIf="user()">
-    <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
-</div>
 <div class="table-container mat-elevation-z8">
-    <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)">
+    <mat-table [dataSource]="dataSource" multiTemplateDataRows>
         <!-- Organization Column -->
         <ng-container matColumnDef="organisation">
             <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
@@ -38,69 +31,26 @@
         </ng-container>
 
         <!-- Button Column -->
-        <ng-container matColumnDef="join">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let element">
-                <button
-                    [disabled]="
-                        !(element.team.length < jobListOptions.maxParticipantsCount) ||
-                        element.organizator.email == userEmail() ||
-                        element.isUserInTeam == true
-                    "
-                    mat-raised-button
-                    *ngIf="user() && element.team && element.isUserInTeam == false"
-                    class="join"
-                    (click)="joinJob(element)"
-                >
-                    Join {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
-                </button>
-                <button
-                    mat-raised-button
-                    class="join"
-                    *ngIf="
-                        user() &&
-                        element.team &&
-                        element.organizator.email != userEmail() &&
-                        element.isUserInTeam == true
-                    "
-                    (click)="leaveJob(element)"
-                >
-                    Leave {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
-                </button>
-            </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="expand">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let element">
-                <img id="imagecurtain" src="assets/dropdownup.png" />
-            </mat-cell>
+        <ng-container matColumnDef="button">
+            <mat-header-cell *matHeaderCellDef
+                ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
+            >
+            <mat-cell *matCellDef="let element"
+                ><button *ngIf="user()" (click)="joinAJob(element)" mat-raised-button>Join this job</button></mat-cell
+            >
         </ng-container>
 
         <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
         <ng-container matColumnDef="expandedDetail">
-            <mat-cell class="expanded-color" *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
                 <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="element-description detail-text">
-                        <p><strong>Idea: </strong> {{ element.idea }}</p>
-                        <div id="extra-in-description">
-                            <p>
-                                <strong>Date: </strong>{{ element.date }};<strong> Location: </strong
-                                >{{ element.region }};
-                            </p>
-                            <p><strong> Category: </strong>{{ element.category }}</p>
-                        </div>
+                        <p><strong>Description: </strong></p>
                         <p>{{ element.description }}</p>
-                        <div class="contact-person">
-                            <p>
-                                <strong>Contact person: </strong>{{ element.contactName }}, {{ element.phone }},
-                                <span [hidden]="!element.email"> {{ element.email }}, </span>
-                                <span [hidden]="!element.website">
-                                    <a href="http://{{ element.website }}"> {{ element.website }}</a>
-                                </span>
-                            </p>
-                        </div>
-                        <a mat-raised-button (click)="openDialog(element)" class="table-button">Show participants</a>
+                        <p><strong>Contacts: </strong></p>
+                        <p>Name: {{ element.contactName }}</p>
+                        <p>Phone: {{ element.phone }}</p>
+                        <p [hidden]="!element.email">Email: {{ element.email }}</p>
                     </div>
                 </div>
             </mat-cell>
@@ -116,8 +66,4 @@
         </mat-row>
         <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
     </mat-table>
-    <div *ngIf="isLoading">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
-    <mat-paginator [pageSize]="jobListOptions.itemsPerPage" showFirstLastButtons></mat-paginator>
 </div>

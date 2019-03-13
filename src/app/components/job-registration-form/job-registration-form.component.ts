@@ -7,21 +7,6 @@ import * as categoriesData from '../../../assets/categories.json';
 import { Router } from '@angular/router';
 import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
-import { User } from '../../models';
-
-const JOB_REGISTRATION_FORM_OPTIONS = {
-    ideaMaxLength: 64,
-    organizationMaxLength: 64,
-    regionMaxLength: 32,
-    categoryMaxLength: 32,
-    emailMaxLength: 64,
-    contactNameMaxLength: 64,
-    descriptionMaxLength: 512,
-    websiteMaxLength: 32,
-    formErrorMessage: 'an error has occurred: ',
-    keyboardLetterECode: 69,
-    phoneMax: 999999999999
-};
 
 @Component({
     selector: 'app-job-registration-form',
@@ -35,15 +20,12 @@ export class JobRegistrationFormComponent implements OnInit {
         private jobService: JobService,
         private alertService: AlertService
     ) {}
-    jobFormConstants = JOB_REGISTRATION_FORM_OPTIONS;
-    keyCode = JOB_REGISTRATION_FORM_OPTIONS.keyboardLetterECode;
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
     regions = regionsData.regions;
     jobForm: FormGroup;
     breakpoint: number;
-    team: User[] = [];
 
     public noWhiteSpaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;
@@ -59,70 +41,28 @@ export class JobRegistrationFormComponent implements OnInit {
     createForm() {
         this.jobForm = this.formBuilder.group({
             date: [null, [Validators.required]],
-            idea: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.ideaMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            organisation: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.organizationMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            region: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.regionMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            category: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.categoryMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            email: ['', [Validators.email, Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength)]],
-            contactName: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.contactNameMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            website: ['', [Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.websiteMaxLength)]],
-            phone: ['', [Validators.required, Validators.max(JOB_REGISTRATION_FORM_OPTIONS.phoneMax)]],
-            description: [
-                '',
-                [
-                    Validators.required,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.descriptionMaxLength),
-                    this.noWhiteSpaceValidator
-                ]
-            ],
-            team: [this.team]
+            idea: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            organisation: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            region: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            category: ['', [Validators.required, Validators.maxLength(32), this.noWhiteSpaceValidator]],
+            email: ['', [Validators.email, Validators.maxLength(64)]],
+            contactName: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
+            website: ['', [Validators.maxLength(32)]],
+            phone: ['', [Validators.required, Validators.max(999999999999)]],
+            description: ['', [Validators.required, Validators.maxLength(512), this.noWhiteSpaceValidator]]
         });
     }
 
     addJob() {
         const stringedDate = moment(this.jobForm.get('date').value).format('YYYY-MM-DD');
         this.jobForm.controls.date.setValue(stringedDate);
+        // we have a proper form  with values to pass into a service now, need a service to handle it
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {
                 this.router.navigate(['/jobs']);
             },
             err => {
-                this.alertService.createErrorAlert(JOB_REGISTRATION_FORM_OPTIONS.formErrorMessage + err.error.message);
+                this.alertService.createErrorAlert('an error has occurred: ' + err);
             }
         );
     }
