@@ -3,7 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobListComponent } from './job-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { MatButtonModule, MatDialogModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('JobListComponent', () => {
     let component: JobListComponent;
@@ -12,14 +13,7 @@ describe('JobListComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [JobListComponent],
-            imports: [
-                MatTableModule,
-                HttpClientTestingModule,
-                MatButtonModule,
-                MatProgressSpinnerModule,
-                MatIconModule,
-                MatDialogModule
-            ]
+            imports: [MatTableModule, HttpClientTestingModule, MatButtonModule, RouterTestingModule]
         }).compileComponents();
     }));
 

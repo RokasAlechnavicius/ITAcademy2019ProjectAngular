@@ -1,5 +1,3 @@
-import { User } from './user';
-
 export interface Job {
     id: number;
     date: string;
@@ -12,8 +10,5 @@ export interface Job {
     website?: string;
     phone: string;
     description: string;
-    organizator?: User;
-    team?: User[];
     hashtags?: string[];
-    isUserInTeam?: boolean;
 }

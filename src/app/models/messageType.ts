@@ -1,4 +1,4 @@
 export enum MessageType {
-    alertSuccess = 'success',
-    alertError = 'error'
+  alertSuccess = 'success',
+  alertError = 'error'
 }

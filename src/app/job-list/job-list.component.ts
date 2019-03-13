@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../services/job.service';
 import { Job } from '../models';
-import { MatDialog } from '@angular/material';
-import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
+import {AlertService} from '../services/alert.service';
 
 @Component({
     selector: 'app-job-list',
@@ -19,34 +18,27 @@ import { ParticipantsDialogComponent } from '../participants-dialog/participants
 })
 export class JobListComponent {
     dataSource: Job[];
-    columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
+    columnsToDisplay = ['organisation', 'idea', 'city', 'category', 'date', 'button'];
     expandedElement: Job | null;
-    isLoading = true;
 
-    constructor(private jobService: JobService, public dialog: MatDialog) {
-        this.jobService.getJobList().subscribe(
-            value => {
-                this.dataSource = value;
-                this.isLoading = false;
-            },
-            error => {
-                this.isLoading = false;
-            }
-        );
-    }
-
-    openDialog(job: Job): void {
-        const dialogRef = this.dialog.open(ParticipantsDialogComponent, {
-            width: '30%',
-            data: job
+    constructor(private jobService: JobService,
+                private alertService: AlertService) {
+        this.jobService.getJobList().subscribe(value => {
+            this.dataSource = value;
         });
     }
-
-    joinJob(job: Job) {
-      console.log(job);
-    }
-
     user() {
         return localStorage.getItem('currentUser');
+    }
+
+    joinAJob(job: Job) {
+      this.jobService.joinJob(job.id).subscribe(
+        success => {
+      this.alertService.createSuccessAlert('You have been succesfully added to the job');
+      },
+        error => {
+          this.alertService.createErrorAlert('An error occurred:' + error);
+        }
+    );
     }
 }
