@@ -29,13 +29,13 @@ export class UserRegistrationFormComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.breakpoint = (window.innerWidth <= 1500) ? 1 : 2;
+        this.breakpoint = window.innerWidth <= 1500 ? 1 : 2;
         this.createForm();
         this.userAuthenticationService.logout();
     }
 
     onResize(event) {
-      this.breakpoint = (event.target.innerWidth <= 1500) ? 1 : 2;
+        this.breakpoint = event.target.innerWidth <= 1500 ? 1 : 2;
     }
 
     public noWhiteSpaceValidator(control: FormControl) {
