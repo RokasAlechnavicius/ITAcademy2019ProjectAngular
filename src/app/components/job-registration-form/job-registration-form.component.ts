@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 // @ts-ignore
-import * as regionsData from './../../assets/regions.json';
-import * as categoriesData from './../../assets/categories.json';
+import * as regionsData from '../../../assets/regions.json';
+import * as categoriesData from '../../../assets/categories.json';
 import { Router } from '@angular/router';
-import { JobService } from '../services/job.service';
-import { AlertService } from '../services/alert.service';
+import { JobService } from '../../services/job.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
     selector: 'app-job-registration-form',

@@ -15,20 +15,20 @@ import {
     MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { JobRegistrationFormComponent } from './job-registration-form/job-registration-form.component';
+import { JobRegistrationFormComponent } from './components/job-registration-form/job-registration-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { AlertComponent } from './alert/alert.component';
-import { LoginComponent } from './login/login.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { LoginComponent } from './components/login/login.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatTableModule } from '@angular/material/table';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { LogoutUserComponent } from './logout-user/logout-user.component';
+import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
+import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {

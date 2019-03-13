@@ -4,6 +4,9 @@ import { JobService } from '../services/job.service';
 import { Job } from '../models';
 import { MatDialog } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
+import { JobService } from '../../services/job.service';
+import { Job } from '../../models';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
     selector: 'app-job-list',
@@ -23,7 +26,7 @@ export class JobListComponent {
     expandedElement: Job | null;
     isLoading = true;
 
-    constructor(private jobService: JobService, public dialog: MatDialog) {
+    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
         this.jobService.getJobList().subscribe(
             value => {
                 this.dataSource = value;
@@ -41,12 +44,18 @@ export class JobListComponent {
             data: job
         });
     }
-
-    joinJob(job: Job) {
-      console.log(job);
-    }
-
     user() {
         return localStorage.getItem('currentUser');
+    }
+
+    joinJob(job: Job) {
+        this.jobService.joinJob(job.id).subscribe(
+            success => {
+                this.alertService.createSuccessAlert('You have been succesfully added to the job');
+            },
+            error => {
+                this.alertService.createErrorAlert('An error occurred:' + error);
+            }
+        );
     }
 }

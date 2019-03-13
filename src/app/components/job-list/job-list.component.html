@@ -35,7 +35,7 @@
             <mat-header-cell *matHeaderCellDef
                 ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
             >
-            <mat-cell *matCellDef="let element"><a mat-raised-button class="join" (click)="joinJob(element)">Join</a></mat-cell>
+            <mat-cell *matCellDef="let element"><a mat-raised-button *ngIf="user()" class="join" (click)="joinJob(element)">Join</a></mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="expand">
