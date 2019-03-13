@@ -5,8 +5,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatCardModule, MatDialogModule, MatDividerModule, MatNativeDateModule } from '@angular/material';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatToolbarModule
+} from '@angular/material';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { JobRegistrationFormComponent } from './job-registration-form/job-registration-form.component';
@@ -24,6 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './logout-user/logout-user.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ParticipantsDialogComponent } from './participants-dialog/participants-dialog.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +45,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         LoginComponent,
         JobListComponent,
         UserRegistrationFormComponent,
-        LogoutUserComponent
+        LogoutUserComponent,
+        ParticipantsDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -60,10 +72,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatDialogModule,
         MatCardModule,
         MatTableModule,
-        MatGridListModule
+        MatGridListModule,
+        MatProgressSpinnerModule,
+        MatIconModule,
+        MatDialogModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent, HomePageComponent],
+    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../services/job.service';
 import { Job } from '../models';
+import { MatDialog } from '@angular/material';
+import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 
 @Component({
     selector: 'app-job-list',
@@ -17,14 +19,33 @@ import { Job } from '../models';
 })
 export class JobListComponent {
     dataSource: Job[];
-    columnsToDisplay = ['organisation', 'idea', 'city', 'category', 'date', 'button'];
+    columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
     expandedElement: Job | null;
+    isLoading = true;
 
-    constructor(private jobService: JobService) {
-        this.jobService.getJobList().subscribe(value => {
-            this.dataSource = value;
+    constructor(private jobService: JobService, public dialog: MatDialog) {
+        this.jobService.getJobList().subscribe(
+            value => {
+                this.dataSource = value;
+                this.isLoading = false;
+            },
+            error => {
+                this.isLoading = false;
+            }
+        );
+    }
+
+    openDialog(job: Job): void {
+        const dialogRef = this.dialog.open(ParticipantsDialogComponent, {
+            width: '30%',
+            data: job
         });
     }
+
+    joinJob(job: Job) {
+      console.log(job);
+    }
+
     user() {
         return localStorage.getItem('currentUser');
     }

@@ -31,16 +31,28 @@
         </ng-container>
 
         <!-- Button Column -->
-        <ng-container matColumnDef="button">
+        <ng-container matColumnDef="join">
             <mat-header-cell *matHeaderCellDef
                 ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
             >
-            <mat-cell *matCellDef="let element"></mat-cell>
+            <mat-cell *matCellDef="let element"><a mat-raised-button class="join" (click)="joinJob(element)">Join</a></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="expand">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef>
+                <mat-icon
+                    class="expand-icon"
+                    (click)="expandedElement = expandedElement === element ? null : element"
+                >
+                  arrow_drop_down_circle
+                </mat-icon>
+            </mat-cell>
         </ng-container>
 
         <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
         <ng-container matColumnDef="expandedDetail">
-            <mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <mat-cell class="expanded-color" *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
                 <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="element-description detail-text">
                         <p><strong>Description: </strong></p>
@@ -49,12 +61,17 @@
                         <p>Name: {{ element.contactName }}</p>
                         <p>Phone: {{ element.phone }}</p>
                         <p [hidden]="!element.email">Email: {{ element.email }}</p>
+                        <p [hidden]="!element.website">
+                            Website: <a href="{{ element.website }}">{{ element.website }}</a>
+                        </p>
+                        <a mat-raised-button (click)="openDialog(element)">participants</a>
                     </div>
                 </div>
             </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row><mat-progress-spinner mode="indeterminate" [hidden]="!isLoading"></mat-progress-spinner></mat-row>
         <mat-row
             *matRowDef="let element; columns: columnsToDisplay"
             class="element-row"
