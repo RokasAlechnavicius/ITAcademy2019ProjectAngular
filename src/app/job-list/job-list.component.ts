@@ -17,7 +17,7 @@ import { Job } from '../models';
 })
 export class JobListComponent {
     dataSource: Job[];
-    columnsToDisplay = ['organisation', 'idea', 'city', 'category', 'date', 'button'];
+    columnsToDisplay = ['organisation', 'idea', 'region', 'category', 'date', 'button'];
     expandedElement: Job | null;
 
     constructor(private jobService: JobService) {
