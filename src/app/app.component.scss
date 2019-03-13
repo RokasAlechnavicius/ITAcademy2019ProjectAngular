@@ -66,8 +66,8 @@ button {
 
 .example-spacer {
   flex: 1 1 auto;
-  height: 6vh;
   border-bottom: 1.5px solid #008000;
+  height: 74%;
   background-color: #ffffff;
 }
 
@@ -91,7 +91,7 @@ button {
 .navlinks {
   border-bottom: 1.5px solid #008000;
   background-color: #ffffff;
-  height: 6vh;
+
 }
 
 .square {
@@ -118,6 +118,3 @@ button {
   font-family: 'Raleway', sans-serif;
 }
 
-.footer {
-  margin-top: 10%;
-}
