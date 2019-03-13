@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from '../services/alert.service';
-import { UserAuthenticationService } from '../services/user-authentication.service';
-import { passwordsMustMatch } from '../helpers/passwords-must-match.validator';
+import { AlertService } from '../../services/alert.service';
+import { UserAuthenticationService } from '../../services/user-authentication.service';
+import { passwordsMustMatch } from '../../helpers/passwords-must-match.validator';
 
 // @ts-ignore
-import * as regionsData from '../../assets/regions.json';
+import * as regionsData from '../../../assets/regions.json';
 import { first } from 'rxjs/operators';
 const returnUrl = '/login';
 @Component({

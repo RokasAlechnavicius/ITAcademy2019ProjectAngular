@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserAuthenticationService } from '../services/user-authentication.service';
-import { AlertService } from '../services/alert.service';
+import { UserAuthenticationService } from '../../services/user-authentication.service';
+import { AlertService } from '../../services/alert.service';
 @Component({
     selector: 'app-logout-user',
     templateUrl: './logout-user.component.html',

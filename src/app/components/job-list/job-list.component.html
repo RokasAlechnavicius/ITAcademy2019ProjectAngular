@@ -35,7 +35,9 @@
             <mat-header-cell *matHeaderCellDef
                 ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
             >
-            <mat-cell *matCellDef="let element"><button *ngIf="user()" (click)="joinAJob(element)" mat-raised-button>Join this job</button></mat-cell>
+            <mat-cell *matCellDef="let element"
+                ><button *ngIf="user()" (click)="joinAJob(element)" mat-raised-button>Join this job</button></mat-cell
+            >
         </ng-container>
 
         <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->

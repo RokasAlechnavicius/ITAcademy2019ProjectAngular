@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { JobRegistrationFormComponent } from './job-registration-form/job-registration-form.component';
-import { LoginComponent } from './login/login.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { JobRegistrationFormComponent } from './components/job-registration-form/job-registration-form.component';
+import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import { JobListComponent } from './job-list/job-list.component';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { LogoutUserComponent } from './logout-user/logout-user.component';
+import { JobListComponent } from './components/job-list/job-list.component';
+import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
+import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
