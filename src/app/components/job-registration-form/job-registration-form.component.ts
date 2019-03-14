@@ -62,7 +62,7 @@ export class JobRegistrationFormComponent implements OnInit {
                 this.router.navigate(['/jobs']);
             },
             err => {
-                this.alertService.createErrorAlert('an error has occurred: ' + err);
+                this.alertService.createErrorAlert('an error has occurred: ' + err.error.message);
             }
         );
     }

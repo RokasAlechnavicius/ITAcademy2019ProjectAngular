@@ -34,6 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
         JobListComponent,
         UserRegistrationFormComponent,
         LogoutUserComponent,
+        StoryRegistrationFormComponent
         ParticipantsDialogComponent
     ],
     imports: [
