@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         LoginComponent,
         JobListComponent,
         UserRegistrationFormComponent,
-        LogoutUserComponent
+        LogoutUserComponent,
+        StoryRegistrationFormComponent
     ],
     imports: [
         BrowserModule,

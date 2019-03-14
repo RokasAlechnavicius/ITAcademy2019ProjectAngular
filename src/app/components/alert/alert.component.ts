@@ -10,12 +10,18 @@ import { MessageType } from '../../models';
 })
 export class AlertComponent implements OnInit {
     alert: Alert;
+    public showDialog = true;
     messageType = MessageType;
     constructor(private alertService: AlertService) {}
 
     ngOnInit() {
         this.alertService.getMessage().subscribe(message => {
             this.alert = message;
+            this.showDialog = true;
         });
+    }
+
+    toggle() {
+      this.showDialog = !this.showDialog;
     }
 }
