@@ -1,10 +1,10 @@
 <div class="create-div" *ngIf="user()">
-  <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
+    <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
 </div>
 <div class="table-container mat-elevation-z8">
     <mat-table [dataSource]="jobsData" multiTemplateDataRows>
         <div class="spinner-container" *ngIf="isLoading">
-            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+            <mat-progress-spinner color="#fff" mode="indeterminate"></mat-progress-spinner>
         </div>
 
         <!-- Organization Column -->
