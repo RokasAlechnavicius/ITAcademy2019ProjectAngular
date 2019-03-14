@@ -5,8 +5,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatCardModule, MatDialogModule, MatDividerModule, MatNativeDateModule } from '@angular/material';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatToolbarModule
+} from '@angular/material';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { JobRegistrationFormComponent } from './components/job-registration-form/job-registration-form.component';
@@ -25,6 +35,7 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
+import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +47,8 @@ import { StoryRegistrationFormComponent } from './components/story-registration-
         JobListComponent,
         UserRegistrationFormComponent,
         LogoutUserComponent,
-        StoryRegistrationFormComponent
+        StoryRegistrationFormComponent,
+        ParticipantsDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -62,10 +74,13 @@ import { StoryRegistrationFormComponent } from './components/story-registration-
         MatDialogModule,
         MatCardModule,
         MatTableModule,
-        MatGridListModule
+        MatGridListModule,
+        MatProgressBarModule,
+        MatIconModule,
+        MatDialogModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent, HomePageComponent],
+    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })

@@ -46,6 +46,7 @@ export class StoryRegistrationFormComponent implements OnInit {
     }
 
     submitForm() {
+        console.log(this.storyForm.value);
         this.storyService.addStory(this.storyForm.value).subscribe(
             data => {
                 this.alertService.createSuccessAlert('A new story has been created', true);

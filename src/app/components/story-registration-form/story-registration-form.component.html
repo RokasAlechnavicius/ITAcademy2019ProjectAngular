@@ -35,7 +35,7 @@
       <mat-form-field appearance="outline" class="grid-tile-field">
         <mat-label>Job</mat-label>
         <mat-select formControlName="job" required>
-          <mat-option *ngFor="let job of jobs" [value]="job.idea">
+          <mat-option *ngFor="let job of jobs" [value]="job">
             {{ job.idea }}
           </mat-option>
         </mat-select>
