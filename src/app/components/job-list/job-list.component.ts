@@ -48,12 +48,13 @@ export class JobListComponent {
     }
 
     joinJob(job: Job) {
+        console.log(job);
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert('You have been succesfully added to the job');
             },
             error => {
-                this.alertService.createErrorAlert('An error occurred:' + error);
+                this.alertService.createErrorAlert('An error occurred:' + error.error.message);
             }
         );
     }

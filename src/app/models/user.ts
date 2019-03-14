@@ -4,5 +4,4 @@ export interface User {
     email: string;
     region: string;
     id: number;
-    token?: string;
 }
