@@ -37,7 +37,7 @@
         <ng-container matColumnDef="join">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <a mat-raised-button *ngIf="user()" class="join" (click)="joinJob(element)">Join</a>
+                <a mat-raised-button *ngIf="user() && element.team && element.team.length < 14" class="join" (click)="joinJob(element)">Join</a>
             </mat-cell>
         </ng-container>
 

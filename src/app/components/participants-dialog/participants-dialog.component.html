@@ -2,7 +2,7 @@
 
 <mat-dialog-content>
     <h4><strong>Team lead: </strong></h4>
-  <p [hidden]="!data.organizator">{{ data.organizator }}</p>
+  <p [hidden]="!data.organizator">{{ data.organizator.name }} {{data.organizator.surname}}</p>
     <h4><strong>Participants: </strong></h4>
     <ul [hidden]="!data.team">
       <li *ngFor="let participant of data.team; let i = index">
