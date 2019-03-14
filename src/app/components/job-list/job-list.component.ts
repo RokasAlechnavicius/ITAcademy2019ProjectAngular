@@ -5,6 +5,7 @@ import { Job } from '../../models';
 import { MatDialog } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-job-list',
@@ -25,16 +26,20 @@ export class JobListComponent {
     isLoading = true;
     dialogRef;
 
-    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
-        this.jobService.getJobList().subscribe(
-            value => {
-                this.jobsData = value;
-                this.isLoading = false;
-            },
-            error => {
-                this.isLoading = false;
-            }
-        );
+    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService, private router: Router) {
+        this.getJobs();
+    }
+
+    getJobs() {
+      this.jobService.getJobList().subscribe(
+        value => {
+          this.jobsData = value;
+          this.isLoading = false;
+        },
+        error => {
+          this.isLoading = false;
+        }
+      );
     }
 
     openDialog(job: Job): void {
@@ -51,10 +56,11 @@ export class JobListComponent {
         console.log(job);
         this.jobService.joinJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have been succesfully added to the job');
+                this.alertService.createSuccessAlert('You have been succesfully added to the job', true);
+                location.reload();
             },
             error => {
-                this.alertService.createErrorAlert('An error occurred:' + error.error.message);
+                this.alertService.createErrorAlert(error.error.message);
             }
         );
     }
