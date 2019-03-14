@@ -8,6 +8,17 @@ import { Router } from '@angular/router';
 import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
 
+const JOB_REGISTRATION_FORM_OPTIONS = {
+    ideaMaxLength: 64,
+    organizationMaxLength: 64,
+    regionMaxLength: 32,
+    categoryMaxLength: 32,
+    emailMaxLength: 64,
+    contactNameMaxLength: 64,
+    descriptionMaxLength: 512,
+    websiteMaxLength: 32
+};
+
 @Component({
     selector: 'app-job-registration-form',
     templateUrl: './job-registration-form.component.html',
@@ -20,6 +31,7 @@ export class JobRegistrationFormComponent implements OnInit {
         private jobService: JobService,
         private alertService: AlertService
     ) {}
+    jobFormConstants = JOB_REGISTRATION_FORM_OPTIONS;
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
@@ -41,15 +53,57 @@ export class JobRegistrationFormComponent implements OnInit {
     createForm() {
         this.jobForm = this.formBuilder.group({
             date: [null, [Validators.required]],
-            idea: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
-            organisation: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
-            region: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
-            category: ['', [Validators.required, Validators.maxLength(32), this.noWhiteSpaceValidator]],
-            email: ['', [Validators.email, Validators.maxLength(64)]],
-            contactName: ['', [Validators.required, Validators.maxLength(64), this.noWhiteSpaceValidator]],
-            website: ['', [Validators.maxLength(32)]],
+            idea: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.ideaMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ],
+            organisation: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.organizationMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ],
+            region: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.regionMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ],
+            category: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.categoryMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ],
+            email: ['', [Validators.email, Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength)]],
+            contactName: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.contactNameMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ],
+            website: ['', [Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.websiteMaxLength)]],
             phone: ['', [Validators.required, Validators.max(999999999999)]],
-            description: ['', [Validators.required, Validators.maxLength(512), this.noWhiteSpaceValidator]]
+            description: [
+                '',
+                [
+                    Validators.required,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.descriptionMaxLength),
+                    this.noWhiteSpaceValidator
+                ]
+            ]
         });
     }
 
