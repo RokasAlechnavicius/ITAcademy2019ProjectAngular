@@ -17,7 +17,7 @@ import {
     MatSidenavModule,
     MatToolbarModule
 } from '@angular/material';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { JobRegistrationFormComponent } from './components/job-registration-form/job-registration-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +34,7 @@ import { MatTableModule } from '@angular/material/table';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ParticipantsDialogComponent } from './participants-dialog/participants-dialog.component';
+import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 
 @NgModule({
     declarations: [

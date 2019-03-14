@@ -10,7 +10,7 @@ describe('ParticipantsDialogComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ParticipantsDialogComponent],
-            imports: [MatDialogModule, MatDialogRef]
+            imports: [MatDialogModule]
         }).compileComponents();
     }));
 

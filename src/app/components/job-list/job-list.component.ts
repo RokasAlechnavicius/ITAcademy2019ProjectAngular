@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { JobService } from '../services/job.service';
-import { Job } from '../models';
-import { MatDialog } from '@angular/material';
-import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
+import { MatDialog } from '@angular/material';
+import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
 
 @Component({
