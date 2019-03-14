@@ -18,10 +18,6 @@ export class JobService {
         return this.http.get<Job[]>('https://team-test-backend.herokuapp.com' + '/jobs/all');
     }
 
-  getStoryJobList() {
-    return this.http.get<Job[]>('https://storyappj.herokuapp.com' + '/jobs/notactive');
-  }
-
     getStoryJobList() {
         return this.http.get<Job[]>(HEROKU_URL + '/jobs/notactive');
     }
