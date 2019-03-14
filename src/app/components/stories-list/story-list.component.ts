@@ -25,7 +25,7 @@ export class StoryListComponent implements OnInit {
     constructor(private storyService: StoryService, public dialog: MatDialog) {
         this.storyService.getStoryList().subscribe(
             value => {
-                this.storiesData.data = value;
+                this.storiesData = value;
                 this.isLoading = false;
             },
             error => {
@@ -34,12 +34,12 @@ export class StoryListComponent implements OnInit {
         );
     }
 
-    ngOnInit() {
-        this.storiesData.paginator = this.paginator;
-    }
-
     user() {
         return localStorage.getItem('currentUser');
+    }
+
+    ngOnInit() {
+        this.storiesData.paginator = this.paginator;
     }
 
     openStoryDetail(story: Story): void {

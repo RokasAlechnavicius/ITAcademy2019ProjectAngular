@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Story} from '../models/story';
 
-const HEROKU_URL = 'https://project-backend.herokuapp.com';
+const HEROKU_URL = 'https://team-test-backend.herokuapp.com';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +11,11 @@ export class StoryService {
   constructor(private http: HttpClient) { }
 
   addStory(story: Story) {
-    return this.http.post('https://storyappj.herokuapp.com' + '/story', story);
+    return this.http.post(HEROKU_URL + '/story', story);
   }
 
   getStoryList() {
-    return this.http.get<Story[]>('https://storyappj.herokuapp.com/stories');
+    return this.http.get<Story[]>(HEROKU_URL + '/stories');
   }
 
   getStoryDetails(id: number) {
