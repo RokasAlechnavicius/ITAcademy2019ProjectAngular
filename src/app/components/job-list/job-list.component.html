@@ -62,7 +62,7 @@
                         <p>Phone: {{ element.phone }}</p>
                         <p [hidden]="!element.email">Email: {{ element.email }}</p>
                         <p [hidden]="!element.website">
-                            Website: <a href="{{ element.website }}">{{ element.website }}</a>
+                            Website: <a href="http://{{ element.website }}">{{ element.website }}</a>
                         </p>
                         <a mat-raised-button (click)="openDialog(element)">show participants</a>
                     </div>
