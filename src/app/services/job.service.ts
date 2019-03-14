@@ -11,18 +11,22 @@ export class JobService {
     private options = { headers: new HttpHeaders().set('Content-Type', 'text/html') };
 
     addJob(job: Job) {
-        return this.http.post(HEROKU_URL + '/job', job);
+        return this.http.post('https://team-test-backend.herokuapp.com' + '/job', job);
     }
 
     getJobList() {
-        return this.http.get<Job[]>(HEROKU_URL + '/jobs/all');
+        return this.http.get<Job[]>('https://team-test-backend.herokuapp.com' + '/jobs/all');
     }
+
+  getStoryJobList() {
+    return this.http.get<Job[]>('https://storyappj.herokuapp.com' + '/jobs/notactive');
+  }
 
     getStoryJobList() {
         return this.http.get<Job[]>(HEROKU_URL + '/jobs/notactive');
     }
 
     joinJob(id: number) {
-        return this.http.post(HEROKU_URL + '/job/join', id);
+        return this.http.post('https://team-test-backend.herokuapp.com' + '/job/join', id);
     }
 }
