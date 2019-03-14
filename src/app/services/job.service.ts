@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Job } from '../models';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 const HEROKU_URL = 'https://project-backend.herokuapp.com';
 
 @Injectable({
@@ -18,9 +18,9 @@ export class JobService {
         return this.http.get<Job[]>('https://team-test-backend.herokuapp.com' + '/jobs/all');
     }
 
-  getStoryJobList() {
-    return this.http.get<Job[]>('https://storyappj.herokuapp.com' + '/jobs/notactive');
-  }
+    getStoryJobList() {
+        return this.http.get<Job[]>('https://storyappj.herokuapp.com' + '/jobs/notactive');
+    }
 
     joinJob(id: number) {
         return this.http.post('https://team-test-backend.herokuapp.com' + '/job/join', id);
