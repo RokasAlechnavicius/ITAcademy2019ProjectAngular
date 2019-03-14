@@ -2,13 +2,13 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
-    selector: 'app-participants-dialog',
-    templateUrl: './participants-dialog.component.html',
-    styleUrls: ['./participants-dialog.component.scss']
+    selector: 'app-story-details-dialog',
+    templateUrl: './story-details-dialog.component.html',
+    styleUrls: ['./story-details-dialog.component.scss']
 })
-export class ParticipantsDialogComponent implements OnInit {
+export class StoryDetailsDialogComponent implements OnInit {
     constructor(
-        public dialogRef: MatDialogRef<ParticipantsDialogComponent>,
+        public dialogRef: MatDialogRef<StoryDetailsDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any
     ) {}
 

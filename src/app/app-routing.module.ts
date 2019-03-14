@@ -7,7 +7,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { JobListComponent } from './components/job-list/job-list.component';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
-import {StoryRegistrationFormComponent} from './components/story-registration-form/story-registration-form.component';
+import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
+import { StoryListComponent } from './components/stories-list/story-list.component';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
@@ -17,7 +18,9 @@ const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent },
-    {path: 'create-story', component: StoryRegistrationFormComponent, canActivate: [AuthGuard]}
+    { path: 'create-story', component: StoryRegistrationFormComponent, canActivate: [AuthGuard] },
+    { path: 'stories', component: StoryListComponent, canActivate: [AuthGuard] },
+    { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
