@@ -47,7 +47,7 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
         JobListComponent,
         UserRegistrationFormComponent,
         LogoutUserComponent,
-        StoryRegistrationFormComponent
+        StoryRegistrationFormComponent,
         ParticipantsDialogComponent
     ],
     imports: [
