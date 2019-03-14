@@ -14,14 +14,14 @@ export class HomePageComponent implements OnInit {
     rowspanIcon = 1;
 
     ngOnInit() {
-        this.breakpoint = window.innerWidth <= 973 ? 1 : 3;
-        this.colspan = window.innerWidth <= 973 ? 1 : 2;
-        this.rowspanText = window.innerWidth <= 973 ? 2 : 1;
+        this.breakpoint = window.innerWidth <= 1000 ? 1 : 3;
+        this.colspan = window.innerWidth <= 1000 ? 1 : 2;
+        this.rowspanText = window.innerWidth <= 1000 ? 2 : 1;
     }
 
     onResize(event) {
-        this.breakpoint = event.target.innerWidth <= 973 ? 1 : 3;
-        this.colspan = window.innerWidth <= 973 ? 1 : 2;
-        this.rowspanText = window.innerWidth <= 973 ? 2 : 1;
+        this.breakpoint = event.target.innerWidth <= 1000 ? 1 : 3;
+        this.colspan = window.innerWidth <= 1000 ? 1 : 2;
+        this.rowspanText = window.innerWidth <= 1000 ? 2 : 1;
     }
 }
