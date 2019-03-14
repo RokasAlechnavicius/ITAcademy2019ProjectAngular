@@ -18,13 +18,16 @@ export class StoryListComponent {
         this.storyService.getStoryList().subscribe(
             value => {
                 this.storiesData = value;
-                console.log(value);
                 this.isLoading = false;
             },
             error => {
                 this.isLoading = false;
             }
         );
+    }
+
+    user() {
+        return localStorage.getItem('currentUser');
     }
 
     openStoryDetail(story: Story): void {

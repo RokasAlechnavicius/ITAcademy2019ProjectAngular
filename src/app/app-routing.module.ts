@@ -19,7 +19,7 @@ const routes: Routes = [
     { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent },
     { path: 'create-story', component: StoryRegistrationFormComponent, canActivate: [AuthGuard] },
-    { path: 'stories', component: StoryListComponent, canActivate: [AuthGuard] },
+    { path: 'stories', component: StoryListComponent },
     { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

@@ -1,5 +1,5 @@
 <div class="create-div">
-  <button mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
+  <button *ngIf="user()" mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
 </div>
 <div class="mat-elevation-z8 table-container">
     <mat-table [dataSource]="storiesData" multiTemplateDataRows>

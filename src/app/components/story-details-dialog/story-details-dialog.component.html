@@ -7,7 +7,7 @@
   <h4><strong>Story:</strong></h4>
   <p class="text">{{data.description}}</p>
   <h4><strong>Team lead: </strong></h4>
-  <p>{{ data.job.website }}</p>
+  <p *ngIf="data.job.organizator">{{ data.job.organizator.name }} {{data.job.organizator.surname}}</p>
   <h4><strong>Participants: </strong></h4>
   <ul>
     <li *ngFor="let member of data.job.team">{{ member.name }} {{member.surname}}</li>

@@ -49,7 +49,7 @@ export class StoryRegistrationFormComponent implements OnInit {
         this.storyService.addStory(this.storyForm.value).subscribe(
             data => {
                 this.alertService.createSuccessAlert('A new story has been created', true);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/stories']);
             },
             error => {
                 this.alertService.createErrorAlert('An error has occured: ' + error.error.message);
