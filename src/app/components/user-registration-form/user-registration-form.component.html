@@ -9,7 +9,7 @@
                         <mat-form-field appearance="outline" class="register-form-field">
                             <mat-label>First name</mat-label>
                             <input formControlName="name" matInput placeholder="" required maxlength="32" />
-                            <mat-hint>Max {{ userRegistrationFormOptions.nameMaxLength }} characters</mat-hint>
+                            <mat-hint>Max {{userRegistrationFormOptions.nameMaxLength}} characters</mat-hint>
                             <mat-error
                                 *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched"
                             >
@@ -17,8 +17,7 @@
                                     Please enter valid First name
                                 </mat-error>
                                 <mat-error *ngIf="registerForm.controls['name'].hasError('maxlength')">
-                                    First name cannot be longer than
-                                    {{ userRegistrationFormOptions.nameMaxLength }} characters
+                                    First name cannot be longer than {{userRegistrationFormOptions.nameMaxLength}} characters
                                 </mat-error>
                             </mat-error>
                         </mat-form-field>
@@ -26,7 +25,7 @@
                             <mat-form-field appearance="outline" class="register-form-field">
                                 <mat-label>Surname</mat-label>
                                 <input formControlName="surname" matInput placeholder="" required maxlength="64" />
-                                <mat-hint>Max {{ userRegistrationFormOptions.surnameMaxLength }} characters</mat-hint>
+                                <mat-hint>Max {{userRegistrationFormOptions.surnameMaxLength}} characters</mat-hint>
                                 <mat-error
                                     *ngIf="
                                         registerForm.controls['surname'].invalid &&
@@ -37,8 +36,7 @@
                                         Please enter valid Surname
                                     </mat-error>
                                     <mat-error *ngIf="registerForm.controls['surname'].hasError('maxlength')">
-                                        Surname cannot be longer than
-                                        {{ userRegistrationFormOptions.surnameMaxLength }} characters
+                                        Surname cannot be longer than {{userRegistrationFormOptions.surnameMaxLength}} characters
                                     </mat-error>
                                 </mat-error>
                             </mat-form-field>
@@ -47,7 +45,7 @@
                             <mat-form-field appearance="outline" class="register-form-field">
                                 <mat-label>Email</mat-label>
                                 <input formControlName="email" matInput placeholder="" required maxlength="64" />
-                                <mat-hint>Max {{ userRegistrationFormOptions.emailMaxLength }} characters</mat-hint>
+                                <mat-hint>Max {{userRegistrationFormOptions.emailMaxLength}} characters</mat-hint>
                                 <mat-error
                                     *ngIf="
                                         registerForm.controls['email'].invalid && registerForm.controls['email'].touched
@@ -62,11 +60,7 @@
                                         Please enter valid email
                                     </mat-error>
                                     <mat-error *ngIf="registerForm.controls['email'].hasError('maxlength')">
-                                        Email cannot be longer than
-                                        {{ userRegistrationFormOptions.emailMaxLength }} characters
-                                    </mat-error>
-                                    <mat-error *ngIf="registerForm.controls.email.hasError('pattern')">
-                                        Email must end with @darboviete.lt
+                                        Email cannot be longer than {{userRegistrationFormOptions.emailMaxLength}} characters
                                     </mat-error>
                                 </mat-error>
                             </mat-form-field>
@@ -94,8 +88,7 @@
                                         Region cannot be empty
                                     </mat-error>
                                     <mat-error *ngIf="registerForm.controls['region'].hasError('maxlength')">
-                                        Region cannot be longer than
-                                        {{ userRegistrationFormOptions.regionMaxLength }} characters
+                                        Region cannot be longer than {{userRegistrationFormOptions.regionMaxLength}} characters
                                     </mat-error>
                                 </mat-error>
                             </mat-form-field>
@@ -112,7 +105,7 @@
                                     required
                                     maxlength="32"
                                 />
-                                <mat-hint>Max {{ userRegistrationFormOptions.passwordMaxLength }} characters</mat-hint>
+                                <mat-hint>Max {{userRegistrationFormOptions.passwordMaxLength}} characters</mat-hint>
                                 <mat-error
                                     *ngIf="
                                         registerForm.controls['password'].invalid &&
@@ -128,10 +121,7 @@
                                             registerForm.controls['password'].hasError('minlength')
                                         "
                                     >
-                                        Password must be {{ userRegistrationFormOptions.passwordMinLength }}-{{
-                                            userRegistrationFormOptions.passwordMaxLength
-                                        }}
-                                        characters long
+                                        Password must be {{userRegistrationFormOptions.passwordMinLength}}-{{userRegistrationFormOptions.passwordMaxLength}} characters long
                                     </mat-error>
                                 </mat-error>
                             </mat-form-field>
@@ -148,7 +138,7 @@
                                     required
                                     maxlength="32"
                                 />
-                                <mat-hint>Max {{ userRegistrationFormOptions.passwordMaxLength }} characters</mat-hint>
+                                <mat-hint>Max {{userRegistrationFormOptions.passwordMaxLength}} characters</mat-hint>
                                 <mat-error
                                     *ngIf="
                                         registerForm.controls['passwordRepeat'].invalid &&
@@ -164,10 +154,7 @@
                                             registerForm.controls['password'].hasError('minlength')
                                         "
                                     >
-                                        Password must be {{ userRegistrationFormOptions.passwordMinLength }}-{{
-                                            userRegistrationFormOptions.passwordMaxLength
-                                        }}
-                                        characters long
+                                        Password must be {{userRegistrationFormOptions.passwordMinLength}}-{{userRegistrationFormOptions.passwordMaxLength}} characters long
                                     </mat-error>
                                     <mat-error *ngIf="registerForm.controls['passwordRepeat'].hasError('mustMatch')">
                                         Passwords do not match
@@ -179,7 +166,7 @@
                 </mat-grid-tile>
             </mat-grid-list>
             <mat-card-actions class="register-btn">
-                <button class="registrationBtnBtn" [disabled]="!registerForm.valid && !loading" mat-raised-button>
+                <button class="registrationBtnBtn" [disabled]="!registerForm.valid" mat-raised-button>
                     Create user
                 </button>
             </mat-card-actions>

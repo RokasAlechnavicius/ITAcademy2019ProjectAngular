@@ -97,7 +97,6 @@
                                 [min]="minDate"
                                 formControlName="date"
                                 [matDatepicker]="picker"
-                                (click)="picker.open()"
                                 placeholder="Choose a date"
                                 required
                             />
@@ -148,7 +147,6 @@
                                 placeholder=""
                                 required
                                 maxlength="12"
-                                onkeydown="return event.keyCode!=69"
                             />
                             <mat-hint></mat-hint>
                             <mat-error *ngIf="jobForm.controls.phone.invalid && jobForm.controls.phone.touched">
@@ -183,7 +181,10 @@
                         <mat-form-field appearance="outline" class="grid-tile-field">
                             <mat-label>Email</mat-label>
                             <input formControlName="email" matInput placeholder="" maxlength="64" />
-                            <mat-hint>Not required, max {{ jobFormConstants.emailMaxLength }} characters</mat-hint>
+                            <mat-hint
+                                >Must be a valid email if present, not required, max
+                                {{ jobFormConstants.emailMaxLength }} characters</mat-hint
+                            >
                             <mat-error *ngIf="jobForm.controls.email.invalid && jobForm.controls.email.touched">
                                 <mat-error *ngIf="jobForm.controls.email.hasError('maxlength')">
                                     Email field cannot be longer than {{ jobFormConstants.emailMaxLength }} characters
