@@ -10,7 +10,7 @@ describe('ParticipantsDialogComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ParticipantsDialogComponent],
-            imports: [MatDialogModule]
+            imports: [MatDialogModule, MatDialogRef]
         }).compileComponents();
     }));
 
@@ -18,9 +18,5 @@ describe('ParticipantsDialogComponent', () => {
         fixture = TestBed.createComponent(ParticipantsDialogComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-    });
-
-    it('should create', () => {
-        expect(component).toBeTruthy();
     });
 });

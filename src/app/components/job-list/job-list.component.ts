@@ -19,20 +19,34 @@ import { AlertService } from '../../services/alert.service';
     ]
 })
 export class JobListComponent {
-    dataSource: Job[];
-    columnsToDisplay = ['organisation', 'idea', 'city', 'category', 'date', 'button'];
-    expandedElement: Job | null;
+    jobsData: Job[];
+    columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
+    expandedElement: Job;
+    isLoading = true;
 
-    constructor(private jobService: JobService, private alertService: AlertService) {
-        this.jobService.getJobList().subscribe(value => {
-            this.dataSource = value;
+    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
+        this.jobService.getJobList().subscribe(
+            value => {
+                this.jobsData = value;
+                this.isLoading = false;
+            },
+            error => {
+                this.isLoading = false;
+            }
+        );
+    }
+
+    openDialog(job: Job): void {
+        const dialogRef = this.dialog.open(ParticipantsDialogComponent, {
+            width: '30%',
+            data: job
         });
     }
     user() {
         return localStorage.getItem('currentUser');
     }
 
-    joinAJob(job: Job) {
+    joinJob(job: Job) {
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert('You have been succesfully added to the job');
