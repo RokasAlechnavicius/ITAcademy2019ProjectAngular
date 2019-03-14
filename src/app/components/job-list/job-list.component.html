@@ -3,10 +3,6 @@
 </div>
 <div class="table-container mat-elevation-z8">
     <mat-table [dataSource]="jobsData" multiTemplateDataRows>
-        <div class="spinner-container" *ngIf="isLoading">
-            <mat-progress-spinner color="#fff" mode="indeterminate"></mat-progress-spinner>
-        </div>
-
         <!-- Organization Column -->
         <ng-container matColumnDef="organisation">
             <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
