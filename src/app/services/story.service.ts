@@ -11,7 +11,7 @@ export class StoryService {
   constructor(private http: HttpClient) { }
 
   addStory(story: Story) {
-    return this.http.post('https://storyappj.herokuapp.com' + '/story', story);
+    return this.http.post(HEROKU_URL + '/story', story);
   }
 
   getStoryList() {

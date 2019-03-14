@@ -166,7 +166,7 @@
                 </mat-grid-tile>
             </mat-grid-list>
             <mat-card-actions class="register-btn">
-                <button class="registrationBtnBtn" [disabled]="!registerForm.valid" mat-raised-button>
+                <button class="registrationBtnBtn" [disabled]="!registerForm.valid && !loading" mat-raised-button>
                     Create user
                 </button>
             </mat-card-actions>
