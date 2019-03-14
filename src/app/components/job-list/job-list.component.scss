@@ -1,3 +1,14 @@
+.create-div {
+    width: 90%;
+    margin: 2% auto;
+    display: flex;
+    padding: 1%;
+}
+
+.create-job {
+    padding: 5px 10px;
+}
+
 .table-container {
     width: 90%;
     margin: 2% auto;
@@ -11,10 +22,6 @@
 .detail-row:not(.expanded-row) {
     padding: 0;
 }
-
-/*.expanded-color {
-    background-color: #d5ffd1;
-}*/
 
 .mat-footer-row,
 .mat-row {
@@ -63,20 +70,28 @@
 
 .mat-column-join {
     padding: 0 2%;
-    flex: 0 0 4%;
+    flex: 0 0 5%;
 }
 
 .mat-column-expand {
     flex: 0 0 3%;
 }
 
-.join{
-  margin: 1%;
+.join {
+    margin: 4px 0;
 }
 
 .expand-icon:hover {
-  cursor: default;
-  background-color: #9eef99;
-  border-radius: 10px;
-  padding: 4px;
+    cursor: default;
+    background-color: #9eef99;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.spinner-container {
+    height: 8%;
+    .spinner {
+        height: 8%;
+        color: #72ef67;
+    }
 }

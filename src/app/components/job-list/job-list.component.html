@@ -1,5 +1,12 @@
+<div class="create-div" *ngIf="user()">
+  <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
+</div>
 <div class="table-container mat-elevation-z8">
-    <mat-table [dataSource]="dataSource" multiTemplateDataRows>
+    <mat-table [dataSource]="jobsData" multiTemplateDataRows>
+        <div class="spinner-container" *ngIf="isLoading">
+            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        </div>
+
         <!-- Organization Column -->
         <ng-container matColumnDef="organisation">
             <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
@@ -32,20 +39,17 @@
 
         <!-- Button Column -->
         <ng-container matColumnDef="join">
-            <mat-header-cell *matHeaderCellDef
-                ><a mat-raised-button *ngIf="user()" routerLink="/create-job">Create new Job</a></mat-header-cell
-            >
-            <mat-cell *matCellDef="let element"><a mat-raised-button *ngIf="user()" class="join" (click)="joinJob(element)">Join</a></mat-cell>
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <a mat-raised-button *ngIf="user()" class="join" (click)="joinJob(element)">Join</a>
+            </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="expand">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef>
-                <mat-icon
-                    class="expand-icon"
-                    (click)="expandedElement = expandedElement === element ? null : element"
-                >
-                  arrow_drop_down_circle
+            <mat-cell *matCellDef="let element">
+                <mat-icon class="expand-icon" (click)="expandedElement = expandedElement === element ? null : element">
+                    arrow_drop_down_circle
                 </mat-icon>
             </mat-cell>
         </ng-container>
@@ -64,21 +68,22 @@
                         <p [hidden]="!element.website">
                             Website: <a href="{{ element.website }}">{{ element.website }}</a>
                         </p>
-                        <a mat-raised-button (click)="openDialog(element)">participants</a>
+                        <a mat-raised-button (click)="openDialog(element)">show participants</a>
                     </div>
                 </div>
             </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-        <mat-row><mat-progress-spinner mode="indeterminate" [hidden]="!isLoading"></mat-progress-spinner></mat-row>
         <mat-row
             *matRowDef="let element; columns: columnsToDisplay"
             class="element-row"
             [class.expanded-row]="expandedElement === element"
-            (click)="expandedElement = expandedElement === element ? null : element"
         >
         </mat-row>
         <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
     </mat-table>
+    <div class="spinner-container" *ngIf="isLoading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
 </div>

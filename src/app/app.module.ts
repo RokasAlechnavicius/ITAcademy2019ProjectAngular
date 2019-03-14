@@ -13,7 +13,7 @@ import {
     MatIconModule,
     MatListModule,
     MatNativeDateModule,
-    MatProgressSpinnerModule,
+    MatProgressBarModule,
     MatSidenavModule,
     MatToolbarModule
 } from '@angular/material';
@@ -73,7 +73,7 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
         MatCardModule,
         MatTableModule,
         MatGridListModule,
-        MatProgressSpinnerModule,
+        MatProgressBarModule,
         MatIconModule,
         MatDialogModule
     ],

@@ -19,15 +19,15 @@ import { AlertService } from '../../services/alert.service';
     ]
 })
 export class JobListComponent {
-    dataSource: Job[];
+    jobsData: Job[];
     columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
-    expandedElement: Job | null;
+    expandedElement: Job;
     isLoading = true;
 
     constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
         this.jobService.getJobList().subscribe(
             value => {
-                this.dataSource = value;
+                this.jobsData = value;
                 this.isLoading = false;
             },
             error => {
