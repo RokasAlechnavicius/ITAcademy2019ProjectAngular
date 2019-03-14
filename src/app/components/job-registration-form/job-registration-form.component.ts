@@ -7,6 +7,7 @@ import * as categoriesData from '../../../assets/categories.json';
 import { Router } from '@angular/router';
 import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
+import {User} from '../../models';
 
 const JOB_REGISTRATION_FORM_OPTIONS = {
     ideaMaxLength: 64,
@@ -38,6 +39,7 @@ export class JobRegistrationFormComponent implements OnInit {
     regions = regionsData.regions;
     jobForm: FormGroup;
     breakpoint: number;
+    team: User[] = [];
 
     public noWhiteSpaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;
@@ -103,13 +105,15 @@ export class JobRegistrationFormComponent implements OnInit {
                     Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.descriptionMaxLength),
                     this.noWhiteSpaceValidator
                 ]
-            ]
+            ],
+          team: [this.team],
         });
     }
 
     addJob() {
         const stringedDate = moment(this.jobForm.get('date').value).format('YYYY-MM-DD');
         this.jobForm.controls.date.setValue(stringedDate);
+        console.log(this.jobForm.value);
         // we have a proper form  with values to pass into a service now, need a service to handle it
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {

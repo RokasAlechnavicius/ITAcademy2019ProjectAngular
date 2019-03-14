@@ -13,6 +13,6 @@ export interface Job {
     phone: string;
     description: string;
     organizator?: User;
-    participants?: User[];
+    team?: User[];
     hashtags?: string[];
 }
