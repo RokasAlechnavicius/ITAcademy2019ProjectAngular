@@ -15,7 +15,7 @@ export class StoryService {
   }
 
   getStoryList() {
-    return this.http.get<Story[]>(HEROKU_URL + '/stories');
+    return this.http.get<Story[]>('https://storyappj.herokuapp.com/stories');
   }
 
   getStoryDetails(id: number) {

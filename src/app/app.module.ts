@@ -36,6 +36,8 @@ import { LogoutUserComponent } from './components/logout-user/logout-user.compon
 import { MatGridListModule } from '@angular/material/grid-list';
 import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
+import { StoryListComponent } from './components/stories-list/story-list.component';
+import { StoryDetailsDialogComponent } from './components/story-details-dialog/story-details-dialog.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +50,9 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
         UserRegistrationFormComponent,
         LogoutUserComponent,
         StoryRegistrationFormComponent,
-        ParticipantsDialogComponent
+        ParticipantsDialogComponent,
+        StoryListComponent,
+        StoryDetailsDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -80,7 +84,7 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
         MatDialogModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent],
+    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent, StoryDetailsDialogComponent],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })

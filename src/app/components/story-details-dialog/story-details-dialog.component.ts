@@ -12,7 +12,7 @@ export class StoryDetailsDialogComponent implements OnInit {
         @Inject(MAT_DIALOG_DATA) public data: any
     ) {}
 
-    closeModal(): void {
+    done(): void {
         this.dialogRef.close();
     }
     ngOnInit() {}

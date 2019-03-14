@@ -5,7 +5,6 @@ import {
     MatButtonModule,
     MatDialogModule,
     MatIconModule,
-    MatPaginatorModule,
     MatProgressBarModule,
     MatTableModule
 } from '@angular/material';
@@ -26,8 +25,7 @@ describe('StoryListComponent', () => {
                 MatProgressBarModule,
                 MatIconModule,
                 MatDialogModule,
-                RouterTestingModule,
-                MatPaginatorModule
+                RouterTestingModule
             ]
         }).compileComponents();
     }));

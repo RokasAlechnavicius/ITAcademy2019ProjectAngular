@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
@@ -23,6 +23,7 @@ export class JobListComponent {
     columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
     expandedElement: Job;
     isLoading = true;
+    dialogRef;
 
     constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
         this.jobService.getJobList().subscribe(
@@ -37,7 +38,7 @@ export class JobListComponent {
     }
 
     openDialog(job: Job): void {
-        const dialogRef = this.dialog.open(ParticipantsDialogComponent, {
+        this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
             width: '30%',
             data: job
         });
