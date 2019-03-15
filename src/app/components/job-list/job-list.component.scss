@@ -6,8 +6,8 @@
 
 .create-job {
     padding: 5px 10px;
-    background-color: #FFC107;
-    color: #FFFFFF;
+    background-color: #ffc107;
+    color: #ffffff;
     font-weight: bolder;
 }
 
@@ -25,10 +25,11 @@
     padding: 0;
 }
 
-.detail-row, .expanded-row {
-  #imagecurtain{
-    transform: rotate(90deg);
-  }
+.detail-row,
+.expanded-row {
+    #imagecurtain {
+        transform: rotate(90deg);
+    }
 }
 
 .mat-footer-row,
@@ -97,32 +98,33 @@
 }
 
 mat-header-row {
-  background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 mat-header-cell {
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: medium;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .title-desc {
-  font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 img {
-  width: 30%;
-  height: 30%;
+    width: 30%;
+    height: 30%;
 }
 
-.table-button:hover, .join:hover {
-  background-color: #FFC107;
-  color: #FFFFFF;
+.table-button:hover,
+.join:hover {
+    background-color: #ffc107;
+    color: #ffffff;
 }
