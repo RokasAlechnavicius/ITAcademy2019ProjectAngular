@@ -7,6 +7,10 @@ import { ParticipantsDialogComponent } from '../participants-dialog/participants
 import { AlertService } from '../../services/alert.service';
 import {Router} from '@angular/router';
 
+const JOB_LIST_OPTIONS = {
+  maxParticipantsCount: 14
+};
+
 @Component({
     selector: 'app-job-list',
     templateUrl: './job-list.component.html',
@@ -20,6 +24,7 @@ import {Router} from '@angular/router';
     ]
 })
 export class JobListComponent {
+    jobListOptions = JOB_LIST_OPTIONS;
     jobsData: Job[];
     columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
     expandedElement: Job;
@@ -57,10 +62,12 @@ export class JobListComponent {
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert('You have been succesfully added to the job', true);
-                location.reload();
+                window.scroll(0,0);
+                this.getJobs();
             },
             error => {
                 this.alertService.createErrorAlert(error.error.message);
+                window.scroll(0,0);
             }
         );
     }

@@ -1,3 +1,7 @@
+<div class="">
+    <p class="title">JOBS</p>
+    <p class="title-desc">Browse activities you could be a part of</p>
+</div>
 <div class="create-div" *ngIf="user()">
     <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
 </div>
@@ -37,16 +41,20 @@
         <ng-container matColumnDef="join">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <a mat-raised-button *ngIf="user() && element.team && element.team.length < 14" class="join" (click)="joinJob(element)">Join</a>
+                <a
+                    mat-raised-button
+                    *ngIf="user() && element.team && element.team.length < 14"
+                    class="join"
+                    (click)="joinJob(element); $event.stopPropagation()"
+                    >Join {{ element.team.length }}/{{ jobListOptions.maxParticipantsCount }}</a
+                >
             </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="expand">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <mat-icon class="expand-icon" (click)="expandedElement = expandedElement === element ? null : element">
-                    arrow_drop_down_circle
-                </mat-icon>
+                <img id="imagecurtain" src="assets/dropdownup.png" />
             </mat-cell>
         </ng-container>
 
@@ -64,7 +72,7 @@
                         <p [hidden]="!element.website">
                             Website: <a href="http://{{ element.website }}">{{ element.website }}</a>
                         </p>
-                        <a mat-raised-button (click)="openDialog(element)">show participants</a>
+                        <a mat-raised-button (click)="openDialog(element)" class="table-button">Show participants</a>
                     </div>
                 </div>
             </mat-cell>
@@ -75,6 +83,7 @@
             *matRowDef="let element; columns: columnsToDisplay"
             class="element-row"
             [class.expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element"
         >
         </mat-row>
         <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
