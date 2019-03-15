@@ -7,7 +7,7 @@ import * as categoriesData from '../../../assets/categories.json';
 import { Router } from '@angular/router';
 import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
-import {User} from '../../models';
+import { User } from '../../models';
 
 const JOB_REGISTRATION_FORM_OPTIONS = {
     ideaMaxLength: 64,
@@ -87,7 +87,14 @@ export class JobRegistrationFormComponent implements OnInit {
                     this.noWhiteSpaceValidator
                 ]
             ],
-            email: ['', [Validators.email, Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength)]],
+            email: [
+                '',
+                [
+                    Validators.email,
+                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength),
+                    Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(swedbank).lt$')
+                ]
+            ],
             contactName: [
                 '',
                 [
@@ -106,14 +113,13 @@ export class JobRegistrationFormComponent implements OnInit {
                     this.noWhiteSpaceValidator
                 ]
             ],
-          team: [this.team],
+            team: [this.team]
         });
     }
 
     addJob() {
         const stringedDate = moment(this.jobForm.get('date').value).format('YYYY-MM-DD');
         this.jobForm.controls.date.setValue(stringedDate);
-        console.log(this.jobForm.value);
         // we have a proper form  with values to pass into a service now, need a service to handle it
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {

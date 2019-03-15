@@ -79,7 +79,8 @@ export class UserRegistrationFormComponent implements OnInit {
                         Validators.required,
                         Validators.email,
                         Validators.maxLength(USER_REGISTRATION_FORM_OPTIONS.emailMaxLength),
-                        this.noWhiteSpaceValidator
+                        this.noWhiteSpaceValidator,
+                        Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(swedbank).lt$')
                     ]
                 ],
                 region: [

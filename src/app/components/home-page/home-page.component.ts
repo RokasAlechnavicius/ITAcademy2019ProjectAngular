@@ -24,4 +24,8 @@ export class HomePageComponent implements OnInit {
         this.colspan = window.innerWidth <= 1000 ? 1 : 2;
         this.rowspanText = window.innerWidth <= 1000 ? 2 : 1;
     }
+
+    scroll(el: HTMLElement) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
