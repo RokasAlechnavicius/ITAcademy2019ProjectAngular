@@ -1,66 +1,66 @@
 <mat-card class="story-card">
-  <div>
-    <mat-card-title>Create a story</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  <form [formGroup]="storyForm" (ngSubmit)="submitForm()">
-    <div class="story-field">
-      <mat-form-field appearance="outline" class="description-field">
-        <mat-label>Description</mat-label>
-        <mat-hint>Max 1024 characters, required</mat-hint>
-        <textarea
-          class="textareainput"
-          matInput
-          formControlName="description"
-          placeholder=""
-          maxlength="1024"
-          required
-        >
+    <div>
+        <mat-card-title>Create a story</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+        <form [formGroup]="storyForm" (ngSubmit)="submitForm()">
+            <div class="job-form-field">
+                <mat-form-field appearance="outline" class="grid-tile-field">
+                    <mat-label>Job</mat-label>
+                    <mat-select formControlName="job" required>
+                        <mat-option *ngFor="let job of jobs" [value]="job">
+                            {{ job.idea }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint>Select from a list</mat-hint>
+                    <mat-error *ngIf="storyForm.controls.job.invalid && storyForm.controls.job.touched">
+                        <mat-error
+                            *ngIf="
+                                storyForm.controls.job.hasError('required') ||
+                                storyForm.controls.job.hasError('whitespace')
+                            "
+                        >
+                            Job field cannot be empty
+                        </mat-error>
+                        <mat-error *ngIf="storyForm.controls.job.hasError('maxlength')">
+                            Job field cannot be longer than 32 characters
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="story-field">
+                <mat-form-field appearance="outline" class="description-field">
+                    <mat-label>Description</mat-label>
+                    <mat-hint>Max 1024 characters, required</mat-hint>
+                    <textarea
+                        class="textareainput"
+                        matInput
+                        formControlName="description"
+                        placeholder=""
+                        maxlength="1024"
+                        required
+                    >
                     </textarea>
-        <mat-error *ngIf="storyForm.controls.description.invalid && storyForm.controls.description.touched">
-          <mat-error
-            *ngIf="
+                    <mat-error *ngIf="storyForm.controls.description.invalid && storyForm.controls.description.touched">
+                        <mat-error
+                            *ngIf="
                                 storyForm.controls.description.hasError('required') ||
                                 storyForm.controls.description.hasError('whitespace')
                             "
-          >
-            Description field cannot be empty
-          </mat-error>
-          <mat-error *ngIf="storyForm.controls.description.hasError('maxlength')">
-            Description field cannot be longer than 1024 characters
-          </mat-error>
-        </mat-error>
-      </mat-form-field>
+                        >
+                            Description field cannot be empty
+                        </mat-error>
+                        <mat-error *ngIf="storyForm.controls.description.hasError('maxlength')">
+                            Description field cannot be longer than 1024 characters
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!--<div class="login-field">-->
+            <!--<input type='file' accept="image/x-png,image/gif,image/jpeg" (change)="onSelectFile($event)" multiple>-->
+            <!--</div>-->
+            <mat-card-actions class="story-btn">
+                <button class="storyBtnBtn" mat-raised-button>Create story</button>
+            </mat-card-actions>
+        </form>
     </div>
-    <div class="job-form-field">
-      <mat-form-field appearance="outline" class="grid-tile-field">
-        <mat-label>Job</mat-label>
-        <mat-select formControlName="job" required>
-          <mat-option *ngFor="let job of jobs" [value]="job">
-            {{ job.idea }}
-          </mat-option>
-        </mat-select>
-        <mat-hint>Select from a list</mat-hint>
-        <mat-error *ngIf="storyForm.controls.job.invalid && storyForm.controls.job.touched">
-          <mat-error
-            *ngIf="
-                                        storyForm.controls.job.hasError('required') ||
-                                        storyForm.controls.job.hasError('whitespace')
-                                    "
-          >
-            Job field cannot be empty
-          </mat-error>
-          <mat-error *ngIf="storyForm.controls.job.hasError('maxlength')">
-            Job field cannot be longer than 32 characters
-          </mat-error>
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <!--<div class="login-field">-->
-        <!--<input type='file' accept="image/x-png,image/gif,image/jpeg" (change)="onSelectFile($event)" multiple>-->
-    <!--</div>-->
-    <mat-card-actions class="story-btn">
-      <button class="storyBtnBtn" mat-raised-button>Create story</button>
-    </mat-card-actions>
-  </form>
-  </div>
 </mat-card>

@@ -3,7 +3,7 @@
   <p class="title-desc">Read the stories about good deeds </p>
 </div>
 <div class="create-div">
-  <button *ngIf="user()" mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
+    <button *ngIf="user()" mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
 </div>
 <div class="mat-elevation-z8 table-container">
     <mat-table [dataSource]="storiesData" multiTemplateDataRows>
