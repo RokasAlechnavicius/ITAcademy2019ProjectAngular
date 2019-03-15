@@ -6,8 +6,8 @@
 
 .create-job {
     padding: 5px 10px;
-    background-color: #FFC107;
-    color: #FFFFFF;
+    background-color: #ffc107;
+    color: #ffffff;
     font-weight: bolder;
 }
 
@@ -25,10 +25,11 @@
     padding: 0;
 }
 
-.detail-row, .expanded-row {
-  #imagecurtain{
-    transform: rotate(90deg);
-  }
+.detail-row,
+.expanded-row {
+    #imagecurtain {
+        transform: rotate(90deg);
+    }
 }
 
 .mat-footer-row,
@@ -38,10 +39,16 @@
 
 .element-row:not(.expanded-row):hover {
     background: #d5ffd1;
+    .join:disabled {
+        background: #d5ffd1;
+    }
 }
 
 .element-row:not(.expanded-row):active {
     background: #9eef99;
+    .join:disabled {
+        background: #9eef99;
+    }
 }
 
 .element-row {
@@ -54,10 +61,15 @@
 }
 
 .element-description {
-    width: 100%;
-    padding: 16px;
+    font-size: 120%;
+    width: 50%;
+    padding: 16px 16px 16px 50px;
     text-align: left;
     word-break: break-all;
+}
+
+.contact-person {
+    word-break: normal;
 }
 
 .mat-column-organisation {
@@ -73,6 +85,14 @@
 
 .mat-column-region {
     padding: 0 2%;
+}
+
+.mat-column-category {
+  padding: 0 2%;
+}
+
+.mat-column-date {
+  padding: 0 2%;
 }
 
 .mat-column-join {
@@ -97,32 +117,38 @@
 }
 
 mat-header-row {
-  background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 mat-header-cell {
-  color: #FFFFFF;
-  font-weight: bold;
-  font-size: medium;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .title-desc {
-  font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 img {
-  width: 30%;
-  height: 30%;
+    width: 30%;
+    height: 30%;
 }
 
-.table-button:hover, .join:hover {
-  background-color: #FFC107;
-  color: #FFFFFF;
+.table-button:hover,
+.join:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.join:disabled {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.38);
 }

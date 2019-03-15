@@ -41,13 +41,15 @@
         <ng-container matColumnDef="join">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <a
+                <button
+                    [disabled]="!(element.team.length < jobListOptions.maxParticipantsCount)"
                     mat-raised-button
-                    *ngIf="user() && element.team && element.team.length < 14"
+                    *ngIf="user() && element.team"
                     class="join"
                     (click)="joinJob(element); $event.stopPropagation()"
-                    >Join {{ element.team.length }}/{{ jobListOptions.maxParticipantsCount }}</a
                 >
+                    Join {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
+                </button>
             </mat-cell>
         </ng-container>
 
@@ -63,15 +65,17 @@
             <mat-cell class="expanded-color" *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
                 <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="element-description detail-text">
-                        <p><strong>Description: </strong></p>
+                        <p><strong>Idea: </strong> {{ element.idea }}</p>
                         <p>{{ element.description }}</p>
-                        <p><strong>Contacts: </strong></p>
-                        <p>Name: {{ element.contactName }}</p>
-                        <p>Phone: {{ element.phone }}</p>
-                        <p [hidden]="!element.email">Email: {{ element.email }}</p>
-                        <p [hidden]="!element.website">
-                            Website: <a href="http://{{ element.website }}">{{ element.website }}</a>
-                        </p>
+                        <div class="contact-person">
+                            <p>
+                                <strong>Contact person: </strong>{{ element.contactName }}, {{ element.phone }},
+                                <span [hidden]="!element.email"> {{ element.email }}, </span>
+                                <span [hidden]="!element.website">
+                                    <a href="http://{{ element.website }}"> {{ element.website }}</a>
+                                </span>
+                            </p>
+                        </div>
                         <a mat-raised-button (click)="openDialog(element)" class="table-button">Show participants</a>
                     </div>
                 </div>

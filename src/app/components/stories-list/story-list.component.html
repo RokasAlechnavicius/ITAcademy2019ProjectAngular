@@ -1,3 +1,7 @@
+<div>
+  <p class="title">STORIES</p>
+  <p class="title-desc">Read the stories about good deeds </p>
+</div>
 <div class="create-div">
   <button *ngIf="user()" mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
 </div>
@@ -19,7 +23,7 @@
         <ng-container matColumnDef="read">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <a mat-raised-button class="join" (click)="openStoryDetail(element)">read more</a>
+                <a mat-raised-button class="read" (click)="openStoryDetail(element)">read more</a>
             </mat-cell>
         </ng-container>
 

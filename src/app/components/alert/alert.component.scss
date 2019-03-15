@@ -20,17 +20,22 @@
 img {
     width: 10%;
     float: left;
-    padding-top: 3%;
-    padding-left: 1%;
+    margin: 2% 2%;
 }
 
 .img-success {
     width: 10%;
     float: left;
-    padding-top: 0;
-    padding-left: 3%;
+    margin: 2% 2%;
 }
 
 .alert-text {
     padding-top: 3%;
+}
+
+.mat-dialog-actions {
+    float: right;
+    mat-icon:hover {
+        cursor: pointer;
+    }
 }

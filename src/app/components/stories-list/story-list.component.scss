@@ -4,14 +4,28 @@
     text-align: left;
 }
 
+.title {
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: inherit;
+  margin: 0;
+}
+
+.title-desc {
+  font-family: 'Raleway', sans-serif;
+}
+
 .create-div {
     width: 80%;
     margin: 2% auto;
     display: flex;
-    padding: 1%;
 }
+
 .create-story {
     padding: 5px 10px;
+    background-color: #ffc107;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .mat-column-date {
@@ -28,6 +42,29 @@
     margin: 0 auto;
 }
 
+.read:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
 mat-row {
     padding: 1% 0;
+}
+
+mat-row:hover {
+    background: #d5ffd1;
+}
+
+mat-row:active {
+    background: #9eef99;
+}
+
+mat-header-row {
+    background-color: #4caf50;
+}
+
+mat-header-cell {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: medium;
 }
