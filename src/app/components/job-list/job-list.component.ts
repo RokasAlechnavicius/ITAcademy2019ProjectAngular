@@ -5,10 +5,10 @@ import { Job } from '../../models';
 import { MatDialog } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 const JOB_LIST_OPTIONS = {
-  maxParticipantsCount: 14
+    maxParticipantsCount: 14
 };
 
 @Component({
@@ -31,20 +31,25 @@ export class JobListComponent {
     isLoading = true;
     dialogRef;
 
-    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService, private router: Router) {
+    constructor(
+        private jobService: JobService,
+        public dialog: MatDialog,
+        private alertService: AlertService,
+        private router: Router
+    ) {
         this.getJobs();
     }
 
     getJobs() {
-      this.jobService.getJobList().subscribe(
-        value => {
-          this.jobsData = value;
-          this.isLoading = false;
-        },
-        error => {
-          this.isLoading = false;
-        }
-      );
+        this.jobService.getJobList().subscribe(
+            value => {
+                this.jobsData = value;
+                this.isLoading = false;
+            },
+            error => {
+                this.isLoading = false;
+            }
+        );
     }
 
     openDialog(job: Job): void {
@@ -62,12 +67,12 @@ export class JobListComponent {
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert('You have been succesfully added to the job', true);
-                window.scroll(0,0);
+                window.scroll(0, 0);
                 this.getJobs();
             },
             error => {
                 this.alertService.createErrorAlert(error.error.message);
-                window.scroll(0,0);
+                window.scroll(0, 0);
             }
         );
     }

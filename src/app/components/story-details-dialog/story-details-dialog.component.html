@@ -1,19 +1,19 @@
 <mat-icon class="close-icon" (click)="done()">
-  close
+    close
 </mat-icon>
-<h2 mat-dialog-title>Story of {{data.job.idea}}</h2>
+<h2 mat-dialog-title>Story of {{ data.job.idea }}</h2>
 
 <mat-dialog-content>
-  <h4><strong>Story:</strong></h4>
-  <p class="text">{{data.description}}</p>
-  <h4><strong>Team lead: </strong></h4>
-  <p *ngIf="data.job.organizator">{{ data.job.organizator.name }} {{data.job.organizator.surname}}</p>
-  <h4><strong>Participants: </strong></h4>
-  <ul>
-    <li *ngFor="let member of data.job.team">{{ member.name }} {{member.surname}}</li>
-  </ul>
+    <h4><strong>Story:</strong></h4>
+    <p class="text">{{ data.description }}</p>
+    <h4><strong>Team lead: </strong></h4>
+    <p *ngIf="data.job.organizator">{{ data.job.organizator.name }} {{ data.job.organizator.surname }}</p>
+    <h4><strong>Participants: </strong></h4>
+    <ul>
+        <li *ngFor="let member of data.job.team">{{ member.name }} {{ member.surname }}</li>
+    </ul>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-button class="button-done" (click)="done()">Done</button>
+    <button mat-button class="button-done" (click)="done()">Done</button>
 </mat-dialog-actions>

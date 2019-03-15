@@ -26,6 +26,6 @@ export class HomePageComponent implements OnInit {
     }
 
     scroll(el: HTMLElement) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }

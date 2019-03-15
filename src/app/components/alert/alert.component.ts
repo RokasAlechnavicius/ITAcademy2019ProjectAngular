@@ -22,6 +22,6 @@ export class AlertComponent implements OnInit {
     }
 
     toggle() {
-      this.showDialog = !this.showDialog;
+        this.showDialog = !this.showDialog;
     }
 }
