@@ -4,32 +4,29 @@
     width: 30%;
     height: 30%;
     border-radius: 5px;
-    margin: 2% auto;
+    margin: auto;
     padding: 0.5%;
 }
 
 .alert-success {
     background-color: #54fe784d;
     width: 30%;
-    height: 30%;
+    height: 50%;
     border-radius: 5px;
     font-size: 120%;
-    margin: 2% auto;
-    padding: 0.5%;
+    margin: auto;
 }
 
 img {
     width: 10%;
     float: left;
-    padding-top: 4%;
-    padding-left: 2%;
+    margin: 2% 2%;
 }
 
 .img-success {
     width: 10%;
     float: left;
-    padding-top: 0;
-    padding-left: 3%;
+    margin: 2% 2%;
 }
 
 .alert-text {
@@ -40,11 +37,5 @@ img {
     float: right;
     mat-icon:hover {
         cursor: pointer;
-    }
-}
-
-@media only screen and (max-width: 1080px) {
-    img {
-        display: none;
     }
 }

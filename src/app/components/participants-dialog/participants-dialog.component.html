@@ -1,19 +1,20 @@
+<div class="dialog-container">
 <mat-icon class="close-icon" (click)="done()">
-    close
+  close
 </mat-icon>
-<h2 mat-dialog-title>Participants</h2>
 
 <mat-dialog-content>
     <h4><strong>Team lead: </strong></h4>
-    <p [hidden]="!data.organizator">{{ data.organizator.name }} {{ data.organizator.surname }}</p>
+  <p [hidden]="!data.organizator">{{ data.organizator.name }} {{data.organizator.surname}}</p>
     <h4><strong>Participants: </strong></h4>
     <ul [hidden]="!data.team">
-        <li *ngFor="let participant of data.team; let i = index">
-            {{ i + 1 }} {{ participant.name }} {{ participant.surname }}
-        </li>
+      <li *ngFor="let participant of data.team; let i = index">
+        {{participant.name}} {{participant.surname}}
+      </li>
     </ul>
 </mat-dialog-content>
 
-<mat-dialog-actions>
-    <button mat-button class="button-done" (click)="done()">Done</button>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="button-done" (click)="done()">Close</button>
 </mat-dialog-actions>
+</div>

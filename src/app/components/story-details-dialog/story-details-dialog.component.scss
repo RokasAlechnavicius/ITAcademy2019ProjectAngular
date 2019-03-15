@@ -1,21 +1,27 @@
 .close-icon {
     float: right;
-    background-color: #caefb8;
     border-radius: 8px;
 }
 
 .close-icon:hover {
-    cursor: default;
+    cursor: pointer;
     float: right;
-    background-color: #9eef99;
-    border-radius: 8px;
 }
 
 .button-done {
-    display: flex;
     float: right;
 }
 
-.text {
+.button-done:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.dialog-container {
+    width: 100%;
+    margin: 2% auto;
+}
+
+mat-dialog-content {
     word-break: break-all;
 }
