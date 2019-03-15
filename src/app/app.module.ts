@@ -6,16 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatIconModule,
-    MatListModule,
-    MatNativeDateModule,
-    MatProgressBarModule,
-    MatSidenavModule,
-    MatToolbarModule
+  DateAdapter,
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatIconModule,
+  MatListModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatSidenavModule,
+  MatToolbarModule
 } from '@angular/material';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -88,4 +89,8 @@ import { StoryDetailsDialogComponent } from './components/story-details-dialog/s
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dateAdapter: DateAdapter<Date>) {
+    dateAdapter.setLocale('lt');
+  }
+}

@@ -1,6 +1,5 @@
 <div id="HomePageInfo">
     <div id="DeedsVideo">
-        <div class="video-title">Summer good deeds project!</div>
         <div class="video-container">
             <iframe
                 id="video"
@@ -12,6 +11,13 @@
                 allowfullscreen
             ></iframe>
         </div>
+      <!--<div class="topDiv">-->
+        <!--<a class="ct-btn-scroll ct-js-btn-scroll animated" (click)="scroll(target)"><img src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>-->
+      <div class="container">
+        <a data-scroll (click)="scroll(target)">
+          <div class="arrow" #target></div>
+        </a>
+      </div>
     </div>
     <div class="main-text">
         Volunteers were interested in who most needed their help in their communities, talked with elders,
@@ -22,7 +28,7 @@
         <img class="line-divider" src="assets/devider.png" />
     </div>
 
-    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="100">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="100" id="pepegasian">
         <mat-grid-tile [rowspan]="rowspanText">
             <img id="u40_img" class="img img-icon" src="assets/u40.png" />
             <span class="question-text">Who?</span>
