@@ -28,17 +28,22 @@ export class HomePageComponent implements OnInit {
         this.breakpoint = window.innerWidth <= 924 ? 1 : 3;
         this.colspan = window.innerWidth <= 924 ? 1 : 2;
         this.rowspanText = window.innerWidth <= 924 ? 2 : 1;
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 400) {
+            this.rowHeightHow = 165;
+            this.rowHeightWhen = 90;
+            this.rowHeightWho = 75;
+        } else if (window.innerWidth <= 600) {
             this.rowHeightHow = 140;
             this.rowHeightWhen = 100;
         } else if (window.innerWidth <= 924) {
             this.rowHeightHow = 100;
             this.rowHeightWhen = 80;
+            this.rowHeightWho = 60;
         } else {
             this.rowHeightHow = 250;
             this.rowHeightWhen = 225;
+            this.rowHeightWho = 200;
         }
-        this.rowHeightWho = window.innerWidth <= 924 ? 60 : 200;
     }
 
     scroll(el: HTMLElement) {
