@@ -5,14 +5,14 @@
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .title-desc {
-  font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .create-div {
@@ -21,25 +21,22 @@
     display: flex;
 }
 
+.mat-column-date {
+  flex: 0 0 15%;
+  align-content: center;
+}
+
+.mat-column-read {
+  flex: 0 0 100px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
 .create-story {
     padding: 5px 10px;
     background-color: #ffc107;
     color: #ffffff;
     font-weight: bolder;
-}
-
-.mat-column-date {
-    flex: 0 0 10%;
-}
-
-.mat-column-idea {
-    flex: 0 0 70%;
-    word-break: break-all;
-}
-
-.mat-column-read {
-    padding-left: 1%;
-    margin: 0 auto;
 }
 
 .read:hover {
@@ -67,4 +64,45 @@ mat-header-cell {
     color: #ffffff;
     font-weight: bold;
     font-size: medium;
+}
+
+@media only screen and (min-width: 1145px) {
+    .mat-column-date {
+        flex: 0 0 10%;
+    }
+
+    .mat-column-idea {
+        padding: 0 10px;
+        flex: 0 0 70%;
+        word-break: break-word;
+    }
+
+    .mat-column-read {
+        flex: 0 0 100px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .table-container {
+        width: 90%;
+        margin: 2% auto;
+        text-align: left;
+    }
+    .create-div {
+        width: 90%;
+        margin: 2% auto;
+        display: flex;
+    }
+    .mat-column-date {
+        flex: 0 0 15%;
+        padding-left: 10px;
+        align-content: center;
+    }
+    .mat-column-read {
+        flex: 0 0 100px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
 }
