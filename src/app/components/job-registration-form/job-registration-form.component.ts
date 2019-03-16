@@ -92,7 +92,6 @@ export class JobRegistrationFormComponent implements OnInit {
                 [
                     Validators.email,
                     Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength),
-                    Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(swedbank).lt$')
                 ]
             ],
             contactName: [
