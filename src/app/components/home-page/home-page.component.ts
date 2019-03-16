@@ -12,18 +12,33 @@ export class HomePageComponent implements OnInit {
     colspan = 2;
     rowspanText = 1;
     rowspanIcon = 1;
-    rowHeight = 225;
+    rowHeightHow: number;
+    rowHeightWho: number;
+    rowHeightWhen: number;
 
     ngOnInit() {
-        this.breakpoint = window.innerWidth <= 924 ? 1 : 3;
-        this.colspan = window.innerWidth <= 924 ? 1 : 2;
-        this.rowspanText = window.innerWidth <= 924 ? 2 : 1;
+        this.changeRowHeights();
     }
 
     onResize(event) {
-        this.breakpoint = event.target.innerWidth <= 924 ? 1 : 3;
+        this.changeRowHeights();
+    }
+
+    changeRowHeights() {
+        this.breakpoint = window.innerWidth <= 924 ? 1 : 3;
         this.colspan = window.innerWidth <= 924 ? 1 : 2;
         this.rowspanText = window.innerWidth <= 924 ? 2 : 1;
+        if (window.innerWidth <= 600) {
+            this.rowHeightHow = 140;
+            this.rowHeightWhen = 100;
+        } else if (window.innerWidth <= 924) {
+            this.rowHeightHow = 100;
+            this.rowHeightWhen = 80;
+        } else {
+            this.rowHeightHow = 250;
+            this.rowHeightWhen = 225;
+        }
+        this.rowHeightWho = window.innerWidth <= 924 ? 60 : 200;
     }
 
     scroll(el: HTMLElement) {

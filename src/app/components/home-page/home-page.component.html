@@ -28,7 +28,7 @@
         <img class="line-divider" src="assets/devider.png" />
     </div>
 
-    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="100" id="pepegasian">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightWho>
         <mat-grid-tile [rowspan]="rowspanText">
             <img id="u40_img" class="img img-icon" src="assets/u40.png" />
             <span class="question-text">Who?</span>
@@ -43,7 +43,7 @@
     <div class="divider inner-divider">
         <img class="line-divider" src="assets/devider.png" />
     </div>
-    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeight>
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightHow>
         <mat-grid-tile [rowspan]="rowspanIcon">
             <img id="u42_img" class="img img-icon" src="assets/u42.png" />
             <span class="question-text">How?</span>
@@ -61,7 +61,7 @@
         <img class="line-divider" src="assets/devider.png" />
     </div>
 
-    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="150">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightWhen>
         <mat-grid-tile>
             <img id="u43_img" class="img img-icon" src="assets/u43.png" />
             <span class="question-text">When?</span>
