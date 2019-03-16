@@ -42,13 +42,24 @@
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <button
-                    [disabled]="!(element.team.length < jobListOptions.maxParticipantsCount) || element.organizator.email == userEmail()"
+                    [disabled]="
+                        !(element.team.length < jobListOptions.maxParticipantsCount) ||
+                        element.organizator.email == userEmail() ||
+                        element.isUserInTeam == true
+                    "
                     mat-raised-button
-                    *ngIf="user() && element.team"
+                    *ngIf="user() && element.team && element.isUserInTeam == false"
                     class="join"
                     (click)="joinJob(element); $event.stopPropagation()"
                 >
                     Join {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
+                </button>
+                <button
+                mat-raised-button
+                class="join"
+                *ngIf="user() && element.team && element.organizator.email != userEmail() && element.isUserInTeam == true"
+                (click)="leaveJob(element); $event.stopPropagation()">
+                  Leave {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
                 </button>
             </mat-cell>
         </ng-container>

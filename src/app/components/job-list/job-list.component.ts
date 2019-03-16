@@ -76,4 +76,18 @@ export class JobListComponent {
             }
         );
     }
+
+    leaveJob(job: Job) {
+    this.jobService.leaveJob(job.id).subscribe(
+      success => {
+        this.alertService.createSuccessAlert('You have successfully left the job');
+        window.scroll(0, 0);
+        this.getJobs();
+      },
+      error => {
+        this.alertService.createErrorAlert(error.error.message);
+        window.scroll(0, 0);
+      }
+    );
+  }
 }

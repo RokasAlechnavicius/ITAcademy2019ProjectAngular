@@ -15,7 +15,7 @@ export class JobService {
     }
 
     getJobList() {
-        return this.http.get<Job[]>(HEROKU_URL + '/jobs/all');
+        return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/all');
     }
 
     getStoryJobList() {
@@ -24,5 +24,9 @@ export class JobService {
 
     joinJob(id: number) {
         return this.http.post(HEROKU_URL + '/job/join', id);
+    }
+
+    leaveJob(id: number) {
+      return this.http.post(HEROKU_URL + '/job/leave', id);
     }
 }

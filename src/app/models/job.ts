@@ -15,4 +15,5 @@ export interface Job {
     organizator?: User;
     team?: User[];
     hashtags?: string[];
+    isUserInTeam?: boolean;
 }
