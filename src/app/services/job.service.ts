@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Job } from '../models';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 const HEROKU_URL = 'https://team-test-backend.herokuapp.com';
 
 @Injectable({
@@ -8,7 +8,6 @@ const HEROKU_URL = 'https://team-test-backend.herokuapp.com';
 })
 export class JobService {
     constructor(private http: HttpClient) {}
-    private options = { headers: new HttpHeaders().set('Content-Type', 'text/html') };
 
     addJob(job: Job) {
         return this.http.post(HEROKU_URL + '/job', job);
@@ -27,6 +26,6 @@ export class JobService {
     }
 
     leaveJob(id: number) {
-      return this.http.post(HEROKU_URL + '/job/leave', id);
+      return this.http.post('https://response-test-backend.herokuapp.com' + '/job/leave', id);
     }
 }
