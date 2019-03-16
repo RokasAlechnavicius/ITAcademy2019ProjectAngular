@@ -5,7 +5,6 @@ import { Job } from '../../models';
 import { MatDialog } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
-import { Router } from '@angular/router';
 
 const JOB_LIST_OPTIONS = {
     maxParticipantsCount: 14
