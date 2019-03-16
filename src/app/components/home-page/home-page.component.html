@@ -43,7 +43,7 @@
     <div class="divider inner-divider">
         <img class="line-divider" src="assets/devider.png" />
     </div>
-    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="225">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeight>
         <mat-grid-tile [rowspan]="rowspanIcon">
             <img id="u42_img" class="img img-icon" src="assets/u42.png" />
             <span class="question-text">How?</span>
