@@ -1,15 +1,9 @@
 .close-icon {
     float: right;
-    border-radius: 8px;
 }
 
 .close-icon:hover {
     cursor: pointer;
-    float: right;
-}
-
-.button-done {
-    float: right;
 }
 
 .button-done:hover {
@@ -17,11 +11,23 @@
     color: #ffffff;
 }
 
+.button-done {
+    background-color: #ffffff;
+    margin-right: 1%;
+}
+
 .dialog-container {
-    width: 100%;
+    width: 96%;
     margin: 2% auto;
 }
 
 mat-dialog-content {
     word-break: break-all;
+    margin: 2% auto;
+}
+
+mat-dialog-title {
+  word-break: break-all;
+  font-size: 120%;
+  font-weight: bold;
 }

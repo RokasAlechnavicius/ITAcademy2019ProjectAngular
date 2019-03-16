@@ -92,7 +92,7 @@
         </mat-row>
         <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
     </mat-table>
-    <div class="spinner-container" *ngIf="isLoading">
+    <div *ngIf="isLoading">
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
 </div>
