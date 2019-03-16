@@ -16,6 +16,7 @@ export class UserAuthenticationService {
                 if (user) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     localStorage.setItem('currentUserToken', JSON.stringify(user.headers.get('Authorization')));
+                    localStorage.setItem('currentUserEmail', email);
                 }
                 return user;
             })
@@ -25,6 +26,7 @@ export class UserAuthenticationService {
     logout() {
         localStorage.removeItem('currentUser');
         localStorage.removeItem('currentUserToken');
+        localStorage.removeItem('currentUserEmail');
     }
 
     registerUser(user: User) {

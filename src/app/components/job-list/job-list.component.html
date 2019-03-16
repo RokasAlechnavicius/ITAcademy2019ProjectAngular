@@ -44,6 +44,7 @@
                 <a
                     mat-raised-button
                     *ngIf="user() && element.team && element.team.length < 14"
+                    [disabled]="element.organizator.email == userEmail()"
                     class="join"
                     (click)="joinJob(element); $event.stopPropagation()"
                     >Join {{ element.team.length }}/{{ jobListOptions.maxParticipantsCount }}</a

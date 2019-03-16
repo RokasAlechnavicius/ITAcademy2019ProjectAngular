@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
@@ -35,7 +35,6 @@ export class JobListComponent {
         private jobService: JobService,
         public dialog: MatDialog,
         private alertService: AlertService,
-        private router: Router
     ) {
         this.getJobs();
     }
@@ -61,12 +60,14 @@ export class JobListComponent {
     user() {
         return localStorage.getItem('currentUser');
     }
+    userEmail() {
+        return localStorage.getItem('currentUserEmail');
+    }
 
     joinJob(job: Job) {
-        console.log(job);
         this.jobService.joinJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have been succesfully added to the job', true);
+                this.alertService.createSuccessAlert('You have been succesfully added to the job');
                 window.scroll(0, 0);
                 this.getJobs();
             },
