@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
 
 const JOB_LIST_OPTIONS = {
-    maxParticipantsCount: 14
+    maxParticipantsCount: 14,
+    itemsPerPage: 10
 };
 
 @Component({
@@ -22,17 +23,23 @@ const JOB_LIST_OPTIONS = {
         ])
     ]
 })
-export class JobListComponent {
+export class JobListComponent implements OnInit {
     jobListOptions = JOB_LIST_OPTIONS;
-    jobsData: Job[];
+    jobsData = new MatTableDataSource<Job>();
     columnsToDisplay;
     expandedElement: Job;
     isLoading = true;
     dialogRef;
 
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+
     constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
         this.getJobs();
         this.adjustTable(window);
+    }
+
+    ngOnInit() {
+        this.jobsData.paginator = this.paginator;
     }
 
     adjustTable(event) {
@@ -51,7 +58,7 @@ export class JobListComponent {
     getJobs() {
         this.jobService.getJobList().subscribe(
             value => {
-                this.jobsData = value;
+                this.jobsData.data = value;
                 this.isLoading = false;
             },
             error => {
@@ -88,16 +95,16 @@ export class JobListComponent {
     }
 
     leaveJob(job: Job) {
-    this.jobService.leaveJob(job.id).subscribe(
-      success => {
-        this.alertService.createSuccessAlert('You have successfully left the job');
-        window.scroll(0, 0);
-        this.getJobs();
-      },
-      error => {
-        this.alertService.createErrorAlert(error.error.message);
-        window.scroll(0, 0);
-      }
-    );
-  }
+        this.jobService.leaveJob(job.id).subscribe(
+            success => {
+                this.alertService.createSuccessAlert('You have successfully left the job');
+                window.scroll(0, 0);
+                this.getJobs();
+            },
+            error => {
+                this.alertService.createErrorAlert(error.error.message);
+                window.scroll(0, 0);
+            }
+        );
+    }
 }

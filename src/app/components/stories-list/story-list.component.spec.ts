@@ -2,11 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StoryListComponent } from './story-list.component';
 import {
-    MatButtonModule,
-    MatDialogModule,
-    MatIconModule,
-    MatProgressBarModule,
-    MatTableModule
+  MatButtonModule,
+  MatDialogModule,
+  MatIconModule, MatPaginatorModule,
+  MatProgressBarModule,
+  MatTableModule
 } from '@angular/material';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -25,7 +25,8 @@ describe('StoryListComponent', () => {
                 MatProgressBarModule,
                 MatIconModule,
                 MatDialogModule,
-                RouterTestingModule
+                RouterTestingModule,
+                MatPaginatorModule
             ]
         }).compileComponents();
     }));

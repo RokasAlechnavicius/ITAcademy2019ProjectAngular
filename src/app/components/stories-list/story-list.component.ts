@@ -25,7 +25,7 @@ export class StoryListComponent implements OnInit {
     constructor(private storyService: StoryService, public dialog: MatDialog) {
         this.storyService.getStoryList().subscribe(
             value => {
-                this.storiesData = value;
+                this.storiesData.data = value;
                 this.isLoading = false;
             },
             error => {
