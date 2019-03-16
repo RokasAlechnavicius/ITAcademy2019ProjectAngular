@@ -25,17 +25,27 @@ const JOB_LIST_OPTIONS = {
 export class JobListComponent {
     jobListOptions = JOB_LIST_OPTIONS;
     jobsData: Job[];
-    columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date', 'join'];
+    columnsToDisplay;
     expandedElement: Job;
     isLoading = true;
     dialogRef;
 
-    constructor(
-        private jobService: JobService,
-        public dialog: MatDialog,
-        private alertService: AlertService,
-    ) {
+    constructor(private jobService: JobService, public dialog: MatDialog, private alertService: AlertService) {
         this.getJobs();
+        this.adjustTable(window);
+    }
+
+    adjustTable(event) {
+        if (window.innerWidth <= 900) {
+            this.columnsToDisplay = ['expand', 'idea'];
+        } else if (window.innerWidth <= 1240) {
+            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'date'];
+        } else {
+            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date'];
+        }
+        if (this.user()) {
+            this.columnsToDisplay.push('join');
+        }
     }
 
     getJobs() {

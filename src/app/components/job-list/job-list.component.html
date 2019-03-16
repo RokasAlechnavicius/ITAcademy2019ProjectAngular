@@ -6,7 +6,7 @@
     <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
 </div>
 <div class="table-container mat-elevation-z8">
-    <mat-table [dataSource]="jobsData" multiTemplateDataRows>
+    <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)">
         <!-- Organization Column -->
         <ng-container matColumnDef="organisation">
             <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
@@ -42,7 +42,10 @@
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <button
-                    [disabled]="!(element.team.length < jobListOptions.maxParticipantsCount) || element.organizator.email == userEmail()"
+                    [disabled]="
+                        !(element.team.length < jobListOptions.maxParticipantsCount) ||
+                        element.organizator.email == userEmail()
+                    "
                     mat-raised-button
                     *ngIf="user() && element.team"
                     class="join"
@@ -66,6 +69,13 @@
                 <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="element-description detail-text">
                         <p><strong>Idea: </strong> {{ element.idea }}</p>
+                        <div id="extra-in-description">
+                            <p>
+                                <strong>Date: </strong>{{ element.date }};<strong>  Location: </strong
+                                >{{ element.region }};
+                            </p>
+                            <p><strong> Category: </strong>{{ element.category }}</p>
+                        </div>
                         <p>{{ element.description }}</p>
                         <div class="contact-person">
                             <p>
