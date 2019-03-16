@@ -39,10 +39,16 @@
 
 .element-row:not(.expanded-row):hover {
     background: #d5ffd1;
+    .join:disabled {
+        background: #d5ffd1;
+    }
 }
 
 .element-row:not(.expanded-row):active {
     background: #9eef99;
+    .join:disabled {
+        background: #9eef99;
+    }
 }
 
 .element-row {
@@ -55,10 +61,15 @@
 }
 
 .element-description {
-    width: 100%;
-    padding: 16px;
+    font-size: 120%;
+    width: 50%;
+    padding: 16px 16px 16px 50px;
     text-align: left;
     word-break: break-all;
+}
+
+.contact-person {
+    word-break: normal;
 }
 
 .mat-column-organisation {
@@ -74,6 +85,14 @@
 
 .mat-column-region {
     padding: 0 2%;
+}
+
+.mat-column-category {
+  padding: 0 2%;
+}
+
+.mat-column-date {
+  padding: 0 2%;
 }
 
 .mat-column-join {
@@ -127,4 +146,9 @@ img {
 .join:hover {
     background-color: #ffc107;
     color: #ffffff;
+}
+
+.join:disabled {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.38);
 }

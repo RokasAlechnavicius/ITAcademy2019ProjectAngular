@@ -33,7 +33,7 @@ h4 {
     font-weight: bold;
     float: left;
     padding-right: 1%;
-    padding-left: 2%;
+    padding-left: 10%;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
     font-size: x-large;
 }
@@ -89,7 +89,7 @@ mat-grid-list {
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 973px) {
+@media only screen and (max-width: 1020px) {
     mat-grid-list {
         padding-top: 0;
     }
@@ -99,7 +99,16 @@ mat-grid-list {
     }
 
     .text-block {
-        text-align: center;
+      text-align: center;
+      font-size: medium;
+    }
+
+    .main-text{
+      font-size: medium;
+    }
+
+    .question-text {
+      font-size: x-large;
     }
 }
 
@@ -125,4 +134,8 @@ mat-grid-list {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#u43_img {
+  margin-left: 7%;
 }

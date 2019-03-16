@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AlertComponent } from './alert.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatIconModule } from '@angular/material';
 
 describe('AlertComponent', () => {
     let component: AlertComponent;
@@ -11,7 +12,7 @@ describe('AlertComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [AlertComponent],
-            imports: [RouterTestingModule, HttpClientTestingModule]
+            imports: [RouterTestingModule, HttpClientTestingModule, MatIconModule]
         }).compileComponents();
     }));
 
