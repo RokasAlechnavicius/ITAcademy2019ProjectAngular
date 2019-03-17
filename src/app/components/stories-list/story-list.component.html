@@ -33,4 +33,5 @@
     <div class="spinner-container" *ngIf="isLoading">
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
+  <mat-paginator [pageSize]="storyListOptions.itemsPerPage" showFirstLastButtons></mat-paginator>
 </div>

@@ -1,29 +1,40 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { StoryService } from '../../services/story.service';
 import { Story } from '../../models/story';
 import { StoryDetailsDialogComponent } from '../story-details-dialog/story-details-dialog.component';
+
+const STORY_LIST_OPTIONS = {
+    itemsPerPage: 10
+};
 
 @Component({
     selector: 'app-stories-list',
     templateUrl: './story-list.component.html',
     styleUrls: ['./story-list.component.scss']
 })
-export class StoryListComponent {
-    storiesData: Story[];
+export class StoryListComponent implements OnInit {
+    storyListOptions = STORY_LIST_OPTIONS;
+    storiesData = new MatTableDataSource<Story>();
     columnsToDisplay = ['date', 'idea', 'read'];
     isLoading = true;
+
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor(private storyService: StoryService, public dialog: MatDialog) {
         this.storyService.getStoryList().subscribe(
             value => {
-                this.storiesData = value;
+                this.storiesData.data = value;
                 this.isLoading = false;
             },
             error => {
                 this.isLoading = false;
             }
         );
+    }
+
+    ngOnInit() {
+        this.storiesData.paginator = this.paginator;
     }
 
     user() {
