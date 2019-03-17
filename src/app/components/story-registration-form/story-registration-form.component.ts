@@ -14,7 +14,7 @@ import { AlertService } from '../../services/alert.service';
 export class StoryRegistrationFormComponent implements OnInit {
     storyForm: FormGroup;
     jobs: Job[];
-    // selectedFiles: File[] = [];
+    base64textString = [];
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
@@ -41,11 +41,12 @@ export class StoryRegistrationFormComponent implements OnInit {
         this.storyForm = this.formBuilder.group({
             description: ['', [Validators.required, Validators.maxLength(1024), this.noWhiteSpaceValidator]],
             job: ['', Validators.required],
-            images: []
+            images: [this.base64textString]
         });
     }
 
     submitForm() {
+        console.log(this.storyForm.value);
         this.storyService.addStory(this.storyForm.value).subscribe(
             data => {
                 this.alertService.createSuccessAlert('A new story has been created', true);
@@ -56,12 +57,18 @@ export class StoryRegistrationFormComponent implements OnInit {
             }
         );
     }
+    onUploadChange(event: any) {
+        if (event.target.files.length) {
+            for (const file of event.target.files) {
+                const reader = new FileReader();
+                reader.onload = this.handleReaderLoaded.bind(this);
+                reader.readAsBinaryString(file);
+            }
+        }
+    }
 
-    // onSelectFile(event) {
-    //     if (event.target.files.length) {
-    //         for (let i = 0; i < event.target.files.length; i++) {
-    //             this.selectedFiles.push(<File>event.target.files[i]);
-    //         }
-    //     }
-    // }
+
+    handleReaderLoaded(e) {
+        this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
+    }
 }
