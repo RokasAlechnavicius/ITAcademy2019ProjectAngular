@@ -38,9 +38,10 @@
 .submit-event-register-button {
     width: 15%;
     min-width: 100px;
-    margin-left: 25%;
     background-color: #008000;
     color: #ffffff;
+    float: right;
+    margin-right: 7%;
 }
 
 input::-webkit-outer-spin-button,
