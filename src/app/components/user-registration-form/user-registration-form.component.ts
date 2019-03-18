@@ -12,7 +12,7 @@ import { first } from 'rxjs/operators';
 const USER_REGISTRATION_FORM_OPTIONS = {
     nameMaxLength: 32,
     surnameMaxLength: 64,
-    emailMaxLength: 64,
+    emailMaxLength: 128,
     regionMaxLength: 64,
     passwordMaxLength: 32,
     passwordMinLength: 7
@@ -29,6 +29,8 @@ export class UserRegistrationFormComponent implements OnInit {
     loading = false;
     submitted = false;
     regions = regionsData.regions;
+    hidePassword = true;
+    hideRepeatPassword = true;
     breakpoint: number;
     constructor(
         private formBuilder: FormBuilder,
@@ -39,14 +41,11 @@ export class UserRegistrationFormComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.breakpoint = window.innerWidth <= 1500 ? 1 : 2;
+        this.breakpoint = window.innerWidth <= 1500 ? 1 : 1;
         this.createForm();
         this.userAuthenticationService.logout();
     }
 
-    onResize(event) {
-        this.breakpoint = event.target.innerWidth <= 1500 ? 1 : 2;
-    }
 
     public noWhiteSpaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;
@@ -80,16 +79,11 @@ export class UserRegistrationFormComponent implements OnInit {
                         Validators.email,
                         Validators.maxLength(USER_REGISTRATION_FORM_OPTIONS.emailMaxLength),
                         this.noWhiteSpaceValidator,
-                        Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(swedbank).lt$')
+                        Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(darboviete).lt$')
                     ]
                 ],
                 region: [
-                    '',
-                    [
-                        Validators.required,
-                        Validators.maxLength(USER_REGISTRATION_FORM_OPTIONS.regionMaxLength),
-                        this.noWhiteSpaceValidator
-                    ]
+                    'Regionas'
                 ],
                 password: [
                     '',

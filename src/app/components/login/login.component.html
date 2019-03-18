@@ -1,10 +1,9 @@
+<p class="title">Login</p>
 <mat-card class="authentication-card">
-    <mat-card-title>Summer Good Deeds</mat-card-title>
-    <mat-card-subtitle>Login</mat-card-subtitle>
     <div class="login-fields">
         <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
             <div class="login-field">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="mat-login-field">
                     <mat-label>Email</mat-label>
                     <input matInput type="email" formControlName="email" />
                     <mat-error *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">
@@ -13,7 +12,7 @@
                 </mat-form-field>
             </div>
             <div class="login-field">
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="mat-login-field">
                     <mat-label>Password</mat-label>
                     <input matInput type="password" formControlName="password" />
                     <mat-error
@@ -26,10 +25,10 @@
             </div>
             <div>
                 <div class="create-account-btn">
-                    <button type="button" routerLink="/register" mat-raised-button>Register</button>
+                  <button class="loginBtnBtn" [disabled]="!loginForm.valid" mat-raised-button>Login</button>
                 </div>
                 <mat-card-actions class="login-btn">
-                    <button class="loginBtnBtn" [disabled]="!loginForm.valid" mat-raised-button>Login</button>
+                  <button routerLink="/register" mat-raised-button>Register</button>
                 </mat-card-actions>
             </div>
         </form>

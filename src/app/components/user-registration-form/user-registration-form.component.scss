@@ -3,30 +3,40 @@
     color: #ffffff;
 }
 
+.title {
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: inherit;
+  margin: 0;
+}
+
 .register-btn {
     position: absolute;
     right: 0;
-    padding-right: 20%;
+    padding-right: 8%;
     color: #008000;
 }
 
 .register-form-field {
-    width: 110%;
+    width: 90%;
     min-width: 200px;
+    padding: 5px;
 }
 
 .authentication-card {
-    width: 35%;
-    min-width: 300px;
+    width: 40%;
+    min-width: 250px;
     min-height: 350px;
     padding-top: 2%;
     padding-bottom: 5%;
     display: flex;
     flex-direction: column;
     margin: 1% auto auto;
-    border: 1.5px solid #008000;
+    border: none;
     border-radius: 5%;
-    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+    transition: none !important;
+    box-shadow: none !important;
+
 }
 
 @media screen and (max-width: 1400px) {
