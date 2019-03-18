@@ -6,6 +6,7 @@ import { MatCardModule, MatGridListModule, MatInputModule, MatSelectModule } fro
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('UserRegistrationFormComponent', () => {
     let component: UserRegistrationFormComponent;
@@ -23,7 +24,8 @@ describe('UserRegistrationFormComponent', () => {
                 MatSelectModule,
                 HttpClientTestingModule,
                 BrowserAnimationsModule,
-                MatGridListModule
+                MatGridListModule,
+                MatIconModule
             ]
         }).compileComponents();
     }));
