@@ -2,6 +2,7 @@
     width: 90%;
     margin: 2% auto;
     display: flex;
+    justify-content: flex-end;
 }
 
 .create-job {
@@ -17,8 +18,19 @@
     text-align: left;
 }
 
+mat-table {
+    font-size: 120%;
+    line-height: 150%;
+    color: #222;
+    word-break: break-word;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
+}
+
 .mat-row {
-    padding: 1% 0;
+    padding-top: 4px;
 }
 
 .detail-row:not(.expanded-row) {
@@ -32,9 +44,15 @@
     }
 }
 
+.detail-row {
+    background-color: #f5f5f5;
+    border: 1px solid #eeeeee;
+}
+
 #imagecurtain {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
 }
 
 .mat-footer-row,
@@ -68,27 +86,18 @@
 .element-description {
     font-size: 120%;
     width: 50%;
-    padding: 16px 16px 30px 50px;
+    padding: 16px 16px 0px 50px;
     text-align: left;
-    word-break: break-word;
 }
 
-.contact-person {
-    word-break: break-word;
-}
-
-.mat-column-organisation {
-    flex: 0 0 20%;
-    padding-right: 10px;
-    word-break: break-word;
+.mat-column-idea {
+    padding: 0 2%;
+    font-size: 18px;
 }
 
 .mat-column-region {
     padding: 0 2%;
-}
-
-.mat-column-category {
-    padding: 0 2%;
+    flex: 0 0 15%;
 }
 
 .mat-column-date {
@@ -96,8 +105,12 @@
 }
 
 .mat-column-join {
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
     padding: 0 2%;
-    flex: 0 0 100px;
+    flex: 0 0 80px;
+
 }
 
 .mat-column-expand {
@@ -131,6 +144,7 @@ mat-header-cell {
 
 .title-desc {
     font-family: 'Raleway', sans-serif;
+    margin-top: -4px;
 }
 
 img {
@@ -144,50 +158,32 @@ img {
     color: #ffffff;
 }
 
+.button-div {
+    width: 100%;
+    float: right;
+}
+
+#participants-button {
+    float: right;
+    margin: 0 2px 20px 0;
+}
+
 .join:disabled {
     background-color: #ffffff;
     color: rgba(0, 0, 0, 0.38);
 }
 
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 900px) {
     #extra-in-description {
         display: none;
     }
     .mat-column-idea {
         padding: 0 2%;
-        flex: 0 0 30%;
+        flex: 0 0 45%;
         word-break: break-word;
     }
-}
-
-@media only screen and (max-width: 900px) {
-    .element-description {
-        width: 100%;
-        padding: 16px 16px 30px 16px;
-    }
-    .mat-column-expand {
-        padding: 0 10px;
-    }
-    .mat-column-idea {
-        padding-right: 10px;
-        word-break: break-word;
-    }
-    .mat-row {
-        min-height: 20px;
-    }
-    .mat-row {
-      padding: 2% 0;
-    }
-    .mat-footer-row,
-    .mat-row {
-        min-height: 0;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .mat-column-idea {
-        flex: 0 0 30%;
-        padding-right: 10px;
-        word-break: break-word;
+    .mat-column-region {
+        padding: 0 2%;
+        flex: 0 0 15%;
     }
 }

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-participants-dialog',
@@ -9,11 +10,22 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 export class ParticipantsDialogComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<ParticipantsDialogComponent>,
+        private router: Router,
         @Inject(MAT_DIALOG_DATA) public data: any
     ) {}
 
-    done(): void {
-        this.dialogRef.close();
+    join(): void {
+        if (!localStorage.getItem('currentUser')) {
+            this.router.navigate(['/login']);
+            this.dialogRef.close({ join: false, job: this.data });
+        } else {
+            this.dialogRef.close({ join: true, job: this.data });
+        }
     }
+
+    done(): void {
+        this.dialogRef.close({ join: false, job: this.data });
+    }
+
     ngOnInit() {}
 }
