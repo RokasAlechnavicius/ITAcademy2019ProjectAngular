@@ -45,10 +45,8 @@ export class JobListComponent implements OnInit {
     adjustTable(event) {
         if (window.innerWidth <= 900) {
             this.columnsToDisplay = ['expand', 'idea'];
-        } else if (window.innerWidth <= 1240) {
-            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'date'];
         } else {
-            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date'];
+            this.columnsToDisplay = ['expand', 'idea', 'region', 'date'];
         }
         if (this.user()) {
             this.columnsToDisplay.push('join');
@@ -72,7 +70,14 @@ export class JobListComponent implements OnInit {
             width: '30%',
             data: job
         });
+
+        this.dialogRef.afterClosed().subscribe(result => {
+            if (result.join) {
+                this.joinJob(result.job);
+            }
+        });
     }
+
     user() {
         return localStorage.getItem('currentUser');
     }
