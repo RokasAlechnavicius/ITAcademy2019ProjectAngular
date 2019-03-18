@@ -13,23 +13,29 @@
 
 .title-desc {
     font-family: 'Raleway', sans-serif;
+    margin-top: -4px;
 }
 
 .create-div {
     width: 70%;
     margin: 2% auto;
     display: flex;
+    justify-content: flex-end;
+}
+
+.mat-column-idea {
+    font-size: 18px;
 }
 
 .mat-column-date {
-  flex: 0 0 15%;
-  align-content: center;
+    flex: 0 0 15%;
+    align-content: center;
 }
 
 .mat-column-read {
-  flex: 0 0 100px;
-  padding: 0 10px;
-  margin: 0 auto;
+    flex: 0 0 100px;
+    padding: 0 10px;
+    margin: 0 auto;
 }
 
 .create-story {
@@ -42,6 +48,17 @@
 .read:hover {
     background-color: #ffc107;
     color: #ffffff;
+}
+
+mat-table {
+    font-size: 120%;
+    line-height: 150%;
+    color: #222;
+    word-break: break-word;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
 }
 
 mat-row {

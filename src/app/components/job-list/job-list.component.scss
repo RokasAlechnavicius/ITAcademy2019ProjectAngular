@@ -1,5 +1,5 @@
 .create-div {
-    width: 90%;
+    width: 70%;
     margin: 2% auto;
     display: flex;
     justify-content: flex-end;
@@ -12,9 +12,8 @@
     font-weight: bolder;
 }
 
-
 .table-container {
-    width: 90%;
+    width: 70%;
     margin: 2% auto;
     text-align: left;
 }
@@ -111,7 +110,6 @@ mat-table {
     line-height: 0;
     padding: 0 2%;
     flex: 0 0 80px;
-
 }
 
 .mat-column-expand {
@@ -119,7 +117,17 @@ mat-table {
 }
 
 .join {
-    margin: 4px 0;
+    margin: 4px 0 2px 0;
+}
+
+.leave {
+    margin: 4px 0 2px 0;
+}
+
+.leave:hover {
+  margin: 4px 0 2px 0;
+  cursor: pointer;
+  background-color: #d71b0d;
 }
 
 .expand-icon:hover {
