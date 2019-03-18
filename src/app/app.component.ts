@@ -32,4 +32,8 @@ export class AppComponent {
     user() {
         return localStorage.getItem('currentUser');
     }
+
+    admin() {
+        return localStorage.getItem('currentAdmin');
+    }
 }

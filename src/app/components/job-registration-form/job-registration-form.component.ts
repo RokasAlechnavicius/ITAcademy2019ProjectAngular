@@ -87,13 +87,7 @@ export class JobRegistrationFormComponent implements OnInit {
                     this.noWhiteSpaceValidator
                 ]
             ],
-            email: [
-                '',
-                [
-                    Validators.email,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength),
-                ]
-            ],
+            email: ['', [Validators.email, Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength)]],
             contactName: [
                 '',
                 [

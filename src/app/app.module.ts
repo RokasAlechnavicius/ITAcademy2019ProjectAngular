@@ -6,17 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-  DateAdapter,
-  MatButtonModule,
-  MatCardModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatNativeDateModule, MatPaginatorModule,
-  MatProgressBarModule,
-  MatSidenavModule,
-  MatToolbarModule
+    DateAdapter,
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatToolbarModule
 } from '@angular/material';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';

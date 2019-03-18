@@ -56,8 +56,13 @@
                 </mat-form-field>
             </div>
             <div class="login-field">
-            <input type='file' accept="image/x-png,image/gif,image/jpeg" (change)="onUploadChange($event)" multiple>
-              <p>{{base64textString.length}}</p>
+                <input
+                    type="file"
+                    accept="image/x-png,image/gif,image/jpeg"
+                    (change)="onUploadChange($event)"
+                    multiple
+                />
+                <p>{{ base64textString.length }}</p>
             </div>
             <mat-card-actions class="story-btn">
                 <button class="storyBtnBtn" [disabled]="!storyForm.valid" mat-raised-button>Create story</button>

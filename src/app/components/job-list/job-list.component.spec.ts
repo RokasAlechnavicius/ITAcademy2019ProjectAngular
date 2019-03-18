@@ -2,7 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobListComponent } from './job-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import {MatButtonModule, MatDialogModule, MatIconModule, MatPaginatorModule, MatProgressBarModule} from '@angular/material';
+import {
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatProgressBarModule
+} from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('JobListComponent', () => {
