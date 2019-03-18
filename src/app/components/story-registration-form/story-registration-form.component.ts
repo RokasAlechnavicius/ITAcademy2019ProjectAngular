@@ -15,6 +15,7 @@ export class StoryRegistrationFormComponent implements OnInit {
     storyForm: FormGroup;
     jobs: Job[];
     base64textString = [];
+    invalidFileNames = [];
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
@@ -60,13 +61,24 @@ export class StoryRegistrationFormComponent implements OnInit {
     onUploadChange(event: any) {
         if (event.target.files.length) {
             for (const file of event.target.files) {
-                const reader = new FileReader();
-                reader.onload = this.handleReaderLoaded.bind(this);
-                reader.readAsBinaryString(file);
+                if (file.size / 1024 / 1024 < 4 && file.type.includes('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = this.handleReaderLoaded.bind(this);
+                    reader.readAsBinaryString(file);
+                } else {
+                    this.invalidFileNames.push(file.name + ' ');
+                }
+            }
+            if (this.invalidFileNames.length > 0) {
+                this.storyForm.controls.images.setErrors({ incorrect: true });
+                this.alertService.createErrorAlert(
+                    'These files are larger than 4Mb or not a valid image format: ' + this.invalidFileNames
+                );
+            } else {
+                this.storyForm.controls.images.setErrors(null);
             }
         }
     }
-
 
     handleReaderLoaded(e) {
         this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
