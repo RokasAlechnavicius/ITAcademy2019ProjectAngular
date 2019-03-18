@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JobService } from '../../services/job.service';
@@ -24,6 +24,8 @@ export class StoryRegistrationFormComponent implements OnInit {
         private storyService: StoryService,
         private alertService: AlertService
     ) {}
+
+  @ViewChild('uploadEl') uploadElRef: ElementRef
 
     ngOnInit() {
         this.createForm();
@@ -59,6 +61,7 @@ export class StoryRegistrationFormComponent implements OnInit {
         );
     }
     onUploadChange(event: any) {
+        console.log(this.base64textString)
         if (event.target.files.length) {
             for (const file of event.target.files) {
                 if (file.size / 1024 / 1024 < 4 && file.type.includes('image/')) {
@@ -82,5 +85,10 @@ export class StoryRegistrationFormComponent implements OnInit {
 
     handleReaderLoaded(e) {
         this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
+    }
+
+    cancelImageUpload() {
+      this.base64textString = [];
+      this.uploadElRef.nativeElement.value = '';
     }
 }
