@@ -6,7 +6,7 @@
     <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
 </div>
 <div class="table-container mat-elevation-z8">
-    <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)">
+    <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)" class="zui-table zui-table-rounded">
         <!-- Organization Column -->
         <ng-container matColumnDef="organisation">
             <mat-header-cell *matHeaderCellDef>Organization</mat-header-cell>
