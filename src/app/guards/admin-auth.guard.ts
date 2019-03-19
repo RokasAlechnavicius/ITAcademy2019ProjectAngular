@@ -12,7 +12,6 @@ export class AdminAuthGuard implements CanActivate {
         const currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'));
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentAdmin) {
-            console.log('yaa');
             return true;
         }
         if (currentUser) {
