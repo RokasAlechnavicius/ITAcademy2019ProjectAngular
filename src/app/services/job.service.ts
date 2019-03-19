@@ -17,6 +17,10 @@ export class JobService {
         return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/all');
     }
 
+    getJobAdminList() {
+      return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/admin');
+    }
+
     getStoryJobList() {
         return this.http.get<Job[]>(HEROKU_URL + '/jobs/notactive');
     }
@@ -27,5 +31,13 @@ export class JobService {
 
     leaveJob(id: number) {
         return this.http.post('https://response-test-backend.herokuapp.com' + '/job/leave', id);
+    }
+
+    approveJob(id: number) {
+        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/admin/approve/' + id, id);
+    }
+
+    rejectJob(id: number) {
+        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/admin/cancel/' + id, id);
     }
 }

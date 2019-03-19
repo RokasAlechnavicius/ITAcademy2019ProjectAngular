@@ -1,0 +1,95 @@
+<div class="">
+    <p class="title">NEW JOBS</p>
+    <p class="title-desc">Confirm or reject jobs</p>
+</div>
+<div class="table-container">
+    <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)">
+        <!-- Idea Column -->
+        <ng-container matColumnDef="idea">
+            <mat-header-cell *matHeaderCellDef>Idea</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.idea }}</mat-cell>
+        </ng-container>
+
+        <!-- Location Column -->
+        <ng-container matColumnDef="region">
+            <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.region }}</mat-cell>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.date }}</mat-cell>
+        </ng-container>
+
+        <!-- Button Column -->
+        <ng-container matColumnDef="join">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <div>
+                <button mat-raised-button class="join" (click)="approveJob(element)">
+                  Approve
+                </button>
+                <button mat-raised-button class="leave" (click)="rejectJob(element)">
+                  Cancel
+                </button>
+
+              </div>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="expand">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <img id="imagecurtain" src="assets/dropdownup.png" />
+            </mat-cell>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <mat-cell class="expanded-color" *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div
+                    style="flex-direction: column"
+                    class="element-detail"
+                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
+                >
+                    <div class="element-description detail-text">
+                        <p><strong>Idea: </strong> {{ element.idea }}</p>
+                        <strong>Organisation: </strong>{{ element.organisation }};<br />
+                        <div id="extra-in-description">
+                            <p>
+                                <strong>Date: </strong>{{ element.date }};<strong> Location: </strong
+                                >{{ element.region }};
+                            </p>
+                        </div>
+                        <p><strong> Category: </strong>{{ element.category }}</p>
+                        <p>{{ element.description }}</p>
+                        <div class="contact-person">
+                            <p>
+                                <strong>Contact person: </strong>{{ element.contactName }}, {{ element.phone }},
+                                <span [hidden]="!element.email"> {{ element.email }}, </span>
+                                <span [hidden]="!element.website">
+                                    <a href="http://{{ element.website }}"> {{ element.website }}</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row
+            *matRowDef="let element; columns: columnsToDisplay"
+            class="element-row"
+            [class.expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element"
+        >
+        </mat-row>
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
+    </mat-table>
+    <div *ngIf="isLoading">
+        <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    </div>
+    <mat-paginator [pageSize]="jobListOptions.itemsPerPage" [hidePageSize]="true" showFirstLastButtons></mat-paginator>
+</div>

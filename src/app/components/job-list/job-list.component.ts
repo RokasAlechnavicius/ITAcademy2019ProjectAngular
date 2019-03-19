@@ -98,6 +98,7 @@ export class JobListComponent implements OnInit {
     }
 
     joinJob(job: Job) {
+        event.stopPropagation();
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert(ALERT_MESSAGES.successJoin);
@@ -112,9 +113,11 @@ export class JobListComponent implements OnInit {
     }
 
     leaveJob(job: Job) {
+        event.stopPropagation();
         this.jobService.leaveJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);
+                // event.stopPropagation();
                 window.scroll(0, 0);
                 this.getJobs();
             },

@@ -40,6 +40,7 @@ import { StoryRegistrationFormComponent } from './components/story-registration-
 import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 import { StoryListComponent } from './components/stories-list/story-list.component';
 import { StoryDetailsDialogComponent } from './components/story-details-dialog/story-details-dialog.component';
+import { AdminJobListComponent } from './components/admin-job-list/admin-job-list.component';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { StoryDetailsDialogComponent } from './components/story-details-dialog/s
         StoryRegistrationFormComponent,
         ParticipantsDialogComponent,
         StoryListComponent,
-        StoryDetailsDialogComponent
+        StoryDetailsDialogComponent,
+        AdminJobListComponent
     ],
     imports: [
         BrowserModule,

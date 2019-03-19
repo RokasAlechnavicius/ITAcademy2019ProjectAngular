@@ -10,6 +10,7 @@ import { LogoutUserComponent } from './components/logout-user/logout-user.compon
 import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 import { StoryListComponent } from './components/stories-list/story-list.component';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
+import {AdminJobListComponent} from './components/admin-job-list/admin-job-list.component';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'jobs', component: JobListComponent },
     { path: 'create-story', component: StoryRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'stories', component: StoryListComponent },
+    { path: 'admin/jobs', component: AdminJobListComponent, canActivate: [AdminAuthGuard]},
     { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
