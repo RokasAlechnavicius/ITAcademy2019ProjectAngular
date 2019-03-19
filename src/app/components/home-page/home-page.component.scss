@@ -99,16 +99,16 @@ mat-grid-list {
     }
 
     .text-block {
-      text-align: center;
-      font-size: medium;
+        text-align: center;
+        font-size: medium;
     }
 
-    .main-text{
-      font-size: medium;
+    .main-text {
+        font-size: medium;
     }
 
     .question-text {
-      font-size: x-large;
+        font-size: x-large;
     }
 }
 
@@ -118,7 +118,7 @@ mat-grid-list {
     width: 3vw;
     border-style: solid;
     border-color: green;
-    border-width: 0px 2px 2px 0px;
+    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     transition: border-width 150ms ease-in-out;
 }
@@ -137,5 +137,5 @@ mat-grid-list {
 }
 
 #u43_img {
-  margin-left: 7%;
+    margin-left: 7%;
 }

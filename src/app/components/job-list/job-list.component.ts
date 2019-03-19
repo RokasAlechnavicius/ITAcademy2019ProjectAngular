@@ -8,7 +8,17 @@ import { AlertService } from '../../services/alert.service';
 
 const JOB_LIST_OPTIONS = {
     maxParticipantsCount: 14,
-    itemsPerPage: 10
+    itemsPerPage: 10,
+    bigWidth: 1240,
+    mediumWidth: 900,
+    mediumCollumns: ['expand', 'idea'],
+    bigCollumns: ['expand', 'organisation', 'idea', 'city', 'date'],
+    allCollumns: ['expand', 'organisation', 'idea', 'city', 'category', 'date']
+};
+
+const ALERT_MESSAGES = {
+    successJoin: 'You have been succesfully added to the job',
+    successLeave: 'You have successfully left the job'
 };
 
 @Component({
@@ -26,7 +36,7 @@ const JOB_LIST_OPTIONS = {
 export class JobListComponent implements OnInit {
     jobListOptions = JOB_LIST_OPTIONS;
     jobsData = new MatTableDataSource<Job>();
-    columnsToDisplay;
+    columnsToDisplay: string[];
     expandedElement: Job;
     isLoading = true;
     dialogRef;
@@ -43,12 +53,12 @@ export class JobListComponent implements OnInit {
     }
 
     adjustTable(event) {
-        if (window.innerWidth <= 900) {
-            this.columnsToDisplay = ['expand', 'idea'];
-        } else if (window.innerWidth <= 1240) {
-            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'date'];
+        if (window.innerWidth <= JOB_LIST_OPTIONS.mediumWidth) {
+            this.columnsToDisplay = JOB_LIST_OPTIONS.mediumCollumns;
+        } else if (window.innerWidth <= JOB_LIST_OPTIONS.bigWidth) {
+            this.columnsToDisplay = JOB_LIST_OPTIONS.bigCollumns;
         } else {
-            this.columnsToDisplay = ['expand', 'organisation', 'idea', 'city', 'category', 'date'];
+            this.columnsToDisplay = JOB_LIST_OPTIONS.allCollumns;
         }
         if (this.user()) {
             this.columnsToDisplay.push('join');
@@ -83,8 +93,9 @@ export class JobListComponent implements OnInit {
     joinJob(job: Job) {
         this.jobService.joinJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have been succesfully added to the job');
+                this.alertService.createSuccessAlert(ALERT_MESSAGES.successJoin);
                 window.scroll(0, 0);
+                event.stopPropagation();
                 this.getJobs();
             },
             error => {
@@ -97,8 +108,9 @@ export class JobListComponent implements OnInit {
     leaveJob(job: Job) {
         this.jobService.leaveJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have successfully left the job');
+                this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);
                 window.scroll(0, 0);
+                event.stopPropagation();
                 this.getJobs();
             },
             error => {

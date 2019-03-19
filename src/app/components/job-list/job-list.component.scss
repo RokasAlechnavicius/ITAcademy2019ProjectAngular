@@ -146,7 +146,7 @@ img {
 
 .join:disabled {
     background-color: #ffffff;
-    color: rgba(0, 0, 0, 0.38);
+    color: #00000059;
 }
 
 @media only screen and (min-width: 1240px) {
@@ -176,7 +176,7 @@ img {
         min-height: 20px;
     }
     .mat-row {
-      padding: 2% 0;
+        padding: 2% 0;
     }
     .mat-footer-row,
     .mat-row {

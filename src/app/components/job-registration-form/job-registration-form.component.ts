@@ -17,7 +17,10 @@ const JOB_REGISTRATION_FORM_OPTIONS = {
     emailMaxLength: 64,
     contactNameMaxLength: 64,
     descriptionMaxLength: 512,
-    websiteMaxLength: 32
+    websiteMaxLength: 32,
+    formErrorMessage: 'an error has occurred: ',
+    keyCode: 69,
+    phoneMax: 999999999999
 };
 
 @Component({
@@ -33,6 +36,7 @@ export class JobRegistrationFormComponent implements OnInit {
         private alertService: AlertService
     ) {}
     jobFormConstants = JOB_REGISTRATION_FORM_OPTIONS;
+    keyCode = JOB_REGISTRATION_FORM_OPTIONS.keyCode;
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;
@@ -87,13 +91,7 @@ export class JobRegistrationFormComponent implements OnInit {
                     this.noWhiteSpaceValidator
                 ]
             ],
-            email: [
-                '',
-                [
-                    Validators.email,
-                    Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength),
-                ]
-            ],
+            email: ['', [Validators.email, Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.emailMaxLength)]],
             contactName: [
                 '',
                 [
@@ -103,7 +101,7 @@ export class JobRegistrationFormComponent implements OnInit {
                 ]
             ],
             website: ['', [Validators.maxLength(JOB_REGISTRATION_FORM_OPTIONS.websiteMaxLength)]],
-            phone: ['', [Validators.required, Validators.max(999999999999)]],
+            phone: ['', [Validators.required, Validators.max(JOB_REGISTRATION_FORM_OPTIONS.phoneMax)]],
             description: [
                 '',
                 [
@@ -119,13 +117,12 @@ export class JobRegistrationFormComponent implements OnInit {
     addJob() {
         const stringedDate = moment(this.jobForm.get('date').value).format('YYYY-MM-DD');
         this.jobForm.controls.date.setValue(stringedDate);
-        // we have a proper form  with values to pass into a service now, need a service to handle it
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {
                 this.router.navigate(['/jobs']);
             },
             err => {
-                this.alertService.createErrorAlert('an error has occurred: ' + err.error.message);
+                this.alertService.createErrorAlert(JOB_REGISTRATION_FORM_OPTIONS.formErrorMessage + err.error.message);
             }
         );
     }

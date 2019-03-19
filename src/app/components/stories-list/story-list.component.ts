@@ -5,7 +5,8 @@ import { Story } from '../../models/story';
 import { StoryDetailsDialogComponent } from '../story-details-dialog/story-details-dialog.component';
 
 const STORY_LIST_OPTIONS = {
-    itemsPerPage: 10
+    itemsPerPage: 10,
+    collumnsDisplay: ['date', 'idea', 'read']
 };
 
 @Component({
@@ -16,7 +17,7 @@ const STORY_LIST_OPTIONS = {
 export class StoryListComponent implements OnInit {
     storyListOptions = STORY_LIST_OPTIONS;
     storiesData = new MatTableDataSource<Story>();
-    columnsToDisplay = ['date', 'idea', 'read'];
+    columnsToDisplay = STORY_LIST_OPTIONS.collumnsDisplay;
     isLoading = true;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;

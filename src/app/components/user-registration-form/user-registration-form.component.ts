@@ -17,6 +17,10 @@ const USER_REGISTRATION_FORM_OPTIONS = {
     passwordMaxLength: 32,
     passwordMinLength: 7
 };
+const USER_REGISTRATION_FORM_MESSAGES = {
+    successRegistration: 'User has been registered succesfuly',
+    errorRegistration: 'An error has occured: '
+};
 const returnUrl = '/login';
 @Component({
     selector: 'app-user-registration-form',
@@ -80,7 +84,7 @@ export class UserRegistrationFormComponent implements OnInit {
                         Validators.email,
                         Validators.maxLength(USER_REGISTRATION_FORM_OPTIONS.emailMaxLength),
                         this.noWhiteSpaceValidator,
-                        Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(swedbank).lt$')
+                        Validators.pattern('^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+.)?[a-zA-Z]+.)?(darboviete).lt$')
                     ]
                 ],
                 region: [
@@ -128,11 +132,13 @@ export class UserRegistrationFormComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.createSuccessAlert('User has been registered succesfuly', true);
+                    this.alertService.createSuccessAlert(USER_REGISTRATION_FORM_MESSAGES.successRegistration, true);
                     this.router.navigate([returnUrl]);
                 },
                 error => {
-                    this.alertService.createErrorAlert('An error has occured: ' + error.error.message);
+                    this.alertService.createErrorAlert(
+                        USER_REGISTRATION_FORM_MESSAGES.errorRegistration + error.error.message
+                    );
                     this.loading = false;
                 }
             );

@@ -50,16 +50,22 @@
                     mat-raised-button
                     *ngIf="user() && element.team && element.isUserInTeam == false"
                     class="join"
-                    (click)="joinJob(element); $event.stopPropagation()"
+                    (click)="joinJob(element)"
                 >
                     Join {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
                 </button>
                 <button
-                mat-raised-button
-                class="join"
-                *ngIf="user() && element.team && element.organizator.email != userEmail() && element.isUserInTeam == true"
-                (click)="leaveJob(element); $event.stopPropagation()">
-                  Leave {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
+                    mat-raised-button
+                    class="join"
+                    *ngIf="
+                        user() &&
+                        element.team &&
+                        element.organizator.email != userEmail() &&
+                        element.isUserInTeam == true
+                    "
+                    (click)="leaveJob(element)"
+                >
+                    Leave {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
                 </button>
             </mat-cell>
         </ng-container>
@@ -79,7 +85,7 @@
                         <p><strong>Idea: </strong> {{ element.idea }}</p>
                         <div id="extra-in-description">
                             <p>
-                                <strong>Date: </strong>{{ element.date }};<strong>  Location: </strong
+                                <strong>Date: </strong>{{ element.date }};<strong> Location: </strong
                                 >{{ element.region }};
                             </p>
                             <p><strong> Category: </strong>{{ element.category }}</p>
@@ -113,5 +119,5 @@
     <div *ngIf="isLoading">
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
-  <mat-paginator [pageSize]="jobListOptions.itemsPerPage" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSize]="jobListOptions.itemsPerPage" showFirstLastButtons></mat-paginator>
 </div>
