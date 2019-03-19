@@ -19,7 +19,7 @@ const JOB_REGISTRATION_FORM_OPTIONS = {
     descriptionMaxLength: 512,
     websiteMaxLength: 32,
     formErrorMessage: 'an error has occurred: ',
-    keyCode: 69,
+    keyboardLetterECode: 69,
     phoneMax: 999999999999
 };
 
@@ -36,7 +36,7 @@ export class JobRegistrationFormComponent implements OnInit {
         private alertService: AlertService
     ) {}
     jobFormConstants = JOB_REGISTRATION_FORM_OPTIONS;
-    keyCode = JOB_REGISTRATION_FORM_OPTIONS.keyCode;
+    keyCode = JOB_REGISTRATION_FORM_OPTIONS.keyboardLetterECode;
     minDate = new Date();
     date: string;
     categories = categoriesData.categories;

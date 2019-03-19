@@ -16,6 +16,10 @@ mat-form-field {
     color: #ffffff;
 }
 
+.image-upload{
+  display:none
+}
+
 .textareainput {
     height: 225px;
 }
