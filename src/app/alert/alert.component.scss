@@ -1,0 +1,36 @@
+.alert-danger {
+    font-size: 120%;
+    background-color: #ff00004d;
+    width: 30%;
+    height: 30%;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0.5%;
+}
+
+.alert-success {
+    background-color: #54fe784d;
+    width: 30%;
+    height: 50%;
+    border-radius: 5px;
+    font-size: 120%;
+    margin: auto;
+}
+
+img {
+    width: 10%;
+    float: left;
+    padding-top: 3%;
+    padding-left: 1%;
+}
+
+.img-success {
+    width: 5%;
+    float: left;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.alert-text {
+    padding-top: 3%;
+}

@@ -1,3 +1,5 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<div style="text-align:center">-->
 <mat-toolbar id="SummerDeeds">
     <div fxShow="true" fxHide.gt-sm="true">
         <button mat-icon-button (click)="sidenav.toggle()">
@@ -6,7 +8,8 @@
     </div>
     <div class="navlinks">
         <a mat-button class="companyName" routerLink="/">
-            <span class="summer-logo">summer good deeds</span>
+            <span class="summer">summer</span>
+            <span class="GDP"> GDP</span>
         </a>
     </div>
     <img class="square" src="assets/square.png" alt="" />
@@ -15,7 +18,7 @@
         <div fxShow="true" fxHide.lt-md="true" fxLayoutGap="20px">
             <a class="navtext" mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Jobs</a>
-            <a mat-button routerLink="stories">Stories</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New job</a>
             <a *ngIf="!user()" mat-button routerLink="register">Register</a>
             <a *ngIf="!user()" mat-button routerLink="login">Login</a>
             <a *ngIf="user()" mat-button routerLink="logout">Logout</a>
@@ -27,7 +30,7 @@
         <div fxLayout="column">
             <a mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Jobs</a>
-            <a mat-button routerLink="stories">Stories</a>
+            <a *ngIf="user()" mat-button routerLink="create-job">New job</a>
             <a *ngIf="!user()" mat-button routerLink="register">Register</a>
             <a *ngIf="!user()" mat-button routerLink="login">Login</a>
             <a *ngIf="user()" mat-button routerLink="logout">Logout</a>

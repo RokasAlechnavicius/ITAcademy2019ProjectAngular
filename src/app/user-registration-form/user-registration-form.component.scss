@@ -1,0 +1,36 @@
+.registrationBtnBtn {
+    background-color: #008000;
+    color: #ffffff;
+}
+
+.register-btn {
+    position: absolute;
+    right: 0;
+    padding-right: 20%;
+    color: #008000;
+}
+
+.register-form-field {
+    width: 110%;
+    min-width: 200px;
+}
+
+.authentication-card {
+    width: 35%;
+    min-width: 300px;
+    min-height: 350px;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto auto;
+    border: 1.5px solid #008000;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000033;
+}
+
+@media screen and (max-width: 1400px) {
+    .authentication-card {
+        min-height: 700px;
+    }
+}
