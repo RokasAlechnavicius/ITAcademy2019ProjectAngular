@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Story } from '../models/story';
 
-const HEROKU_URL = 'https://team-test-backend.herokuapp.com';
+const HEROKU_URL = 'https://response-test-backend.herokuapp.com';
 @Injectable({
     providedIn: 'root'
 })

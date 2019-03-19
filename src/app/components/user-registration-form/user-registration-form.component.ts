@@ -83,7 +83,7 @@ export class UserRegistrationFormComponent implements OnInit {
                     ]
                 ],
                 region: [
-                    'Regionas'
+                    ''
                 ],
                 password: [
                     '',

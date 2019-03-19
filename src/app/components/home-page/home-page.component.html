@@ -11,14 +11,14 @@
                 allowfullscreen
             ></iframe>
         </div>
+      <div class="arrow-text">Click for more information</div>
         <!--<div class="topDiv">-->
         <!--<a class="ct-btn-scroll ct-js-btn-scroll animated" (click)="scroll(target)"><img src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>-->
-        <div class="container">
-            <a data-scroll (click)="scroll(target)">
-                <div class="arrow" #target></div>
-            </a>
-        </div>
+          <div class="wrap" >
+            <img src="assets/3907.png" id="arrow" class="animated bounce" (click)="scroll(target)">
+          </div>
     </div>
+    <div class="space" #target></div>
     <div class="main-text">
         Volunteers were interested in who most needed their help in their communities, talked with elders,
         representatives of various care organizations, worked in teams, where they decided to contribute to the change.
@@ -31,7 +31,7 @@
     <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightWho>
         <mat-grid-tile [rowspan]="rowspanText">
             <img id="u40_img" class="img img-icon" src="assets/u40.png" />
-            <span class="question-text">Who?</span>
+            <span class="question-text">Who</span>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
@@ -46,7 +46,7 @@
     <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightHow>
         <mat-grid-tile [rowspan]="rowspanIcon">
             <img id="u42_img" class="img img-icon" src="assets/u42.png" />
-            <span class="question-text">How?</span>
+            <span class="question-text">How</span>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
@@ -64,7 +64,7 @@
     <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" [rowHeight] = rowHeightWhen>
         <mat-grid-tile>
             <img id="u43_img" class="img img-icon" src="assets/u43.png" />
-            <span class="question-text">When?</span>
+            <span class="question-text">When</span>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="colspan" [rowspan]="rowspanText">
             <div class="text-block">
