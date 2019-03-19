@@ -1,4 +1,4 @@
-<p class="title">Login</p>
+<p class="title">LOGIN</p>
 <mat-card class="authentication-card">
     <div class="login-fields">
         <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
@@ -25,11 +25,8 @@
             </div>
             <div>
                 <div class="create-account-btn">
-                    <button (click)="submitForm()" mat-raised-button>Login</button>
+                    <button [disabled]="loginForm.invalid" (click)="submitForm()" mat-raised-button>Login</button>
                 </div>
-                <mat-card-actions class="login-btn">
-                  <button type="button" routerLink="/register" mat-raised-button>Register</button>
-                </mat-card-actions>
             </div>
         </form>
     </div>

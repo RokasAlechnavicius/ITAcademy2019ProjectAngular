@@ -12,6 +12,13 @@ mat-form-field {
 
 }
 
+.title {
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: inherit;
+  margin: 0;
+}
+
 .storyBtnBtn {
     background-color: #008000;
     color: #ffffff;
