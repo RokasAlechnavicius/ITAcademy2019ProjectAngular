@@ -6,7 +6,6 @@
                 <mat-form-field appearance="outline" class="idea-field">
                     <mat-label>Idea</mat-label>
                     <input formControlName="idea" matInput placeholder="" required maxlength="64" />
-                    <mat-hint>Max {{ jobFormConstants.ideaMaxLength }} characters</mat-hint>
                     <mat-error *ngIf="jobForm.controls['idea'].invalid && jobForm.controls['idea'].touched">
                         <mat-error *ngIf="jobForm.controls['idea'].hasError('whitespace')">
                             Please enter valid Idea field data, cannot be empty
@@ -25,7 +24,6 @@
                         <mat-form-field appearance="outline" class="grid-tile-field">
                             <mat-label>Organization</mat-label>
                             <input formControlName="organisation" matInput placeholder="" required maxlength="64" />
-                            <mat-hint>Max {{ jobFormConstants.organizationMaxLength }} characters</mat-hint>
                             <mat-error
                                 *ngIf="jobForm.controls.organisation.invalid && jobForm.controls.organisation.touched"
                             >
@@ -47,7 +45,6 @@
                                     {{ region }}
                                 </mat-option>
                             </mat-select>
-                            <mat-hint>Select from a list</mat-hint>
                             <mat-error *ngIf="jobForm.controls.region.invalid && jobForm.controls.region.touched">
                                 <mat-error
                                     *ngIf="
@@ -71,7 +68,6 @@
                                     {{ category }}
                                 </mat-option>
                             </mat-select>
-                            <mat-hint>Select from a list</mat-hint>
                             <mat-error *ngIf="jobForm.controls.category.invalid && jobForm.controls.category.touched">
                                 <mat-error
                                     *ngIf="
@@ -103,7 +99,6 @@
                             />
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker disabled="false" #picker></mat-datepicker>
-                            <mat-hint></mat-hint>
                             <mat-error *ngIf="jobForm.controls.date.invalid && jobForm.controls.date.touched">
                                 <mat-error *ngIf="jobForm.controls.date.hasError('required')">
                                     Date field cannot be empty
@@ -119,7 +114,6 @@
                         <mat-form-field appearance="outline" class="grid-tile-field">
                             <mat-label>Contact person</mat-label>
                             <input formControlName="contactName" matInput placeholder="" required maxlength="64" />
-                            <mat-hint>Max {{ jobFormConstants.contactNameMaxLength }} characters</mat-hint>
                             <mat-error
                                 *ngIf="jobForm.controls.contactName.invalid && jobForm.controls.contactName.touched"
                             >
@@ -150,7 +144,6 @@
                                 maxlength="12"
                                 onkeydown="return event.keyCode!=69"
                             />
-                            <mat-hint></mat-hint>
                             <mat-error *ngIf="jobForm.controls.phone.invalid && jobForm.controls.phone.touched">
                                 <mat-error
                                     *ngIf="
@@ -170,7 +163,7 @@
                         <mat-form-field appearance="outline" class="grid-tile-field">
                             <mat-label>Website</mat-label>
                             <input formControlName="website" matInput placeholder="" maxlength="32" />
-                            <mat-hint>Max {{ jobFormConstants.websiteMaxLength }} characters, not required</mat-hint>
+                            <mat-hint>Not required</mat-hint>
                             <mat-error *ngIf="jobForm.controls.website.invalid && jobForm.controls.website.touched">
                                 <mat-error *ngIf="jobForm.controls.website.hasError('maxlength')">
                                     Website field cannot be longer than
@@ -183,7 +176,7 @@
                         <mat-form-field appearance="outline" class="grid-tile-field">
                             <mat-label>Email</mat-label>
                             <input formControlName="email" matInput placeholder="" maxlength="64" />
-                            <mat-hint>Not required, max {{ jobFormConstants.emailMaxLength }} characters</mat-hint>
+                            <mat-hint>Not required</mat-hint>
                             <mat-error *ngIf="jobForm.controls.email.invalid && jobForm.controls.email.touched">
                                 <mat-error *ngIf="jobForm.controls.email.hasError('maxlength')">
                                     Email field cannot be longer than {{ jobFormConstants.emailMaxLength }} characters
@@ -210,7 +203,6 @@
                         required
                     >
                     </textarea>
-                    <mat-hint>Max {{ jobFormConstants.descriptionMaxLength }} characters</mat-hint>
                     <mat-error *ngIf="jobForm.controls.description.invalid && jobForm.controls.description.touched">
                         <mat-error
                             *ngIf="
