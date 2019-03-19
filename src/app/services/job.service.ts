@@ -14,7 +14,7 @@ export class JobService {
     }
 
     getJobList() {
-        return this.http.get<Job[]>(HEROKU_URL + '/jobs/all');
+        return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/all');
     }
 
     getStoryJobList() {
