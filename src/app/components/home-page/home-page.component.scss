@@ -29,13 +29,12 @@ h4 {
 }
 
 .question-text {
-    margin-bottom: 5%;
     font-weight: bold;
     float: left;
-    padding-right: 1%;
-    padding-left: 10%;
+    padding-left: 5%;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-    font-size: x-large;
+    font-size: 50px;
+    color: #222222;
 }
 
 .square {
@@ -49,17 +48,21 @@ h4 {
 
 .text-block {
     text-align: left;
-    font-size: 125%;
+    font-size: 120%;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
     padding-right: 11%;
+    line-height: 150%;
+    color: #222222;
 }
 
 .main-text {
     display: block;
     padding: 3% 25% 3% 25%;
     text-align: center;
-    font-size: 125%;
+    font-size: 120%;
     font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    line-height: 150%;
+    color: #222222;
 }
 
 .line-divider {
@@ -112,21 +115,6 @@ mat-grid-list {
     }
 }
 
-.arrow {
-    box-sizing: border-box;
-    height: 3vw;
-    width: 3vw;
-    border-style: solid;
-    border-color: green;
-    border-width: 0px 2px 2px 0px;
-    transform: rotate(45deg);
-    transition: border-width 150ms ease-in-out;
-}
-
-.arrow:hover {
-    border-bottom-width: 4px;
-    border-right-width: 4px;
-}
 .filler-div {
     height: 5%;
 }
@@ -138,4 +126,44 @@ mat-grid-list {
 
 #u43_img {
   margin-left: 7%;
+}
+
+.arrow-text {
+  font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+  padding-top: 2%;
+  color: #969eaa;
+}
+
+.bounce {
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation: bounce 3.6s ease infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  5.55556% {
+    transform: translateY(0);
+  }
+  11.11111% {
+    transform: translateY(0);
+  }
+  22.22222% {
+    transform: translateY(-15px);
+  }
+  27.77778% {
+    transform: translateY(0);
+  }
+  33.33333% {
+    transform: translateY(-15px);
+  }
+  44.44444% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
