@@ -5,6 +5,11 @@ import { UserAuthenticationService } from '../../services/user-authentication.se
 import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
 
+const LOGIN_FORM_MESSAGES = {
+  successMessage: 'You have successfully logged in!',
+  errorMessage: 'invalid email or password provided'
+};
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -51,11 +56,11 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.createSuccessAlert('You have successfully logged in!', true);
+                    this.alertService.createSuccessAlert(LOGIN_FORM_MESSAGES.successMessage, true);
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.createErrorAlert('invalid email or password provided', false);
+                    this.alertService.createErrorAlert(LOGIN_FORM_MESSAGES.errorMessage, false);
                     this.loading = false;
                 }
             );

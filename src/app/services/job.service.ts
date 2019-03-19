@@ -26,6 +26,6 @@ export class JobService {
     }
 
     leaveJob(id: number) {
-      return this.http.post('https://response-test-backend.herokuapp.com' + '/job/leave', id);
+        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/leave', id);
     }
 }

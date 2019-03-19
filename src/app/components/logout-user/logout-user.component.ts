@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 import { AlertService } from '../../services/alert.service';
+
+const LOGOUT_MESSAGES = {
+    successMessage: 'You have been successfully logged out'
+};
+
 @Component({
     selector: 'app-logout-user',
     templateUrl: './logout-user.component.html',
@@ -16,7 +21,7 @@ export class LogoutUserComponent implements OnInit {
 
     ngOnInit() {
         this.userAuthenticationService.logout();
-        this.alertService.createSuccessAlert('You have been successfully logged out', true);
+        this.alertService.createSuccessAlert(LOGOUT_MESSAGES.successMessage, true);
         this.router.navigate(['/']);
     }
 }

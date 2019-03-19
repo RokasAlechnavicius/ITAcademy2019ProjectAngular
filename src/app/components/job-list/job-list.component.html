@@ -38,7 +38,7 @@
                     mat-raised-button
                     *ngIf="user() && element.team && element.isUserInTeam == false"
                     class="join"
-                    (click)="joinJob(element); $event.stopPropagation()"
+                    (click)="joinJob(element)"
                 >
                     Join
                 </button>
@@ -51,11 +51,13 @@
                         element.organizator.email != userEmail() &&
                         element.isUserInTeam == true
                     "
-                    (click)="leaveJob(element); $event.stopPropagation()"
+                    (click)="leaveJob(element)"
                 >
                     Leave
                 </button>
-                <p id="outOfText">Joined: {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}</p>
+                <p id="outOfText">
+                    Joined: {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
+                </p>
             </mat-cell>
         </ng-container>
 
@@ -96,7 +98,12 @@
                         </div>
                     </div>
                     <div class="button-div">
-                        <button mat-raised-button (click)="openDialog(element)" class="table-button" id="participants-button">
+                        <button
+                            mat-raised-button
+                            (click)="openDialog(element)"
+                            class="table-button"
+                            id="participants-button"
+                        >
                             Show participants
                         </button>
                     </div>

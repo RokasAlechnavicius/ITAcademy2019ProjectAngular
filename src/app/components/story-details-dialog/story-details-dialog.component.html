@@ -1,5 +1,5 @@
 <div class="dialog-container">
-    <mat-icon class="close-icon" (click)="done()">
+    <mat-icon class="close-icon" (click)="closeModal()">
         close
     </mat-icon>
     <mat-dialog-title>Story of {{ data.job.idea }}</mat-dialog-title>
@@ -16,6 +16,6 @@
     </mat-dialog-content>
 
     <mat-dialog-actions align="end">
-        <button mat-raised-button class="button-done" (click)="done()">Close</button>
+        <button mat-raised-button class="button-done" (click)="closeModal()">Close</button>
     </mat-dialog-actions>
 </div>

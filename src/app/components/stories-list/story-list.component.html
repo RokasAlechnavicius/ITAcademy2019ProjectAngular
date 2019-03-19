@@ -1,6 +1,6 @@
 <div>
-  <p class="title">STORIES</p>
-  <p class="title-desc">Read the stories about good deeds </p>
+    <p class="title">STORIES</p>
+    <p class="title-desc">Read the stories about good deeds</p>
 </div>
 <div class="create-div">
     <button *ngIf="user()" mat-raised-button class="create-story" routerLink="/create-story">Write a story</button>
@@ -23,7 +23,7 @@
         <ng-container matColumnDef="read">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-              <button mat-raised-button class="read" (click)="openStoryDetail(element)">Read more</button>
+                <button mat-raised-button class="read" (click)="openStoryDetail(element)">Read more</button>
             </mat-cell>
         </ng-container>
 
@@ -33,5 +33,9 @@
     <div class="spinner-container" *ngIf="isLoading">
         <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
     </div>
-  <mat-paginator [pageSize]="storyListOptions.itemsPerPage" [hidePageSize]="true" showFirstLastButtons></mat-paginator>
+    <mat-paginator
+        [pageSize]="storyListOptions.itemsPerPage"
+        [hidePageSize]="true"
+        showFirstLastButtons
+    ></mat-paginator>
 </div>

@@ -7,16 +7,15 @@ mat-form-field {
 .story-btn {
     position: absolute;
     right: 0;
-    padding-right:13%;
+    padding-right: 13%;
     margin-top: 10%;
-
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .storyBtnBtn {
@@ -43,16 +42,21 @@ mat-form-field {
 }
 
 label {
-  background-color: green;
-  padding: 1%;
-  color: #FFFFFF;
-  border-radius: 5px;
-  font-size: smaller;
-  float: left;
-  margin-left: 10%;
+    background-color: green;
+    padding: 1%;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: smaller;
+    float: left;
+    margin-left: 10%;
 }
 
 .file-word {
-  float: left;
-  margin-left: 5%;
+    float: left;
+    margin-left: 5%;
 }
+
+.img-upload{
+  display:none;
+}
+

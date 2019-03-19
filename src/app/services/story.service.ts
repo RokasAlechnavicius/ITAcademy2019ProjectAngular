@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Story } from '../models/story';
 
 const HEROKU_URL = 'https://response-test-backend.herokuapp.com';
@@ -10,7 +10,7 @@ export class StoryService {
     constructor(private http: HttpClient) {}
 
     createAuthorizationHeader(headers: HttpHeaders) {
-    headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Content-Type', 'multipart/form-data');
     }
 
     addStory(story: Story) {
