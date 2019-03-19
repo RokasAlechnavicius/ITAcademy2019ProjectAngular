@@ -16,6 +16,7 @@
     width: 70%;
     margin: 2% auto;
     text-align: left;
+    font-family: Arial;
 }
 
 mat-table {
@@ -113,7 +114,7 @@ mat-table {
 }
 
 .mat-column-expand {
-    flex: 0 0 3%;
+    flex: 0 0 14px;
 }
 
 .join {
@@ -125,9 +126,9 @@ mat-table {
 }
 
 .leave:hover {
-  margin: 4px 0 2px 0;
-  cursor: pointer;
-  background-color: #d71b0d;
+    margin: 4px 0 2px 0;
+    cursor: pointer;
+    background-color: #d71b0d;
 }
 
 .expand-icon:hover {
@@ -182,7 +183,13 @@ img {
     color: rgba(0, 0, 0, 0.38);
 }
 
-@media only screen and (min-width: 900px) {
+#outOfText {
+    font-family: Arial;
+    font-size: 11px;
+    color: #666;
+}
+
+@media only screen and (min-width: 1000px) {
     #extra-in-description {
         display: none;
     }
@@ -194,5 +201,28 @@ img {
     .mat-column-region {
         padding: 0 2%;
         flex: 0 0 15%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .create-div {
+        width: 95%;
+        margin: 2% auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .table-container {
+        width: 95%;
+        margin: 2% auto;
+        text-align: left;
+        font-family: Arial;
+    }
+    .mat-column-expand {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .element-description {
+        width: 90%;
+        padding: 16px 16px 0px 16px;
     }
 }
