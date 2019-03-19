@@ -14,11 +14,11 @@ export class JobService {
     }
 
     getJobList() {
-        return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/all');
+        return this.http.get<Job[]>(HEROKU_URL + '/jobs/all');
     }
 
     getJobAdminList() {
-      return this.http.get<Job[]>('https://response-test-backend.herokuapp.com' + '/jobs/admin');
+      return this.http.get<Job[]>(HEROKU_URL + '/jobs/admin');
     }
 
     getStoryJobList() {
@@ -30,11 +30,11 @@ export class JobService {
     }
 
     leaveJob(id: number) {
-        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/leave', id);
+        return this.http.post(HEROKU_URL + '/job/leave', id);
     }
 
     approveJob(id: number) {
-        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/admin/approve/' + id, id);
+        return this.http.post(HEROKU_URL + '/job/admin/approve/' + id, id);
     }
 
     rejectJob(id: number) {
