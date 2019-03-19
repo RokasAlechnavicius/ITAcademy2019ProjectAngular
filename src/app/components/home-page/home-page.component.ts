@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
 
     breakpoint = 3;
     colspan = 2;
+    rowspanIcon = 1;
     rowspanText = 1;
     rowHeightHow: number;
     rowHeightWho: number;
@@ -25,7 +26,7 @@ export class HomePageComponent implements OnInit {
         this.changeRowHeights();
     }
 
-    onResize() {
+    onResize(event) {
         this.changeRowHeights();
     }
 

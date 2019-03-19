@@ -13,7 +13,7 @@ const JOB_LIST_OPTIONS = {
     mediumWidth: 900,
     mediumCollumns: ['expand', 'idea'],
     bigCollumns: ['expand', 'organisation', 'idea', 'city', 'date'],
-    allCollumns: ['expand', 'organisation', 'idea', 'city', 'category', 'date']
+    allCollumns: ['expand', 'organisation', 'idea', 'city', 'category', 'date'],
 };
 
 const ALERT_MESSAGES = {
