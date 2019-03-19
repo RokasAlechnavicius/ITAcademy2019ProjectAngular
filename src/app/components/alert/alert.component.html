@@ -1,0 +1,15 @@
+<div
+    class="mat-dialog-content"
+    (click)="toggleAlertVisibility()"
+    *ngIf="alert && showDialog"
+    [ngClass]="{
+        alert: alert,
+        'alert-danger': alert.type === messageType.alertError,
+        'alert-success': alert.type === messageType.alertSuccess
+    }"
+>
+    <div class="mat-dialog-actions"><mat-icon>close</mat-icon></div>
+    <div *ngIf="alert.type === 'error'"><img src="assets/warning-sign.png" alt="" /></div>
+    <div *ngIf="alert.type === 'success'"><img class="img-success" src="assets/check-solid.png" alt="" /></div>
+    <p class="alert-text">{{ alert.text }}</p>
+</div>

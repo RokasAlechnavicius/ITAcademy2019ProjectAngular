@@ -1,0 +1,33 @@
+.close-icon {
+    float: right;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+}
+
+.button-done:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.button-done {
+    background-color: #ffffff;
+    margin-right: 1%;
+}
+
+.dialog-container {
+    width: 96%;
+    margin: 2% auto;
+}
+
+mat-dialog-content {
+    word-break: break-word;
+    margin: 2% auto;
+}
+
+mat-dialog-title {
+    word-break: break-word;
+    font-size: 120%;
+    font-weight: bold;
+}

@@ -1,4 +1,6 @@
-export class Job {
+import { User } from './user';
+
+export interface Job {
     id: number;
     date: string;
     idea: string;
@@ -10,5 +12,8 @@ export class Job {
     website?: string;
     phone: string;
     description: string;
+    organizator?: User;
+    team?: User[];
     hashtags?: string[];
+    isUserInTeam?: boolean;
 }

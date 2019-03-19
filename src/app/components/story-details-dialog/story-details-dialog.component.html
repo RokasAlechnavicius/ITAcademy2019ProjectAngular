@@ -1,0 +1,21 @@
+<div class="dialog-container">
+    <mat-icon class="close-icon" (click)="closeModal()">
+        close
+    </mat-icon>
+    <mat-dialog-title>Story of {{ data.job.idea }}</mat-dialog-title>
+
+    <mat-dialog-content>
+        <h4><strong>Story:</strong></h4>
+        <p class="text">{{ data.description }}</p>
+        <h4><strong>Team lead: </strong></h4>
+        <p *ngIf="data.job.organizator">{{ data.job.organizator.name }} {{ data.job.organizator.surname }}</p>
+        <h4><strong>Participants: </strong></h4>
+        <ul>
+            <li *ngFor="let member of data.job.team">{{ member.name }} {{ member.surname }}</li>
+        </ul>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="button-done" (click)="closeModal()">Close</button>
+    </mat-dialog-actions>
+</div>

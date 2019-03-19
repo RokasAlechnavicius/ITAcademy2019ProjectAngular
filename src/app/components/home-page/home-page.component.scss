@@ -1,0 +1,141 @@
+mat-list-item {
+    text-align: center;
+}
+
+#HomePageInfo {
+    background-color: #ffffff;
+}
+
+.video-title {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 2%;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+}
+
+#DeedsVideo {
+    padding: 2% 20%;
+}
+h4 {
+    padding: 3% 30% 0 20%;
+    font-family: Arial;
+    text-align: left;
+}
+
+.img-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.question-text {
+    margin-bottom: 5%;
+    font-weight: bold;
+    float: left;
+    padding-right: 1%;
+    padding-left: 10%;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    font-size: x-large;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    margin-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.text-block {
+    text-align: left;
+    font-size: 125%;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    padding-right: 11%;
+}
+
+.main-text {
+    display: block;
+    padding: 3% 25% 3% 25%;
+    text-align: center;
+    font-size: 125%;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+}
+
+.line-divider {
+    width: 50%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+mat-grid-list {
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1020px) {
+    mat-grid-list {
+        padding-top: 0;
+    }
+
+    .line-divider {
+        display: none;
+    }
+
+    .text-block {
+        text-align: center;
+        font-size: medium;
+    }
+
+    .main-text {
+        font-size: medium;
+    }
+
+    .question-text {
+        font-size: x-large;
+    }
+}
+
+.arrow {
+    box-sizing: border-box;
+    height: 3vw;
+    width: 3vw;
+    border-style: solid;
+    border-color: green;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+}
+.filler-div {
+    height: 5%;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#u43_img {
+    margin-left: 7%;
+}
