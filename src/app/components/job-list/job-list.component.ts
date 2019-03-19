@@ -67,22 +67,22 @@ export class JobListComponent implements OnInit {
     }
 
     openDialog(job: Job): void {
-        if (this.user()) {
-            this.loggedIn = true;
-        } else {
-          this.loggedIn = false;
-        }
-        this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
-            width: '30%',
-            data: { loggedIn: this.loggedIn, job }
-        });
-
-        this.dialogRef.afterClosed().subscribe(result => {
-            if (result.join) {
-                this.joinJob(result.job);
-            }
-        });
+    if (this.user()) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
     }
+    this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
+      width: '30%',
+      data: { loggedIn: this.loggedIn, job }
+    });
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      if (result.join) {
+        this.joinJob(result.job);
+      }
+    });
+  }
 
     user() {
         return localStorage.getItem('currentUser');

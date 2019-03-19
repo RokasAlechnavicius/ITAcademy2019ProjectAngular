@@ -4,5 +4,5 @@ export interface Story {
     id: number;
     description: string;
     job: Job;
-    photos?: File[];
+    images?: string[];
 }

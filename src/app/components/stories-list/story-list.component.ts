@@ -3,6 +3,8 @@ import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { StoryService } from '../../services/story.service';
 import { Story } from '../../models/story';
 import { StoryDetailsDialogComponent } from '../story-details-dialog/story-details-dialog.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
 
 const STORY_LIST_OPTIONS = {
     itemsPerPage: 10
@@ -11,13 +13,21 @@ const STORY_LIST_OPTIONS = {
 @Component({
     selector: 'app-stories-list',
     templateUrl: './story-list.component.html',
-    styleUrls: ['./story-list.component.scss']
+    styleUrls: ['./story-list.component.scss'],
+    animations: [
+        trigger('detailExpand', [
+            state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
+            state('expanded', style({ height: '*', width:'100%' })),
+            transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
+        ])
+    ]
 })
 export class StoryListComponent implements OnInit {
     storyListOptions = STORY_LIST_OPTIONS;
     storiesData = new MatTableDataSource<Story>();
-    columnsToDisplay = ['date', 'idea', 'read'];
+    columnsToDisplay = ['expand','date', 'idea'];
     isLoading = true;
+    expandedElement: Story;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -25,6 +35,7 @@ export class StoryListComponent implements OnInit {
         this.storyService.getStoryList().subscribe(
             value => {
                 this.storiesData.data = value;
+                console.log(value);
                 this.isLoading = false;
             },
             error => {
@@ -41,10 +52,10 @@ export class StoryListComponent implements OnInit {
         return localStorage.getItem('currentUser');
     }
 
-    openStoryDetail(story: Story): void {
-        const dialogRef = this.dialog.open(StoryDetailsDialogComponent, {
-            width: '40%',
-            data: story
+    openImageDialog(image: string): void {
+        const dialogRef = this.dialog.open(ImageDialogComponent, {
+            width: '90%',
+            data: image
         });
     }
 }

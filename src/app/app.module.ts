@@ -39,6 +39,7 @@ import { StoryRegistrationFormComponent } from './components/story-registration-
 import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 import { StoryListComponent } from './components/stories-list/story-list.component';
 import { StoryDetailsDialogComponent } from './components/story-details-dialog/story-details-dialog.component';
+import { ImageDialogComponent } from './components/image-dialog/image-dialog.component';
 
 @NgModule({
     declarations: [
@@ -53,7 +54,8 @@ import { StoryDetailsDialogComponent } from './components/story-details-dialog/s
         StoryRegistrationFormComponent,
         ParticipantsDialogComponent,
         StoryListComponent,
-        StoryDetailsDialogComponent
+        StoryDetailsDialogComponent,
+        ImageDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -86,7 +88,7 @@ import { StoryDetailsDialogComponent } from './components/story-details-dialog/s
         MatPaginatorModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent, StoryDetailsDialogComponent],
+    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent, StoryDetailsDialogComponent, ImageDialogComponent],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })
