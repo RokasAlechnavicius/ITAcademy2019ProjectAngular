@@ -18,7 +18,7 @@ const JOB_LIST_OPTIONS = {
     animations: [
         trigger('detailExpand', [
             state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
-            state('expanded', style({ height: '*' })),
+            state('expanded', style({ height: '*', width: '100%' })),
             transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
         ])
     ]
@@ -43,7 +43,7 @@ export class JobListComponent implements OnInit {
     }
 
     adjustTable(event) {
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1000) {
             this.columnsToDisplay = ['expand', 'idea'];
         } else {
             this.columnsToDisplay = ['expand', 'idea', 'region', 'date'];
