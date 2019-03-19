@@ -75,6 +75,10 @@ mat-table {
     }
 }
 
+.element-row:not(.detail-row) {
+    min-height: 60px;
+}
+
 .element-row {
     border-bottom-width: 0;
 }
@@ -103,6 +107,7 @@ mat-table {
 
 .mat-column-date {
     padding: 0 2%;
+    justify-content: center;
 }
 
 .mat-column-join {
