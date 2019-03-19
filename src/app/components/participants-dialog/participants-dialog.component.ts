@@ -17,14 +17,14 @@ export class ParticipantsDialogComponent implements OnInit {
     join(): void {
         if (!localStorage.getItem('currentUser')) {
             this.router.navigate(['/login']);
-            this.dialogRef.close({ join: false, job: this.data });
+            this.dialogRef.close({ join: false, job: this.data.job });
         } else {
-            this.dialogRef.close({ join: true, job: this.data });
+            this.dialogRef.close({ join: true, job: this.data.job });
         }
     }
 
     done(): void {
-        this.dialogRef.close({ join: false, job: this.data });
+        this.dialogRef.close({ join: false, job: this.data.job });
     }
 
     ngOnInit() {}

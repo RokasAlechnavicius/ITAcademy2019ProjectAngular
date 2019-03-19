@@ -9,13 +9,13 @@
 
 <div class="dialog-container">
     <mat-dialog-content>
-        <ol [hidden]="!data.team">
-            <li>{{ data.organizator.name }} {{ data.organizator.surname }} (Team lead)</li>
-            <li *ngFor="let participant of data.team">{{ participant.name }} {{ participant.surname }}</li>
+        <ol [hidden]="!data.job.team">
+            <li>{{ data.job.organizator.name }} {{ data.job.organizator.surname }} (Team lead)</li>
+            <li *ngFor="let participant of data.job.team">{{ participant.name }} {{ participant.surname }}</li>
         </ol>
     </mat-dialog-content>
 
-    <mat-dialog-actions align="end" *ngIf="!data.isUserInTeam">
+    <mat-dialog-actions align="end" *ngIf="!data.job.isUserInTeam && data.loggedIn">
         <button mat-raised-button class="button-done" (click)="join()">Join</button>
     </mat-dialog-actions>
 </div>

@@ -30,6 +30,7 @@ export class JobListComponent implements OnInit {
     expandedElement: Job;
     isLoading = true;
     dialogRef;
+    loggedIn: boolean;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -66,9 +67,14 @@ export class JobListComponent implements OnInit {
     }
 
     openDialog(job: Job): void {
+        if (this.user()) {
+            this.loggedIn = true;
+        } else {
+          this.loggedIn = false;
+        }
         this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
             width: '30%',
-            data: job
+            data: { loggedIn: this.loggedIn, job }
         });
 
         this.dialogRef.afterClosed().subscribe(result => {
