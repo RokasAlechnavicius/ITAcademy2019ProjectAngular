@@ -1,9 +1,6 @@
 <div class="">
-    <p class="title">JOBS</p>
-    <p class="title-desc">Browse activities you could be a part of</p>
-</div>
-<div class="create-div" *ngIf="user()">
-    <button mat-raised-button class="create-job" routerLink="/create-job">Register a new job</button>
+    <p class="title">NEW JOBS</p>
+    <p class="title-desc">Confirm or reject jobs</p>
 </div>
 <div class="table-container">
     <mat-table [dataSource]="jobsData" multiTemplateDataRows (window:resize)="adjustTable($event)">
@@ -29,42 +26,22 @@
         <ng-container matColumnDef="join">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <button
-                    [disabled]="
-                        !(element.team.length < jobListOptions.maxParticipantsCount) ||
-                        element.organizator.email == userEmail() ||
-                        element.isUserInTeam == true
-                    "
-                    mat-raised-button
-                    *ngIf="user() && element.team && element.isUserInTeam == false"
-                    class="join"
-                    (click)="joinJob(element)"
-                >
-                    Join
+              <div>
+                <button mat-raised-button class="join" (click)="approveJob(element)">
+                  Approve
                 </button>
-                <button
-                    mat-raised-button
-                    class="leave"
-                    *ngIf="
-                        user() &&
-                        element.team &&
-                        element.organizator.email != userEmail() &&
-                        element.isUserInTeam == true
-                    "
-                    (click)="leaveJob(element)"
-                >
-                    Leave
+                <button mat-raised-button class="leave" (click)="rejectJob(element)">
+                  Cancel
                 </button>
-                <p id="outOfText">
-                    Joined: {{ element.team.length + 1 }}/{{ jobListOptions.maxParticipantsCount + 1 }}
-                </p>
+
+              </div>
             </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="expand">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
-                <img id="imagecurtain" src="assets/dropdownup.png"  />
+                <img id="imagecurtain" src="assets/dropdownup.png" />
             </mat-cell>
         </ng-container>
 
@@ -96,16 +73,6 @@
                                 </span>
                             </p>
                         </div>
-                    </div>
-                    <div class="button-div">
-                        <button
-                            mat-raised-button
-                            (click)="openDialog(element)"
-                            class="table-button"
-                            id="participants-button"
-                        >
-                            Show participants
-                        </button>
                     </div>
                 </div>
             </mat-cell>

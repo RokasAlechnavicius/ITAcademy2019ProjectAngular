@@ -9,17 +9,20 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
 import { LogoutUserComponent } from './components/logout-user/logout-user.component';
 import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 import { StoryListComponent } from './components/stories-list/story-list.component';
+import { AdminAuthGuard } from './guards/admin-auth.guard';
+import {AdminJobListComponent} from './components/admin-job-list/admin-job-list.component';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: UserRegistrationFormComponent },
-    { path: 'logout', component: LogoutUserComponent, canActivate: [AuthGuard] },
+    { path: 'logout', component: LogoutUserComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'create-job', component: JobRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'jobs', component: JobListComponent },
     { path: 'create-story', component: StoryRegistrationFormComponent, canActivate: [AuthGuard] },
     { path: 'stories', component: StoryListComponent },
+    { path: 'admin/jobs', component: AdminJobListComponent, canActivate: [AdminAuthGuard]},
     { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

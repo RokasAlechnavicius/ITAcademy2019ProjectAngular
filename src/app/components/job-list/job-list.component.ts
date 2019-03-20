@@ -8,8 +8,14 @@ import { AlertService } from '../../services/alert.service';
 
 const JOB_LIST_OPTIONS = {
     maxParticipantsCount: 14,
-    itemsPerPage: 10
+    itemsPerPage: 10,
+    breakWidth: 1000,
 };
+const ALERT_MESSAGES = {
+  successJoin: 'You have been succesfully added to the job',
+  successLeave: 'You have successfully left the job'
+};
+
 
 @Component({
     selector: 'app-job-list',
@@ -44,7 +50,7 @@ export class JobListComponent implements OnInit {
     }
 
     adjustTable(event) {
-        if (window.innerWidth <= 1000) {
+        if (window.innerWidth <= JOB_LIST_OPTIONS.breakWidth) {
             this.columnsToDisplay = ['expand', 'idea'];
         } else {
             this.columnsToDisplay = ['expand', 'idea', 'region', 'date'];
@@ -67,22 +73,22 @@ export class JobListComponent implements OnInit {
     }
 
     openDialog(job: Job): void {
-    if (this.user()) {
-      this.loggedIn = true;
-    } else {
-      this.loggedIn = false;
-    }
-    this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
-      width: '30%',
-      data: { loggedIn: this.loggedIn, job }
-    });
+        if (this.user()) {
+            this.loggedIn = true;
+        } else {
+            this.loggedIn = false;
+        }
+        this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
+            width: '30%',
+            data: { loggedIn: this.loggedIn, job }
+        });
 
-    this.dialogRef.afterClosed().subscribe(result => {
-      if (result.join) {
-        this.joinJob(result.job);
-      }
-    });
-  }
+        this.dialogRef.afterClosed().subscribe(result => {
+            if (result.join) {
+                this.joinJob(result.job);
+            }
+        });
+    }
 
     user() {
         return localStorage.getItem('currentUser');
@@ -92,9 +98,10 @@ export class JobListComponent implements OnInit {
     }
 
     joinJob(job: Job) {
+        event.stopPropagation();
         this.jobService.joinJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have been succesfully added to the job');
+                this.alertService.createSuccessAlert(ALERT_MESSAGES.successJoin);
                 window.scroll(0, 0);
                 this.getJobs();
             },
@@ -106,9 +113,11 @@ export class JobListComponent implements OnInit {
     }
 
     leaveJob(job: Job) {
+        event.stopPropagation();
         this.jobService.leaveJob(job.id).subscribe(
             success => {
-                this.alertService.createSuccessAlert('You have successfully left the job');
+                this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);
+                // event.stopPropagation();
                 window.scroll(0, 0);
                 this.getJobs();
             },

@@ -102,16 +102,16 @@ mat-grid-list {
     }
 
     .text-block {
-      text-align: center;
-      font-size: medium;
+        text-align: center;
+        font-size: medium;
     }
 
-    .main-text{
-      font-size: medium;
+    .main-text {
+        font-size: medium;
     }
 
     .question-text {
-      font-size: x-large;
+        font-size: x-large;
     }
 }
 
@@ -125,49 +125,49 @@ mat-grid-list {
 }
 
 #u43_img {
-  margin-left: 7%;
+    margin-left: 7%;
 }
 
 .arrow-text {
-  font-family: 'Arial Bold', 'Arial Regular', 'Arial';
-  padding-top: 2%;
-  color: #969eaa;
+    font-family: 'Arial Bold', 'Arial Regular', 'Arial';
+    padding-top: 2%;
+    color: #969eaa;
 }
 
 .bounce {
-  animation-iteration-count: infinite;
-  animation-duration: 1.5s;
-  animation: bounce 3.6s ease infinite;
-  transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation: bounce 3.6s ease infinite;
+    transform-origin: 50% 50%;
 }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  5.55556% {
-    transform: translateY(0);
-  }
-  11.11111% {
-    transform: translateY(0);
-  }
-  22.22222% {
-    transform: translateY(-15px);
-  }
-  27.77778% {
-    transform: translateY(0);
-  }
-  33.33333% {
-    transform: translateY(-15px);
-  }
-  44.44444% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    5.55556% {
+        transform: translateY(0);
+    }
+    11.11111% {
+        transform: translateY(0);
+    }
+    22.22222% {
+        transform: translateY(-15px);
+    }
+    27.77778% {
+        transform: translateY(0);
+    }
+    33.33333% {
+        transform: translateY(-15px);
+    }
+    44.44444% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .space {
-  padding-top: 50px;
+    padding-top: 50px;
 }

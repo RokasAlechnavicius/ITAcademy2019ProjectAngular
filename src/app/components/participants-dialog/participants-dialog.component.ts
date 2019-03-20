@@ -23,7 +23,7 @@ export class ParticipantsDialogComponent implements OnInit {
         }
     }
 
-    done(): void {
+    closeModal(): void {
         this.dialogRef.close({ join: false, job: this.data.job });
     }
 

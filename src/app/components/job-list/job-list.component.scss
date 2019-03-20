@@ -1,233 +1,233 @@
 .create-div {
-  width: 70%;
-  margin: 2% auto;
-  display: flex;
-  justify-content: flex-end;
+    width: 70%;
+    margin: 2% auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .create-job {
-  padding: 5px 10px;
-  background-color: #ffc107;
-  color: #ffffff;
-  font-weight: bolder;
+    padding: 5px 10px;
+    background-color: #ffc107;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .table-container {
-  width: 70%;
-  margin: 2% auto;
-  text-align: left;
-  font-family: Arial;
+    width: 70%;
+    margin: 2% auto;
+    text-align: left;
+    font-family: Arial;
 }
 
 mat-table {
-  font-size: 120%;
-  line-height: 150%;
-  color: #222;
-  word-break: break-word;
-  border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid #eeeeee;
+    font-size: 120%;
+    line-height: 150%;
+    color: #222;
+    word-break: break-word;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
 }
 
 .mat-row {
-  padding-top: 4px;
+    padding-top: 4px;
 }
 
 .detail-row:not(.expanded-row) {
-  padding: 0;
+    padding: 0;
 }
 
 .detail-row,
 .expanded-row {
-  #imagecurtain {
-    transform: rotate(90deg);
-  }
+    #imagecurtain {
+        transform: rotate(90deg);
+    }
 }
 
 .detail-row {
-  background-color: #f5f5f5;
-  border: 1px solid #eeeeee;
+    background-color: #f5f5f5;
+    border: 1px solid #eeeeee;
 }
 
 #imagecurtain {
-  width: 14px;
-  height: 14px;
-  opacity: 0.6;
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
 }
 
 .mat-footer-row,
 .mat-row {
-  min-height: 0;
+    min-height: 0;
 }
 
 .element-row:not(.expanded-row):hover {
-  background: #d5ffd1;
-  .join:disabled {
     background: #d5ffd1;
-  }
+    .join:disabled {
+        background: #d5ffd1;
+    }
 }
 
 .element-row:not(.expanded-row):active {
-  background: #9eef99;
-  .join:disabled {
     background: #9eef99;
-  }
+    .join:disabled {
+        background: #9eef99;
+    }
 }
 
 .element-row:not(.detail-row) {
-  min-height: 60px;
+    min-height: 60px;
 }
 
 .element-row {
-  border-bottom-width: 0;
+    border-bottom-width: 0;
 }
 
 .element-detail {
-  overflow: hidden;
-  display: flex;
+    overflow: hidden;
+    display: flex;
 }
 
 .element-description {
-  font-size: 120%;
-  width: 50%;
-  padding: 16px 16px 0px 50px;
-  text-align: left;
+    font-size: 120%;
+    width: 50%;
+    padding: 16px 16px 0px 50px;
+    text-align: left;
 }
 
 .mat-column-idea {
-  padding: 0 2%;
-  font-size: 18px;
+    padding: 0 2%;
+    font-size: 18px;
 }
 
 .mat-column-region {
-  padding: 0 2%;
-  flex: 0 0 15%;
+    padding: 0 2%;
+    flex: 0 0 15%;
 }
 
 .mat-column-date {
-  padding: 0 2%;
-  justify-content: center;
+    padding: 0 2%;
+    justify-content: center;
 }
 
 .mat-column-join {
-  flex-direction: column;
-  justify-content: center;
-  line-height: 0;
-  padding: 0 2%;
-  flex: 0 0 80px;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+    padding: 0 2%;
+    flex: 0 0 80px;
 }
 
 .mat-column-expand {
-  flex: 0 0 14px;
+    flex: 0 0 14px;
 }
 
 .join {
-  margin: 4px 0 2px 0;
+    margin: 4px 0 2px 0;
 }
 
 .leave {
-  margin: 4px 0 2px 0;
+    margin: 4px 0 2px 0;
 }
 
 .leave:hover {
-  margin: 4px 0 2px 0;
-  cursor: pointer;
-  background-color: #d71b0d;
+    margin: 4px 0 2px 0;
+    cursor: pointer;
+    background-color: #d71b0d;
 }
 
 .expand-icon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 mat-header-row {
-  background-color: #4caf50;
+    background-color: #4caf50;
 }
 
 mat-header-cell {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: medium;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: medium;
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .title-desc {
-  font-family: 'Raleway', sans-serif;
-  margin-top: -4px;
+    font-family: 'Raleway', sans-serif;
+    margin-top: -4px;
 }
 
 img {
-  width: 30%;
-  height: 30%;
+    width: 30%;
+    height: 30%;
 }
 
 .table-button:hover,
 .join:hover {
-  background-color: #ffc107;
-  color: #ffffff;
+    background-color: #ffc107;
+    color: #ffffff;
 }
 
 .button-div {
-  width: 100%;
-  float: right;
+    width: 100%;
+    float: right;
 }
 
 #participants-button {
-  float: right;
-  margin: 0 2px 20px 0;
+    float: right;
+    margin: 0 2px 20px 0;
 }
 
 .join:disabled {
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.38);
+    background-color: #ffffff;
+    color: #00000059;
 }
 
 #outOfText {
-  font-family: Arial;
-  font-size: 11px;
-  color: #666;
+    font-family: Arial;
+    font-size: 11px;
+    color: #666;
 }
 
 @media only screen and (min-width: 1000px) {
-  #extra-in-description {
-    display: none;
-  }
-  .mat-column-idea {
-    padding: 0 2%;
-    flex: 0 0 45%;
-    word-break: break-word;
-  }
-  .mat-column-region {
-    padding: 0 2%;
-    flex: 0 0 15%;
-  }
+    #extra-in-description {
+        display: none;
+    }
+    .mat-column-idea {
+        padding: 0 2%;
+        flex: 0 0 45%;
+        word-break: break-word;
+    }
+    .mat-column-region {
+        padding: 0 2%;
+        flex: 0 0 15%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-  .create-div {
-    width: 95%;
-    margin: 2% auto;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .table-container {
-    width: 95%;
-    margin: 2% auto;
-    text-align: left;
-    font-family: Arial;
-  }
-  .mat-column-expand {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .element-description {
-    width: 90%;
-    padding: 16px 16px 0px 16px;
-  }
+    .create-div {
+        width: 95%;
+        margin: 2% auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .table-container {
+        width: 95%;
+        margin: 2% auto;
+        text-align: left;
+        font-family: Arial;
+    }
+    .mat-column-expand {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .element-description {
+        width: 90%;
+        padding: 16px 16px 0px 16px;
+    }
 }

@@ -6,17 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-  DateAdapter,
-  MatButtonModule,
-  MatCardModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatNativeDateModule, MatPaginatorModule,
-  MatProgressBarModule,
-  MatSidenavModule,
-  MatToolbarModule
+    DateAdapter,
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatToolbarModule
 } from '@angular/material';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -40,6 +41,7 @@ import { ParticipantsDialogComponent } from './components/participants-dialog/pa
 import { StoryListComponent } from './components/stories-list/story-list.component';
 import { StoryDetailsDialogComponent } from './components/story-details-dialog/story-details-dialog.component';
 import { ImageDialogComponent } from './components/image-dialog/image-dialog.component';
+import { AdminJobListComponent } from './components/admin-job-list/admin-job-list.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +57,8 @@ import { ImageDialogComponent } from './components/image-dialog/image-dialog.com
         ParticipantsDialogComponent,
         StoryListComponent,
         StoryDetailsDialogComponent,
-        ImageDialogComponent
+        ImageDialogComponent,
+        AdminJobListComponent
     ],
     imports: [
         BrowserModule,

@@ -7,7 +7,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
 
 const STORY_LIST_OPTIONS = {
-    itemsPerPage: 10
+    itemsPerPage: 10,
+    collumnsDisplay: ['date', 'idea', 'read']
 };
 
 @Component({
@@ -25,7 +26,7 @@ const STORY_LIST_OPTIONS = {
 export class StoryListComponent implements OnInit {
     storyListOptions = STORY_LIST_OPTIONS;
     storiesData = new MatTableDataSource<Story>();
-    columnsToDisplay = ['expand','date', 'idea'];
+    columnsToDisplay = STORY_LIST_OPTIONS.collumnsDisplay;
     isLoading = true;
     expandedElement: Story;
 
@@ -35,7 +36,6 @@ export class StoryListComponent implements OnInit {
         this.storyService.getStoryList().subscribe(
             value => {
                 this.storiesData.data = value;
-                console.log(value);
                 this.isLoading = false;
             },
             error => {

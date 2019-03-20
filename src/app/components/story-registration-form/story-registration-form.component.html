@@ -55,13 +55,20 @@
                 </mat-form-field>
             </div>
             <div class="image-upload">
-              <label class="btn custom-input-btn">
-            <input #uploadEl type='file' accept="image/x-png,image/gif,image/jpeg" style="display:none" (change)="onUploadChange($event)" multiple>
-                <i class="fa fa-cloud-upload"></i> Upload Files
-              </label>
+                <label class="btn custom-input-btn">
+                    <input
+                        class="img-upload"
+                        #uploadEl
+                        type="file"
+                        accept="image/x-png,image/gif,image/jpeg"
+                        (change)="onUploadChange($event)"
+                        multiple
+                    />
+                    <i class="fa fa-cloud-upload"></i> Upload Files
+                </label>
             </div>
             <mat-card-actions class="story-btn">
-                <button class="storyBtnBtn" [disabled]="!storyForm.valid"  mat-raised-button>Create story</button>
+                <button class="storyBtnBtn" [disabled]="!storyForm.valid" mat-raised-button>Create story</button>
             </mat-card-actions>
         </form>
       <div>

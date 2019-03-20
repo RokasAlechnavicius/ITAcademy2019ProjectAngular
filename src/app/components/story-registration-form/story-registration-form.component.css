@@ -7,16 +7,15 @@ mat-form-field {
 .story-btn {
     position: absolute;
     right: 0;
-    padding-right: 15%;
-    margin-top: 20%;
-
+    padding-right: 13%;
+    margin-top: 10%;
 }
 
 .title {
-  font-size: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: inherit;
-  margin: 0;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .storyBtnBtn {
@@ -69,3 +68,8 @@ label {
   padding: 0 10px;
   float: left;
 }
+
+.img-upload{
+  display:none;
+}
+
