@@ -4,23 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from '../../services/alert.service';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 import { passwordsMustMatch } from '../../helpers/passwords-must-match.validator';
-
-// @ts-ignore
-import * as regionsData from '../../../assets/regions.json';
+import {
+    USER_REGISTRATION_FORM_MESSAGES,
+    USER_REGISTRATION_FORM_OPTIONS
+} from '../../constants/user-registration-form-constants';
 import { first } from 'rxjs/operators';
-
-const USER_REGISTRATION_FORM_OPTIONS = {
-    nameMaxLength: 32,
-    surnameMaxLength: 64,
-    emailMaxLength: 128,
-    regionMaxLength: 64,
-    passwordMaxLength: 32,
-    passwordMinLength: 7
-};
-const USER_REGISTRATION_FORM_MESSAGES = {
-    successRegistration: 'User has been registered succesfuly',
-    errorRegistration: 'An error has occured: '
-};
 
 const returnUrl = '/login';
 @Component({
@@ -33,7 +21,6 @@ export class UserRegistrationFormComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-    regions = regionsData.regions;
     hidePassword = true;
     hideRepeatPassword = true;
     breakpoint: number;

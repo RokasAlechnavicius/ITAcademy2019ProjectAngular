@@ -4,11 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
-
-const LOGIN_FORM_MESSAGES = {
-    successMessage: 'You have successfully logged in!',
-    errorMessage: 'invalid email or password provided'
-};
+import { LOGIN_FORM_MESSAGES } from '../../constants/login-constants';
 
 @Component({
     selector: 'app-login',

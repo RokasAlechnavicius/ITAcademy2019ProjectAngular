@@ -5,15 +5,7 @@ import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
 import { StoryService } from '../../services/story.service';
 import { AlertService } from '../../services/alert.service';
-
-const STORY_FORM_MESSAGES = {
-    successCreate: 'A new story has been created',
-    errorCreate: 'An error has occured: ',
-    errorFileValidation: 'These files are larger than 4Mb or not a valid image format: ',
-    errorFileAmountValidation: 'Maximum of three files allowed',
-    maxSize: 1024,
-    maxFileSizeMB: 4
-};
+import { STORY_FORM_MESSAGES } from '../../constants/story-registration-form-constants';
 
 @Component({
     selector: 'app-story-registration-form',

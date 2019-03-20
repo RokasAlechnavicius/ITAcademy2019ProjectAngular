@@ -2,14 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { StoryService } from '../../services/story.service';
 import { Story } from '../../models/story';
-import { StoryDetailsDialogComponent } from '../story-details-dialog/story-details-dialog.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
-
-const STORY_LIST_OPTIONS = {
-    itemsPerPage: 10,
-    collumnsDisplay: ['expand', 'date', 'idea']
-};
+import { STORY_LIST_OPTIONS } from '../../constants/story-list-constants';
 
 @Component({
     selector: 'app-stories-list',
@@ -52,12 +47,10 @@ export class StoryListComponent implements OnInit {
         if (element.hasImages) {
             this.isLoading = true;
             element.hasImages = false;
-            this.storyService.getStoryImages(element.id).subscribe(
-                value => {
-                    element.images = value;
-                    this.isLoading = false;
-                }
-            );
+            this.storyService.getStoryImages(element.id).subscribe(value => {
+                element.images = value;
+                this.isLoading = false;
+            });
         }
     }
 

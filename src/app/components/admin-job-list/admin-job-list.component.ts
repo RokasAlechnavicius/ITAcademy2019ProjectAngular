@@ -4,15 +4,8 @@ import { Job } from '../../models';
 import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ADMIN_JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/admin-job-list-constants';
 
-const ADMIN_JOB_LIST_OPTIONS = {
-    itemsPerPage: 15,
-    breakWidth: 1000
-};
-const ALERT_MESSAGES = {
-    successApprove: 'Job was approved',
-    successReject: 'Job was rejected'
-};
 @Component({
     selector: 'app-admin-job-list',
     templateUrl: './admin-job-list.component.html',
