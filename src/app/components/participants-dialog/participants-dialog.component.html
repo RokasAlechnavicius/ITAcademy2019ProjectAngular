@@ -13,7 +13,6 @@
             <li>{{ data.job.organizator.name }} {{ data.job.organizator.surname }} (Team lead)</li>
             <li *ngFor="let participant of data.job.team">{{ participant.name }} {{ participant.surname }}</li>
         </ol>
-      <img [src]="element.images[0]" >
     </mat-dialog-content>
 
     <mat-dialog-actions align="end" *ngIf="!data.job.isUserInTeam && data.loggedIn">
