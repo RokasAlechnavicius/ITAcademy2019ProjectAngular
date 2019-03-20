@@ -232,27 +232,27 @@ img {
   }
 }
 .image img {
-  width: auto;
-  max-height: 200px;
-}
-
-.image {
-  flex: 1;
-  align-self: flex-end;
-  margin-right: 1%;
+  object-fit: cover;
+  width:230px;
+  height:230px;
 }
 
 .images {
+  width:100%;
   display: flex;
+  box-sizing: border-box;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  margin-left: 5%;
 }
 
 .image img:hover  {
   cursor: pointer;
+}
+
+.image {
+
 }
 
 
