@@ -63,11 +63,7 @@ export class JobListComponent implements OnInit {
     }
 
     openDialog(job: Job): void {
-        if (this.user()) {
-            this.loggedIn = true;
-        } else {
-            this.loggedIn = false;
-        }
+        this.loggedIn = !!this.user();
         this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
             width: '30%',
             data: { loggedIn: this.loggedIn, job }
