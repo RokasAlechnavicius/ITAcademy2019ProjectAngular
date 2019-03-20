@@ -5,4 +5,6 @@ export interface Story {
     description: string;
     job: Job;
     images?: string[];
+    hasImages?: boolean;
+    imagesTaken: boolean;
 }

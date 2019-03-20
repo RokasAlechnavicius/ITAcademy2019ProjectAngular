@@ -30,8 +30,8 @@
             <a mat-button routerLink="jobs">Jobs</a>
             <a mat-button routerLink="stories">Stories</a>
             <a *ngIf="admin()" mat-button routerLink="admin/jobs">New jobs</a>
-            <a *ngIf="!(user() && admin())" mat-button routerLink="register">Register</a>
-            <a *ngIf="!(user() && admin())" mat-button routerLink="login">Login</a>
+            <a *ngIf="!user() && !admin()" mat-button routerLink="register">Register</a>
+            <a *ngIf="!user() && !admin()" mat-button routerLink="login">Login</a>
             <a *ngIf="user() || admin()" mat-button routerLink="logout">Logout</a>
         </div>
     </mat-sidenav>

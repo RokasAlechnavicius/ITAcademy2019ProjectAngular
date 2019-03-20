@@ -48,6 +48,19 @@ export class StoryListComponent implements OnInit {
         this.storiesData.paginator = this.paginator;
     }
 
+    loadStoryImages(element) {
+        if (element.hasImages) {
+            this.isLoading = true;
+            element.hasImages = false;
+            this.storyService.getStoryImages(element.id).subscribe(
+                value => {
+                    element.images = value;
+                    this.isLoading = false;
+                }
+            );
+        }
+    }
+
     user() {
         return localStorage.getItem('currentUser');
     }
