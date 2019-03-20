@@ -8,7 +8,7 @@ import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
 
 const STORY_LIST_OPTIONS = {
     itemsPerPage: 10,
-    collumnsDisplay: ['date', 'idea', 'read']
+    collumnsDisplay: ['expand','date', 'idea']
 };
 
 @Component({
