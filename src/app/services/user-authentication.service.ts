@@ -13,7 +13,7 @@ export class UserAuthenticationService {
     login(email: string, password: string) {
         return this.http
             .post<any>(
-              HEROKU_URL + 'login',
+              HEROKU_URL + '/login',
                 { email, password },
                 { observe: 'response' }
             )
