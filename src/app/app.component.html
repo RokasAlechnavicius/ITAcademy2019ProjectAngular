@@ -16,9 +16,10 @@
             <a class="navtext" mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Jobs</a>
             <a mat-button routerLink="stories">Stories</a>
-            <a *ngIf="!user()" mat-button routerLink="register">Register</a>
-            <a *ngIf="!user()" mat-button routerLink="login">Login</a>
-            <a *ngIf="user()" mat-button routerLink="logout">Logout</a>
+            <a *ngIf="admin()" mat-button routerLink="admin/jobs">New jobs</a>
+            <a *ngIf="!user() && !admin()" mat-button routerLink="register">Register</a>
+            <a *ngIf="!user() && !admin()" mat-button routerLink="login">Login</a>
+            <a *ngIf="user() || admin()" mat-button routerLink="logout">Logout</a>
         </div>
     </div>
 </mat-toolbar>
@@ -28,9 +29,10 @@
             <a mat-button routerLink="home">Home</a>
             <a mat-button routerLink="jobs">Jobs</a>
             <a mat-button routerLink="stories">Stories</a>
-            <a *ngIf="!user()" mat-button routerLink="register">Register</a>
-            <a *ngIf="!user()" mat-button routerLink="login">Login</a>
-            <a *ngIf="user()" mat-button routerLink="logout">Logout</a>
+            <a *ngIf="admin()" mat-button routerLink="admin/jobs">New jobs</a>
+            <a *ngIf="!(user() && admin())" mat-button routerLink="register">Register</a>
+            <a *ngIf="!(user() && admin())" mat-button routerLink="login">Login</a>
+            <a *ngIf="user() || admin()" mat-button routerLink="logout">Logout</a>
         </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

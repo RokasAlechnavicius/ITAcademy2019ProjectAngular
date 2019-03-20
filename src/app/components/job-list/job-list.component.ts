@@ -9,13 +9,12 @@ import { AlertService } from '../../services/alert.service';
 const JOB_LIST_OPTIONS = {
     maxParticipantsCount: 14,
     itemsPerPage: 10,
-    breakWidth: 1000,
+    breakWidth: 1000
 };
 const ALERT_MESSAGES = {
-  successJoin: 'You have been succesfully added to the job',
-  successLeave: 'You have successfully left the job'
+    successJoin: 'You have been succesfully added to the job',
+    successLeave: 'You have successfully left the job'
 };
-
 
 @Component({
     selector: 'app-job-list',
@@ -98,6 +97,7 @@ export class JobListComponent implements OnInit {
     }
 
     joinJob(job: Job) {
+        event.stopPropagation();
         this.jobService.joinJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert(ALERT_MESSAGES.successJoin);
@@ -112,6 +112,7 @@ export class JobListComponent implements OnInit {
     }
 
     leaveJob(job: Job) {
+        event.stopPropagation();
         this.jobService.leaveJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);

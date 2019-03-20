@@ -6,8 +6,8 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
 
 const LOGIN_FORM_MESSAGES = {
-  successMessage: 'You have successfully logged in!',
-  errorMessage: 'invalid email or password provided'
+    successMessage: 'You have successfully logged in!',
+    errorMessage: 'invalid email or password provided'
 };
 
 @Component({
