@@ -60,7 +60,10 @@ export class StoryListComponent implements OnInit {
 
     openImageDialog(image: string): void {
         const dialogRef = this.dialog.open(ImageDialogComponent, {
-            width: '90%',
+            width: 'auto',
+            height: 'auto',
+            maxHeight: '90% !important',
+            maxWidth: '95%',
             data: image
         });
     }

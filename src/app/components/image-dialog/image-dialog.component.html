@@ -1,8 +1,9 @@
 <div class="dialog-container">
-    <mat-icon class="close-icon" (click)="done()">
-        close
-    </mat-icon>
-
+    <div class="close">
+        <mat-icon class="close-icon" (click)="done()">
+            close
+        </mat-icon>
+    </div>
     <mat-dialog-content>
         <img [src]="data" alt="" />
     </mat-dialog-content>

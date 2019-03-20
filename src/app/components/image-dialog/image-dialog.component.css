@@ -1,4 +1,16 @@
 img {
-    width: auto;
-    height: 400px;
+    /*display: block;*/
+    max-width: 95%;
+    height: auto;
+}
+mat-dialog-content {
+    text-align: center !important;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+}
+
+.close {
+    text-align: right;
 }
