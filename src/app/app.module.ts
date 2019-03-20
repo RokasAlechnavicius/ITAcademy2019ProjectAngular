@@ -91,7 +91,13 @@ import { AdminJobListComponent } from './components/admin-job-list/admin-job-lis
         MatPaginatorModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    entryComponents: [AlertComponent, HomePageComponent, ParticipantsDialogComponent, StoryDetailsDialogComponent, ImageDialogComponent],
+    entryComponents: [
+        AlertComponent,
+        HomePageComponent,
+        ParticipantsDialogComponent,
+        StoryDetailsDialogComponent,
+        ImageDialogComponent
+    ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })

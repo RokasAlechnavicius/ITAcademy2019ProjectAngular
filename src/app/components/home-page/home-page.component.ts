@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 const REACTIVE_PAGE_BREAKPOINTS = {
-  bigWidth: 924,
-  mediumWidth: 600,
-  lowWidth: 400
+    bigWidth: 924,
+    mediumWidth: 600,
+    lowWidth: 400
 };
 
 @Component({

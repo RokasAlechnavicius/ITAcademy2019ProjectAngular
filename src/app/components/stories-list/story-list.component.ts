@@ -4,11 +4,11 @@ import { StoryService } from '../../services/story.service';
 import { Story } from '../../models/story';
 import { StoryDetailsDialogComponent } from '../story-details-dialog/story-details-dialog.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import {ImageDialogComponent} from '../image-dialog/image-dialog.component';
+import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 
 const STORY_LIST_OPTIONS = {
     itemsPerPage: 10,
-    collumnsDisplay: ['expand','date', 'idea']
+    collumnsDisplay: ['expand', 'date', 'idea']
 };
 
 @Component({
@@ -18,7 +18,7 @@ const STORY_LIST_OPTIONS = {
     animations: [
         trigger('detailExpand', [
             state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
-            state('expanded', style({ height: '*', width:'100%' })),
+            state('expanded', style({ height: '*', width: '100%' })),
             transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
         ])
     ]

@@ -11,31 +11,22 @@ export class UserAuthenticationService {
     constructor(private http: HttpClient) {}
 
     login(email: string, password: string) {
-        return this.http
-            .post<any>(
-              HEROKU_URL + '/login',
-                { email, password },
-                { observe: 'response' }
-            )
-            .pipe(
-                map(user => {
-                    if (user) {
-                        localStorage.setItem('userType', user.body.role);
-                        if (user.body.role === 'user') {
-                            localStorage.setItem('currentUser', JSON.stringify(user));
-                            localStorage.setItem('currentUserToken', JSON.stringify(user.headers.get('Authorization')));
-                        } else {
-                            localStorage.setItem('currentAdmin', JSON.stringify(user));
-                            localStorage.setItem(
-                                'currentAdminToken',
-                                JSON.stringify(user.headers.get('Authorization'))
-                            );
-                        }
-                        localStorage.setItem('currentUserEmail', email);
+        return this.http.post<any>(HEROKU_URL + '/login', { email, password }, { observe: 'response' }).pipe(
+            map(user => {
+                if (user) {
+                    localStorage.setItem('userType', user.body.role);
+                    if (user.body.role === 'user') {
+                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        localStorage.setItem('currentUserToken', JSON.stringify(user.headers.get('Authorization')));
+                    } else {
+                        localStorage.setItem('currentAdmin', JSON.stringify(user));
+                        localStorage.setItem('currentAdminToken', JSON.stringify(user.headers.get('Authorization')));
                     }
-                    return user;
-                })
-            );
+                    localStorage.setItem('currentUserEmail', email);
+                }
+                return user;
+            })
+        );
     }
 
     logout() {

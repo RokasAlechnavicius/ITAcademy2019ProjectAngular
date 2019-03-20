@@ -18,8 +18,8 @@ const USER_REGISTRATION_FORM_OPTIONS = {
     passwordMinLength: 7
 };
 const USER_REGISTRATION_FORM_MESSAGES = {
-  successRegistration: 'User has been registered succesfuly',
-  errorRegistration: 'An error has occured: '
+    successRegistration: 'User has been registered succesfuly',
+    errorRegistration: 'An error has occured: '
 };
 
 const returnUrl = '/login';
@@ -128,7 +128,9 @@ export class UserRegistrationFormComponent implements OnInit {
                     this.router.navigate([returnUrl]);
                 },
                 error => {
-                    this.alertService.createErrorAlert(USER_REGISTRATION_FORM_MESSAGES.errorRegistration + error.error.message);
+                    this.alertService.createErrorAlert(
+                        USER_REGISTRATION_FORM_MESSAGES.errorRegistration + error.error.message
+                    );
                     this.loading = false;
                 }
             );

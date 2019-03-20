@@ -34,8 +34,11 @@
                     [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
                 >
                     <div class="element-description detail-text">
-                        <p><strong>Story </strong> <br> {{ element.description }}</p>
-                      <p> <strong>Participants</strong></p>
+                        <p>
+                            <strong>Story </strong> <br />
+                            {{ element.description }}
+                        </p>
+                        <p><strong>Participants</strong></p>
                         <ol>
                             <li>
                                 {{ element.job.organizator.name }} {{ element.job.organizator.surname }} (Team lead)
@@ -45,11 +48,11 @@
                             </li>
                         </ol>
                     </div>
-                  <div class="images">
-                    <div class="image" *ngFor="let image of element.images">
-                      <img *ngIf="element.images" [src]="image" (click)="openImageDialog(image)" />
+                    <div class="images">
+                        <div class="image" *ngFor="let image of element.images">
+                            <img *ngIf="element.images" [src]="image" (click)="openImageDialog(image)" />
+                        </div>
                     </div>
-                  </div>
                 </div>
             </mat-cell>
         </ng-container>
