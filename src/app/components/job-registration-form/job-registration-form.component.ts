@@ -106,6 +106,7 @@ export class JobRegistrationFormComponent implements OnInit {
         this.jobService.addJob(this.jobForm.value).subscribe(
             data => {
                 this.router.navigate(['/jobs']);
+                this.alertService.createSuccessAlert(JOB_REGISTRATION_FORM_OPTIONS.formSuccessMessage);
             },
             err => {
                 this.alertService.createErrorAlert(JOB_REGISTRATION_FORM_OPTIONS.formErrorMessage + err.error.message);

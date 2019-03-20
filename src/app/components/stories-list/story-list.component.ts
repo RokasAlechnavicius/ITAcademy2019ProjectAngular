@@ -23,6 +23,7 @@ export class StoryListComponent implements OnInit {
     storiesData = new MatTableDataSource<Story>();
     columnsToDisplay = STORY_LIST_OPTIONS.collumnsDisplay;
     isLoading = true;
+    isFetchingImages = true;
     expandedElement: Story;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -45,12 +46,17 @@ export class StoryListComponent implements OnInit {
 
     loadStoryImages(element) {
         if (element.hasImages) {
-            this.isLoading = true;
+            this.isFetchingImages = true;
             element.hasImages = false;
-            this.storyService.getStoryImages(element.id).subscribe(value => {
-                element.images = value;
-                this.isLoading = false;
-            });
+            this.storyService.getStoryImages(element.id).subscribe(
+                value => {
+                    element.images = value;
+                    this.isFetchingImages = false;
+                },
+                error => {
+                    this.isFetchingImages = false;
+                }
+            );
         }
     }
 

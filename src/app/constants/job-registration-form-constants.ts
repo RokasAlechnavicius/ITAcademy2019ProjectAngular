@@ -8,6 +8,7 @@ export const JOB_REGISTRATION_FORM_OPTIONS = {
     descriptionMaxLength: 512,
     websiteMaxLength: 32,
     formErrorMessage: 'an error has occurred: ',
+    formSuccessMessage: 'Success. Job awaiting approval by admin',
     keyboardLetterECode: 69,
     phoneMax: 999999999999,
     windowBreakWidth: 1375

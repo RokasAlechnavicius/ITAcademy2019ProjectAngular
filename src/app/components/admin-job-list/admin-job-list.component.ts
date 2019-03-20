@@ -9,7 +9,7 @@ import { ADMIN_JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/admin-jo
 @Component({
     selector: 'app-admin-job-list',
     templateUrl: './admin-job-list.component.html',
-    styleUrls: ['./admin-job-list.component.scss', '../job-list/job-list.component.scss'],
+    styleUrls: ['../job-list/job-list.component.scss', './admin-job-list.component.scss'],
     animations: [
         trigger('detailExpand', [
             state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
@@ -50,9 +50,9 @@ export class AdminJobListComponent implements OnInit {
 
     adjustTable(event) {
         if (window.innerWidth <= ADMIN_JOB_LIST_OPTIONS.breakWidth) {
-            this.columnsToDisplay = ['expand', 'idea', 'join'];
+            this.columnsToDisplay = ['expand', 'idea', 'buttons'];
         } else {
-            this.columnsToDisplay = ['expand', 'idea', 'region', 'date', 'join'];
+            this.columnsToDisplay = ['expand', 'idea', 'region', 'date', 'buttons'];
         }
     }
 
