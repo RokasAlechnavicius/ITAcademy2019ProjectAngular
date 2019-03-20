@@ -18,7 +18,7 @@ export class JobService {
     }
 
     getJobAdminList() {
-      return this.http.get<Job[]>(HEROKU_URL + '/jobs/admin');
+        return this.http.get<Job[]>(HEROKU_URL + '/jobs/admin');
     }
 
     getStoryJobList() {

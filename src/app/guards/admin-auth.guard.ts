@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import {UserAuthenticationService} from '../services/user-authentication.service';
+import { UserAuthenticationService } from '../services/user-authentication.service';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +15,7 @@ export class AdminAuthGuard implements CanActivate {
             return true;
         }
         if (currentUser) {
-          this.userService.logout();
+            this.userService.logout();
         }
         this.router.navigate(['/login']);
         return false;
