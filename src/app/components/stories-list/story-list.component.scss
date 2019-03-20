@@ -99,7 +99,7 @@ mat-table {
 .element-description {
     font-size: 120%;
     width: 70%;
-    padding: 16px 16px 16px 16px;
+    padding: 16px 16px 16px 40px;
     text-align: left;
 }
 
@@ -247,4 +247,8 @@ img {
 }
 
 .image {
+}
+
+#image-spinner {
+    margin: 2% 0;
 }

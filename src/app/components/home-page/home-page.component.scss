@@ -134,6 +134,10 @@ mat-grid-list {
     color: #969eaa;
 }
 
+#arrow:hover {
+    cursor: pointer;
+}
+
 .bounce {
     animation-iteration-count: infinite;
     animation-duration: 1.5s;

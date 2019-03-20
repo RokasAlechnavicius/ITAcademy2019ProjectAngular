@@ -23,15 +23,16 @@
         </ng-container>
 
         <!-- Button Column -->
-        <ng-container matColumnDef="join">
+        <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <div>
-                    <button mat-raised-button class="join" (click)="approveJob(element)">
+                    <button mat-raised-button class="approve buttons" (click)="approveJob(element)">
                         Approve
                     </button>
-                    <button mat-raised-button class="leave" (click)="rejectJob(element)">
-                        Cancel
+
+                    <button mat-raised-button class="reject buttons" (click)="rejectJob(element)">
+                        Reject
                     </button>
                 </div>
             </mat-cell>

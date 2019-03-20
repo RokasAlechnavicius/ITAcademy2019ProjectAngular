@@ -1,0 +1,80 @@
+.mat-column-buttons {
+    padding: 0;
+    margin: 0;
+    flex: 0 0 15%;
+    min-width: 200px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-items: center;
+}
+
+.mat-row {
+    padding: 0;
+}
+
+.mat-column-date {
+    min-width: 50px;
+}
+
+.mat-column-idea {
+}
+
+.element-description {
+    padding-bottom: 16px;
+}
+
+.buttons {
+    width: 85px;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    background-color: #ffc107;
+    color: #222;
+}
+
+.approve {
+    margin: 0 10px;
+}
+
+.reject {
+    background-color: #d71b0d59;
+}
+
+.reject:hover {
+    background-color: #d71b0d;
+}
+
+@media only screen and (max-width: 1300px) {
+    .mat-column-buttons {
+        flex: 0 0 90px;
+        flex-wrap: wrap;
+        padding-right: 10px;
+        justify-items: center;
+        min-width: 0;
+    }
+    .mat-column-idea {
+        flex: 0 0 35%;
+    }
+    .approve {
+        margin: 5px 2px 10px 2px;
+    }
+    .reject {
+        margin: 0 2px 10px 2px;
+    }
+}
+
+@media only screen and (max-width: 1780px) {
+    .mat-column-idea {
+        flex: 0 0 40%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .mat-column-buttons {
+        flex: 0 0 100px;
+    }
+    .mat-column-idea {
+        flex: 1;
+    }
+}
