@@ -5,7 +5,6 @@ import { JobService } from '../../services/job.service';
 import { AlertService } from '../../services/alert.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ADMIN_JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/admin-job-list-constants';
-
 @Component({
     selector: 'app-admin-job-list',
     templateUrl: './admin-job-list.component.html',

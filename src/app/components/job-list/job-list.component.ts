@@ -7,6 +7,7 @@ import { ParticipantsDialogComponent } from '../participants-dialog/participants
 import { AlertService } from '../../services/alert.service';
 import { JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/job-list-constants';
 
+
 @Component({
     selector: 'app-job-list',
     templateUrl: './job-list.component.html',

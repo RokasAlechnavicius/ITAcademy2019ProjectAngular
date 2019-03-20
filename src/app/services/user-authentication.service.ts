@@ -11,7 +11,7 @@ export class UserAuthenticationService {
     constructor(private http: HttpClient) {}
 
     login(email: string, password: string) {
-        return this.http.post<any>(HEROKU_URL + '/login', { email, password }, { observe: 'response' }).pipe(
+        return this.http.post<any>(HEROKU_URL + 'login', { email, password }, { observe: 'response' }).pipe(
             map(user => {
                 if (user) {
                     localStorage.setItem('userType', user.body.role);

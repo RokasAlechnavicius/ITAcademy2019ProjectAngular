@@ -11,6 +11,7 @@ import {
 import { first } from 'rxjs/operators';
 
 const returnUrl = '/login';
+
 @Component({
     selector: 'app-user-registration-form',
     templateUrl: './user-registration-form.component.html',
