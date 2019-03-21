@@ -23,7 +23,8 @@ export class JobRegistrationFormComponent implements OnInit {
         private alertService: AlertService
     ) {}
     jobFormConstants = JOB_REGISTRATION_FORM_OPTIONS;
-    minDate = new Date();
+    todayDate = new Date();
+    minDate = new Date(this.todayDate.setDate(this.todayDate.getDate() + 1));
     date: string;
     categories = categoriesData.categories;
     regions = regionsData.regions;
