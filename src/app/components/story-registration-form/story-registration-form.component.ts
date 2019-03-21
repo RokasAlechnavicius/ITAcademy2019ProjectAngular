@@ -14,7 +14,7 @@ import { STORY_FORM_MESSAGES } from '../../constants/story-registration-form-con
 })
 export class StoryRegistrationFormComponent implements OnInit {
     storyForm: FormGroup;
-    ideas: string[];
+    ideas: string[] = [];
     base64textString = [];
     invalidFileNames = [];
     constructor(
