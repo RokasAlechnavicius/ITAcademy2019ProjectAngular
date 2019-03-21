@@ -39,7 +39,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { StoryRegistrationFormComponent } from './components/story-registration-form/story-registration-form.component';
 import { ParticipantsDialogComponent } from './components/participants-dialog/participants-dialog.component';
 import { StoryListComponent } from './components/stories-list/story-list.component';
-import { StoryDetailsDialogComponent } from './components/story-details-dialog/story-details-dialog.component';
 import { ImageDialogComponent } from './components/image-dialog/image-dialog.component';
 import { AdminJobListComponent } from './components/admin-job-list/admin-job-list.component';
 
@@ -56,7 +55,6 @@ import { AdminJobListComponent } from './components/admin-job-list/admin-job-lis
         StoryRegistrationFormComponent,
         ParticipantsDialogComponent,
         StoryListComponent,
-        StoryDetailsDialogComponent,
         ImageDialogComponent,
         AdminJobListComponent
     ],
@@ -95,7 +93,6 @@ import { AdminJobListComponent } from './components/admin-job-list/admin-job-lis
         AlertComponent,
         HomePageComponent,
         ParticipantsDialogComponent,
-        StoryDetailsDialogComponent,
         ImageDialogComponent
     ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],

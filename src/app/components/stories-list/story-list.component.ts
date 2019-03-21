@@ -23,7 +23,7 @@ export class StoryListComponent implements OnInit {
     storiesData = new MatTableDataSource<Story>();
     columnsToDisplay = STORY_LIST_OPTIONS.collumnsDisplay;
     isLoading = true;
-    isFetchingImages = false;
+    isFetchingImages;
     expandedElement: Story;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;

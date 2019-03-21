@@ -1,7 +1,6 @@
 img {
-    /*display: block;*/
     max-width: 95%;
-    height: auto;
+    object-fit: contain;
 }
 mat-dialog-content {
     text-align: center !important;

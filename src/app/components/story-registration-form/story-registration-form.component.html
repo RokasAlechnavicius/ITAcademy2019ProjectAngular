@@ -4,7 +4,7 @@
         <form [formGroup]="storyForm" (ngSubmit)="submitForm()">
             <div class="job-form-field">
                 <mat-form-field appearance="outline" class="grid-tile-field">
-                    <mat-label>Job</mat-label>
+                    <mat-label>Completed job</mat-label>
                     <mat-select formControlName="idea" required>
                         <mat-option *ngFor="let idea of ideas" [value]="idea">
                             {{ idea }}

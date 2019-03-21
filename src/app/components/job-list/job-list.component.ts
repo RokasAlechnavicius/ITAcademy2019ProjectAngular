@@ -65,7 +65,7 @@ export class JobListComponent implements OnInit {
     openDialog(job: Job): void {
         this.loggedIn = !!this.user();
         this.dialogRef = this.dialog.open(ParticipantsDialogComponent, {
-            width: '30%',
+            width: '450px',
             data: { loggedIn: this.loggedIn, job }
         });
 

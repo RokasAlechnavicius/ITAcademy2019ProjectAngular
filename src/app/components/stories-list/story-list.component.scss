@@ -237,18 +237,17 @@ img {
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    margin-left: 40px;
+    margin-bottom: 16px;
 }
 
 .image img:hover {
     cursor: pointer;
 }
 
-.image {
-}
-
-#image-spinner {
-    margin: 2% 0;
+.image:not(:last-child) {
+    margin-right: 50px;
 }
