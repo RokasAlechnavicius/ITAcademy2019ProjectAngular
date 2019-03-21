@@ -6,7 +6,6 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
 import { LOGIN_FORM_MESSAGES } from '../../constants/login-constants';
 
-
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',

@@ -28,11 +28,7 @@
 
         <ng-container matColumnDef="expandedDetail">
             <mat-cell class="expanded-color" *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-                <div
-                    style="flex-direction: column"
-                    class="element-detail"
-                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
-                >
+                <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                     <div class="element-description detail-text">
                         <p>
                             <strong>Story </strong> <br />

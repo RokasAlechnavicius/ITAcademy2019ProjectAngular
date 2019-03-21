@@ -9,7 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 export class ImageDialogComponent implements OnInit {
     constructor(public dialogRef: MatDialogRef<ImageDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-    done(): void {
+    closeDialogWindow(): void {
         this.dialogRef.close();
     }
     ngOnInit() {}

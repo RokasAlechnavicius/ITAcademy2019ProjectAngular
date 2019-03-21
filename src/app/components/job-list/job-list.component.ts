@@ -7,7 +7,6 @@ import { ParticipantsDialogComponent } from '../participants-dialog/participants
 import { AlertService } from '../../services/alert.service';
 import { JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/job-list-constants';
 
-
 @Component({
     selector: 'app-job-list',
     templateUrl: './job-list.component.html',
@@ -108,7 +107,6 @@ export class JobListComponent implements OnInit {
         this.jobService.leaveJob(job.id).subscribe(
             success => {
                 this.alertService.createSuccessAlert(ALERT_MESSAGES.successLeave);
-                // event.stopPropagation();
                 window.scroll(0, 0);
                 this.getJobs();
             },
