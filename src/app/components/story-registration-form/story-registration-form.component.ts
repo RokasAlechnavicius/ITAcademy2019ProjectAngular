@@ -14,7 +14,7 @@ import { STORY_FORM_MESSAGES } from '../../constants/story-registration-form-con
 })
 export class StoryRegistrationFormComponent implements OnInit {
     storyForm: FormGroup;
-    jobs: Job[];
+    ideas: string[];
     base64textString = [];
     invalidFileNames = [];
     constructor(
@@ -31,7 +31,7 @@ export class StoryRegistrationFormComponent implements OnInit {
     ngOnInit() {
         this.createForm();
         this.jobService.getStoryJobList().subscribe(jobs => {
-            this.jobs = jobs;
+            this.ideas = jobs;
         });
     }
 
@@ -47,7 +47,7 @@ export class StoryRegistrationFormComponent implements OnInit {
                 '',
                 [Validators.required, Validators.maxLength(STORY_FORM_MESSAGES.maxSize), this.noWhiteSpaceValidator]
             ],
-            job: ['', Validators.required],
+            idea: ['', Validators.required],
             images: [this.base64textString]
         });
     }

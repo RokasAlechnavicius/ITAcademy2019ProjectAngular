@@ -22,7 +22,7 @@ export class JobService {
     }
 
     getStoryJobList() {
-        return this.http.get<Job[]>(HEROKU_URL + '/jobs/notactive');
+        return this.http.get<string[]>(HEROKU_URL + '/story/jobs');
     }
 
     joinJob(id: number) {

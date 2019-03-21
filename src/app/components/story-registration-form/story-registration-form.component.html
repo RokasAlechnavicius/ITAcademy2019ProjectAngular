@@ -5,22 +5,22 @@
             <div class="job-form-field">
                 <mat-form-field appearance="outline" class="grid-tile-field">
                     <mat-label>Job</mat-label>
-                    <mat-select formControlName="job" required>
-                        <mat-option *ngFor="let job of jobs" [value]="job">
-                            {{ job.idea }}
+                    <mat-select formControlName="idea" required>
+                        <mat-option *ngFor="let idea of ideas" [value]="idea">
+                            {{ idea }}
                         </mat-option>
                     </mat-select>
                     <mat-hint>Select from a list</mat-hint>
-                    <mat-error *ngIf="storyForm.controls.job.invalid && storyForm.controls.job.touched">
+                    <mat-error *ngIf="storyForm.controls.idea.invalid && storyForm.controls.idea.touched">
                         <mat-error
                             *ngIf="
-                                storyForm.controls.job.hasError('required') ||
-                                storyForm.controls.job.hasError('whitespace')
+                                storyForm.controls.idea.hasError('required') ||
+                                storyForm.controls.idea.hasError('whitespace')
                             "
                         >
                             Job field cannot be empty
                         </mat-error>
-                        <mat-error *ngIf="storyForm.controls.job.hasError('maxlength')">
+                        <mat-error *ngIf="storyForm.controls.idea.hasError('maxlength')">
                             Job field cannot be longer than 32 characters
                         </mat-error>
                     </mat-error>
