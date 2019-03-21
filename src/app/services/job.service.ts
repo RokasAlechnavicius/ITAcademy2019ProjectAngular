@@ -38,6 +38,6 @@ export class JobService {
     }
 
     rejectJob(id: number) {
-        return this.http.post('https://response-test-backend.herokuapp.com' + '/job/admin/cancel/' + id, id);
+        return this.http.post(HEROKU_URL + '/job/admin/cancel/' + id, id);
     }
 }

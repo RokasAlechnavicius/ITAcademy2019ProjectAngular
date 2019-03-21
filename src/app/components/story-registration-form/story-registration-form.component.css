@@ -43,17 +43,30 @@ mat-form-field {
 
 label {
     background-color: green;
-    padding: 1%;
     color: #ffffff;
     border-radius: 5px;
     font-size: smaller;
     float: left;
     margin-left: 10%;
+    box-shadow: 0 3px 1px -2px #00000033, 0 2px 2px 0 #00000026, 0 1px 5px 0 #0000001a;
+    cursor: pointer;
+    padding: 10px 16px;
 }
 
 .file-word {
     float: left;
     margin-left: 5%;
+    margin-top: 1%;
+    margin-right: 5%;
+}
+
+.delete-btn {
+    background-color: indianred;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: small;
+    padding: 0 10px;
+    float: left;
 }
 
 .img-upload {

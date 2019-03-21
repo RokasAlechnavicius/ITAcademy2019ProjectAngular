@@ -5,16 +5,7 @@ import { Job } from '../../models';
 import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { ParticipantsDialogComponent } from '../participants-dialog/participants-dialog.component';
 import { AlertService } from '../../services/alert.service';
-
-const JOB_LIST_OPTIONS = {
-    maxParticipantsCount: 14,
-    itemsPerPage: 10,
-    breakWidth: 1000
-};
-const ALERT_MESSAGES = {
-    successJoin: 'You have been succesfully added to the job',
-    successLeave: 'You have successfully left the job'
-};
+import { JOB_LIST_OPTIONS, ALERT_MESSAGES } from '../../constants/job-list-constants';
 
 @Component({
     selector: 'app-job-list',

@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 import { AlertService } from '../../services/alert.service';
-
-const LOGOUT_MESSAGES = {
-    successMessage: 'You have been successfully logged out'
-};
+import { LOGOUT_MESSAGES } from '../../constants/logout-constants';
 
 @Component({
     selector: 'app-logout-user',

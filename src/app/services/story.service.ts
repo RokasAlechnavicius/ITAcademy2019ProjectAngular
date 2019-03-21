@@ -26,4 +26,8 @@ export class StoryService {
     getStoryDetails(id: number) {
         return this.http.get<Story>(HEROKU_URL + '/story/' + id);
     }
+
+    getStoryImages(id: number) {
+        return this.http.get<string[]>(HEROKU_URL + '/story/' + id + '/images');
+    }
 }

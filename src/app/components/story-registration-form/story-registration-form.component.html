@@ -75,7 +75,7 @@
             <div class="file-word" *ngIf="base64textString.length === 1">{{ base64textString.length }} File</div>
             <div class="file-word" *ngIf="base64textString.length > 1">{{ base64textString.length }} Files</div>
         </div>
-        <button class="delete-btn" [hidden]="base64textString.length < 1" (click)="cancelImageUpload()">
+        <button class="delete-btn" *ngIf="base64textString.length >= 1" (click)="cancelImageUpload()" mat-raised-button>
             Delete All
         </button>
     </div>

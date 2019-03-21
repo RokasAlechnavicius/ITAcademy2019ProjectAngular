@@ -5,14 +5,7 @@ import { JobService } from '../../services/job.service';
 import { Job } from '../../models';
 import { StoryService } from '../../services/story.service';
 import { AlertService } from '../../services/alert.service';
-
-const STORY_FORM_MESSAGES = {
-    successCreate: 'A new story has been created',
-    errorCreate: 'An error has occured: ',
-    errorFileValidation: 'These files are larger than 4Mb or not a valid image format: ',
-    maxSize: 1024,
-    maxFileSizeMB: 4
-};
+import { STORY_FORM_MESSAGES } from '../../constants/story-registration-form-constants';
 
 @Component({
     selector: 'app-story-registration-form',
@@ -72,6 +65,10 @@ export class StoryRegistrationFormComponent implements OnInit {
     }
     onUploadChange(event: any) {
         if (event.target.files.length) {
+            if (event.target.files.length > 3) {
+                this.alertService.createErrorAlert(STORY_FORM_MESSAGES.errorFileAmountValidation);
+                return;
+            }
             for (const file of event.target.files) {
                 if (
                     file.size / STORY_FORM_MESSAGES.maxSize / STORY_FORM_MESSAGES.maxSize <
@@ -88,6 +85,7 @@ export class StoryRegistrationFormComponent implements OnInit {
             if (this.invalidFileNames.length > 0) {
                 this.storyForm.controls.images.setErrors({ incorrect: true });
                 this.alertService.createErrorAlert(STORY_FORM_MESSAGES.errorFileValidation + this.invalidFileNames);
+                this.invalidFileNames = [];
             } else {
                 this.storyForm.controls.images.setErrors(null);
             }

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-const REACTIVE_PAGE_BREAKPOINTS = {
-    bigWidth: 924,
-    mediumWidth: 600,
-    lowWidth: 400
-};
+import { REACTIVE_PAGE_BREAKPOINTS } from '../../constants/home-page-constants';
 
 @Component({
     selector: 'app-home-page',
@@ -14,10 +9,10 @@ const REACTIVE_PAGE_BREAKPOINTS = {
 export class HomePageComponent implements OnInit {
     constructor() {}
 
-    breakpoint = 3;
-    colspan = 2;
-    rowspanText = 1;
-    rowspanIcon = 1;
+    breakpoint = REACTIVE_PAGE_BREAKPOINTS.breakpoint;
+    colspan = REACTIVE_PAGE_BREAKPOINTS.colspan;
+    rowspanText = REACTIVE_PAGE_BREAKPOINTS.rowspanText;
+    rowspanIcon = REACTIVE_PAGE_BREAKPOINTS.rowspanIcon;
     rowHeightHow: number;
     rowHeightWho: number;
     rowHeightWhen: number;
