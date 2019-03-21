@@ -9,7 +9,7 @@
                         <mat-option *ngFor="let idea of ideas" [value]="idea">
                             {{ idea }}
                         </mat-option>
-                        <mat-option *ngIf="!ideas.length > 0" disabled> No jobs to choose from</mat-option>
+                        <mat-option *ngIf="!(ideas.length > 0)" disabled> No jobs to choose from</mat-option>
                     </mat-select>
                     <mat-hint>Select from a list</mat-hint>
                     <mat-error *ngIf="storyForm.controls.idea.invalid && storyForm.controls.idea.touched">
